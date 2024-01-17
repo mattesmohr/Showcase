@@ -1,23 +1,27 @@
 // swift-tools-version: 5.9
-// The swift-tools-version declares the minimum version of Swift required to build this package.
 
 import PackageDescription
 
 let package = Package(
     name: "Showcase",
-    products: [
-        // Products define the executables and libraries a package produces, making them visible to other packages.
-        .library(
-            name: "Showcase",
-            targets: ["Showcase"]),
+    platforms: [
+       .macOS(.v12)
+    ],
+    dependencies: [
+        .package(url: "https://github.com/vapor/vapor.git", from: "4.88.0"),
+        .package(url: "https://github.com/vapor-community/HTMLKit.git", from: "3.0.0-alpha.7")
     ],
     targets: [
-        // Targets are the basic building blocks of a package, defining a module or a test suite.
-        // Targets can depend on other targets in this package and products from dependencies.
-        .target(
-            name: "Showcase"),
-        .testTarget(
-            name: "ShowcaseTests",
-            dependencies: ["Showcase"]),
+        .executableTarget(
+            name: "Showcase",
+            dependencies: [
+                .product(name: "Vapor", package: "vapor"),
+                .product(name: "HTMLKit", package: "HTMLKit")
+            ],
+            swiftSettings: [
+                .unsafeFlags(["-cross-module-optimization"], .when(configuration: .release))
+            ]
+        ),
+        .testTarget(name: "ShowcaseTests", dependencies: ["Showcase"])
     ]
 )
