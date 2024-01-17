@@ -1,1 +1,113 @@
+html {
+    
+    color: #FFFFFF;
+    background-color: #0D1117;
+}
 
+body {
+    display: flex;
+    flex-direction: column;
+}
+
+header {
+    width: 80%;
+    margin-inline: auto;
+    padding: 0.75rem;
+    border-bottom: 1px solid #161B22;
+}
+
+main {
+    flex-grow: 1;
+    
+    width: 80%;
+    margin-inline: auto;
+    padding: 0.75rem;
+}
+
+footer {
+    width: 80%;
+    margin-inline: auto;
+    padding: 0.75rem;
+    border-top: 1px solid #161B22;
+}
+
+.example {
+    
+    position: relative;
+    display: inline-block;
+    min-width: 400px;
+    height: 200px;
+    border: 1px solid #30363D;
+    border-radius: 10px;
+    background: #fbfdfe;
+    background-image: linear-gradient(#e5f0f5 1px, transparent 1px), linear-gradient(to right, #e5f0f5 1px, transparent 1px);
+    background-size: 25px 25px;
+    overflow: clip;
+}
+
+.example.scheme\:dark {
+    background: #161B22;
+    background-image: linear-gradient(#2b3440 1px, transparent 1px), linear-gradient(to right, #2b3440 1px, transparent 1px);
+    background-size: 25px 25px;
+}
+
+.example-gradient {
+    
+    width: inherit;
+    height: inherit;
+    border-radius: 10px;
+    background: linear-gradient(145deg, transparent 0%, #fbfdfe 60%);
+}
+
+.example.scheme\:dark > .example-gradient {
+    background: linear-gradient(145deg, transparent 0%, #161B22 60%);
+    box-shadow: inset 2px 2px 2px #161B22;
+}
+
+.example-content {
+    
+    width: inherit;
+    height: inherit;
+    padding: 14px 16px;
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.example-toolbar {
+    position: absolute;
+    z-index: 1;
+    top: 10px;
+    right: 10px;
+    display: inline-block;
+}
+
+.example-tool {
+    --foregroundColor: var(--whiteColor);
+    padding: 10px;
+    border: 1px solid #30363D;
+    border-radius: 5px;
+    background: #2b3440;
+}
+
+.snippet {
+    --foregroundColor: var(--whiteColor);
+    
+    font-size: 14px;
+}
+
+.snippet p::before {
+    color: white;
+}
+
+.background\:control-background {
+    --backgroundColor: 215, 21%, 11%;
+    --backgroundOpacity: 1.0;
+}
+
+.border\:control-border {
+    --borderColor: 212, 12%, 21%;
+    
+    border: 1px solid #30363D;
+}

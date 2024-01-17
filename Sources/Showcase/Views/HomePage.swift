@@ -8,6 +8,7 @@ enum HomePage {
         var body: Content {
             PageContainer {
                 HStack {
+                    
                 }
             }
         }

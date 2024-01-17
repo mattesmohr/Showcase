@@ -34,5 +34,6 @@ struct Setup {
     static func routes(_ application: Application) async throws {
         
         try application.routes.register(collection: HomeController())
+        try application.routes.register(collection: ComponentsController())
     }
 }

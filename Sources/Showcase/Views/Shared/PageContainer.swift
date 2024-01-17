@@ -39,6 +39,9 @@ public struct PageContainer: View {
                         }
                         .fontSize(.large)
                         .bold()
+                        Link(destination: "/components/index") {
+                            "Components"
+                        }
                     }
                     .contentSpace(.between)
                 }
