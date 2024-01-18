@@ -27,9 +27,18 @@ public struct PageContainer: View {
                 Link()
                     .relationship(.stylesheet)
                     .reference("/css/page.css")
+                Link()
+                    .relationship(.stylesheet)
+                    .reference("/highlight/highlight.css")
                 Script {
                 }
                 .source("/htmlkit/query.js")
+                Script {
+                }
+                .source("/highlight/highlight.js")
+                Script {
+                }
+                .source("/highlight/swift.js")
             }
             Body {
                 Header {

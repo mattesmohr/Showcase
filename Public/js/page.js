@@ -1,4 +1,4 @@
- (function() {
+(function() {
      
      var Example = function (element) {
          
@@ -30,6 +30,36 @@
              
              (function(i) {
                  new Example(example[i]);
+             })(i);
+         }
+     }
+}());
+ 
+ (function() {
+     
+     var Snippet = function(element) {
+         
+         this.element = element;
+         
+         this.initiateListener();
+     }
+     
+     Snippet.prototype.initiateListener = function () {
+         
+         for (const child of this.element.children) {
+             child.innerHTML = hljs.highlight(child.innerText, {language: 'swift', ignoreIllegals: true}).value;
+         }
+         
+     };
+     
+     var snippet = document.getElementsByClassName('snippet');
+     
+     if (snippet.length > 0) {
+         
+         for (var i = 0; i < snippet.length; i++) {
+             
+             (function(i) {
+                 new Snippet(snippet[i]);
              })(i);
          }
      }

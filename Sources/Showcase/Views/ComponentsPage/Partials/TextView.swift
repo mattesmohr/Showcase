@@ -1,5 +1,6 @@
 import HTMLKit
 import HTMLKitComponents
+import Splash
 
 extension ComponentsPage {
 
