@@ -1,7 +1,7 @@
 import HTMLKit
 import HTMLKitComponents
 
-struct ButtonExample: View {
+struct ColorExample: View {
     
     var body: Content {
         ViewContainer {
@@ -9,7 +9,7 @@ struct ButtonExample: View {
                 VStack {
                     VStack {
                         Text {
-                            "Button"
+                            "Color"
                         }
                         .fontSize(.large)
                         .foregroundColor(.primary)
@@ -21,28 +21,27 @@ struct ButtonExample: View {
                     .contentSpace(.small)
                     VStack {
                         Text {
-                            "Button appearance"
+                            "Color scheme"
                         }
                         .fontSize(.medium)
                         .foregroundColor(.primary)
-                        Text {
-                            "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo."
-                        }
-                        ScrollView(direction: .horizontal) {
-                            for style in Tokens.ButtonStyle.allCases {
-                                ExampleView {
-                                    Button(role: .button) {
-                                        "Button"
-                                    }
-                                    .buttonStyle(style)
+                        ExampleView {
+                            Grid(ratio: .quarter) {
+                                for color in Tokens.BackgroundColor.allCases {
+                                    Card {}
+                                    .borderShape(.smallrounded)
+                                    .backgroundColor(color)
+                                    .frame(width: .twelve)
                                 }
                             }
+                            .contentSpace(.small)
                         }
+                        .frame(width: .twelve)
                         Snippet(highlight: .plaintext) {
                             """
-                            Button(role: .button) {
+                            Card {
                             }
-                            .buttonStyle(.primary)
+                            .colorScheme(.dark)
                             """
                         }
                         .backgroundColor(.custom("control-background"))
@@ -50,35 +49,7 @@ struct ButtonExample: View {
                         .borderShape(.smallrounded)
                     }
                     .contentSpace(.small)
-                    .tag("appearance")
-                    VStack {
-                        Text {
-                            "Button grouping"
-                        }
-                        .fontSize(.medium)
-                        .foregroundColor(.primary)
-                        Text {
-                            "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo."
-                        }
-                        ExampleView {
-                            Grouping {
-                                Button(role: .button) {
-                                    "Left"
-                                }
-                                .borderShape(.smallrounded)
-                                Button(role: .button) {
-                                    "Middle"
-                                }
-                                Button(role: .button) {
-                                    "Right"
-                                }
-                                .borderShape(.smallrounded)
-                            }
-                        }
-                        .frame(width: .twelve)
-                    }
-                    .contentSpace(.small)
-                    .tag("group")
+                    .tag("scheme")
                 }
                 .frame(width: .nine)
                 .contentSpace(.large)
@@ -92,11 +63,8 @@ struct ButtonExample: View {
                     .foregroundColor(.primary)
                     .fontTransformation(.uppercase)
                     List(direction: .vertical) {
-                        Link(destination: "#appearance") {
-                            "Button appearance"
-                        }
-                        Link(destination: "#group") {
-                            "Button grouping"
+                        Link(destination: "#scheme") {
+                            "Color scheme"
                         }
                     }
                     .frame(width: .twelve)

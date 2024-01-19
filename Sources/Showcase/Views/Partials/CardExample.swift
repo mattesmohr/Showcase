@@ -44,9 +44,6 @@ struct CardExample: View {
                         Snippet(highlight: .plaintext) {
                             """
                             Card {
-                                Text {
-                                    "Card"
-                                }
                             }
                             .borderShape(.fullrounded)
                             """
@@ -65,7 +62,10 @@ struct CardExample: View {
                     Text {
                         "Quick navigation"
                     }
-                    .fontSize(.medium)
+                    .fontSize(.small)
+                    .fontWeight(.bold)
+                    .foregroundColor(.primary)
+                    .fontTransformation(.uppercase)
                     List(direction: .vertical) {
                         Link(destination: "#shape") {
                             "View shape"

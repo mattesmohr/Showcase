@@ -3,7 +3,7 @@ import HTMLKitComponents
 extension Tokens.BackgroundColor: CaseIterable {
     
     public static var allCases: [HTMLKitComponents.Tokens.BackgroundColor] {
-        return [.black, .gray, .silver, .white, .red, .brown, .blue, .cyan, .green, .indigo, .mint, .orange, .pink, .purple, .secondary, .primary]
+        return [.black, .gray, .silver, .white, .red, .brown, .blue, .cyan, .green, .indigo, .mint, .orange, .yellow, .pink, .purple, .secondary, .primary]
     }
 }
 

@@ -75,7 +75,10 @@ struct DropdownExample: View {
                     Text {
                         "Quick navigation"
                     }
-                    .fontSize(.medium)
+                    .fontSize(.small)
+                    .fontWeight(.bold)
+                    .foregroundColor(.primary)
+                    .fontTransformation(.uppercase)
                     List(direction: .vertical) {
                         Link(destination: "#appearance") {
                             "Appearance"

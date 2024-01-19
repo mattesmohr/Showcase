@@ -83,6 +83,11 @@ final class ComponentsController {
     func getActionExample(_ request: Request) async throws -> View {
         return try await request.htmlkit.render(ActionExample())
     }
+    
+    // [/action]
+    func getColorExample(_ request: Request) async throws -> View {
+        return try await request.htmlkit.render(ColorExample())
+    }
 }
 
 extension ComponentsController: RouteCollection {
@@ -107,6 +112,7 @@ extension ComponentsController: RouteCollection {
             routes.get("card", use: getCardExample)
             routes.get("form", use: getFormExample)
             routes.get("action", use: getActionExample)
+            routes.get("color", use: getColorExample)
         }
     }
 }

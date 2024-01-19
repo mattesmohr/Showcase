@@ -19,6 +19,13 @@ struct ViewContainer: View {
                         }
                     }
                     .frame(width: .twelve)
+                    Text {
+                        "Submission"
+                    }
+                    .fontSize(.small)
+                    .fontWeight(.bold)
+                    .foregroundColor(.primary)
+                    .fontTransformation(.uppercase)
                     List(direction: .vertical) {
                         Link(destination: "/components/form") {
                             "Form"
@@ -26,8 +33,18 @@ struct ViewContainer: View {
                         Link(destination: "/components/field") {
                             "Fields"
                         }
+                        Link(destination: "/components/button") {
+                            "Button"
+                        }
                     }
                     .frame(width: .twelve)
+                    Text {
+                        "Type"
+                    }
+                    .fontSize(.small)
+                    .fontWeight(.bold)
+                    .foregroundColor(.primary)
+                    .fontTransformation(.uppercase)
                     List(direction: .vertical) {
                         Link(destination: "/components/text") {
                             "Text"
@@ -35,8 +52,18 @@ struct ViewContainer: View {
                         Link(destination: "/components/symbol") {
                             "Symbol"
                         }
+                        Link(destination: "/components/color") {
+                            "Color"
+                        }
                     }
                     .frame(width: .twelve)
+                    Text {
+                        "Content"
+                    }
+                    .fontSize(.small)
+                    .fontWeight(.bold)
+                    .foregroundColor(.primary)
+                    .fontTransformation(.uppercase)
                     List(direction: .vertical) {
                         Link(destination: "/components/image") {
                             "Image"
@@ -44,14 +71,18 @@ struct ViewContainer: View {
                         Link(destination: "/components/card") {
                             "Card"
                         }
-                        Link(destination: "/components/button") {
-                            "Button"
-                        }
                         Link(destination: "/components/snippet") {
                             "Snippet"
                         }
                     }
                     .frame(width: .twelve)
+                    Text {
+                        "Layout"
+                    }
+                    .fontSize(.small)
+                    .fontWeight(.bold)
+                    .foregroundColor(.primary)
+                    .fontTransformation(.uppercase)
                     List(direction: .vertical) {
                         Link(destination: "/components/stack") {
                             "Stack"
@@ -64,6 +95,13 @@ struct ViewContainer: View {
                         }
                     }
                     .frame(width: .twelve)
+                    Text {
+                        "Embedded"
+                    }
+                    .fontSize(.small)
+                    .fontWeight(.bold)
+                    .foregroundColor(.primary)
+                    .fontTransformation(.uppercase)
                     List(direction: .vertical) {
                         Link(destination: "/components/scroll") {
                             "Scroll"
@@ -77,6 +115,13 @@ struct ViewContainer: View {
 
                     }
                     .frame(width: .twelve)
+                    Text {
+                        "Interaction"
+                    }
+                    .fontSize(.small)
+                    .fontWeight(.bold)
+                    .foregroundColor(.primary)
+                    .fontTransformation(.uppercase)
                     List(direction: .vertical) {
                         Link(destination: "/components/action") {
                             "Action"
