@@ -10,7 +10,7 @@ body {
 }
 
 header {
-    width: 80%;
+    inline-size: 80%;
     margin-inline: auto;
     padding: 0.75rem;
     border-bottom: 1px solid #161B22;
@@ -19,24 +19,23 @@ header {
 main {
     flex-grow: 1;
     
-    width: 80%;
+    inline-size: 80%;
     margin-inline: auto;
     padding: 0.75rem;
 }
 
 footer {
-    width: 80%;
+    inline-size: 80%;
     margin-inline: auto;
     padding: 0.75rem;
     border-top: 1px solid #161B22;
 }
 
 .example {
-    
     position: relative;
     display: inline-block;
-    min-width: 400px;
-    height: 200px;
+    min-inline-size: 400px;
+    block-size: 200px;
     border: 1px solid #30363D;
     border-radius: 10px;
     background: #fbfdfe;
@@ -52,9 +51,8 @@ footer {
 }
 
 .example-gradient {
-    
-    width: inherit;
-    height: inherit;
+    inline-size: inherit;
+    block-size: inherit;
     border-radius: 10px;
     background: linear-gradient(145deg, transparent 0%, #fbfdfe 60%);
 }
@@ -65,9 +63,8 @@ footer {
 }
 
 .example-content {
-    
-    width: inherit;
-    height: inherit;
+    inline-size: inherit;
+    block-size: inherit;
     padding: 14px 16px;
     
     display: flex;
@@ -85,6 +82,7 @@ footer {
 
 .example-tool {
     --foregroundColor: var(--whiteColor);
+    
     padding: 10px;
     border: 1px solid #30363D;
     border-radius: 5px;
@@ -98,7 +96,7 @@ footer {
 }
 
 .snippet p::before {
-    color: white;
+    color: var(--whiteColor);
 }
 
 .background\:control-background {
@@ -126,9 +124,8 @@ footer {
 }
 
 .icon-gradient {
-    
-    width: inherit;
-    height: inherit;
+    inline-size: inherit;
+    block-size: inherit;
     
     border-radius: 10px;
     background: linear-gradient(145deg, transparent 0%, #161B22 60%);
@@ -136,13 +133,16 @@ footer {
 }
 
 .icon-content {
-    
-    width: inherit;
-    height: inherit;
+    inline-size: inherit;
+    block-size: inherit;
     padding: 14px 16px;
     
     display: flex;
     justify-content: center;
     align-items: center;
     aspect-ratio: 1/1;
+}
+
+.scrollview {
+    gap: 25px;
 }

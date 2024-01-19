@@ -86,7 +86,7 @@ struct ActionExample: View {
                                     action.hide("visible_text")
                                 }
                                 Text {
-                                    "Coucou!"
+                                    "Arrivederci!"
                                 }
                                 .tag("visible_text")
                             }
@@ -103,7 +103,7 @@ struct ActionExample: View {
                                 action.hide("visible_text")
                             }
                             Text {
-                                "Coucou!"
+                                "Arrivederci!"
                             }
                             .tag("visible_text")
                             """

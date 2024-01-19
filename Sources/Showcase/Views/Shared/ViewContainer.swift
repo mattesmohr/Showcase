@@ -77,6 +77,12 @@ struct ViewContainer: View {
 
                     }
                     .frame(width: .twelve)
+                    List(direction: .vertical) {
+                        Link(destination: "/components/action") {
+                            "Action"
+                        }
+                    }
+                    .frame(width: .twelve)
                 }
                 .frame(width: .two)
                 .contentSpace(.small)

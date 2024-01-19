@@ -20,7 +20,85 @@ struct SymbolExample: View {
                     }
                     .contentSpace(.small)
                     VStack {
-                        Grid(ratio: .sixth) {
+                        Grid(ratio: .fifth) {
+                            SymbolView {
+                                Symbol(system: "bookmark")
+                            }
+                            SymbolView {
+                                Symbol(system: "calendar")
+                            }
+                            SymbolView {
+                                Symbol(system: "chart.pie")
+                            }
+                            SymbolView {
+                                Symbol(system: "clock")
+                            }
+                            SymbolView {
+                                Symbol(system: "cloud")
+                            }
+                            SymbolView {
+                                Symbol(system: "envelope")
+                            }
+                            SymbolView {
+                                Symbol(system: "file")
+                            }
+                            SymbolView {
+                                Symbol(system: "folder")
+                            }
+                            SymbolView {
+                                Symbol(system: "house")
+                            }
+                            SymbolView {
+                                Symbol(system: "lifepreserver")
+                            }
+                            SymbolView {
+                                Symbol(system: "location")
+                            }
+                            SymbolView {
+                                Symbol(system: "lock")
+                            }
+                            SymbolView {
+                                Symbol(system: "person")
+                            }
+                            SymbolView {
+                                Symbol(system: "photo")
+                            }
+                            SymbolView {
+                                Symbol(system: "scope")
+                            }
+                            SymbolView {
+                                Symbol(system: "sidebar.left")
+                            }
+                            SymbolView {
+                                Symbol(system: "sidebar.right")
+                            }
+                            SymbolView {
+                                Symbol(system: "square.split")
+                            }
+                            SymbolView {
+                                Symbol(system: "target")
+                            }
+                            SymbolView {
+                                Symbol(system: "text.aligncenter")
+                            }
+                            SymbolView {
+                                Symbol(system: "text.alignjustify")
+                            }
+                            SymbolView {
+                                Symbol(system: "text.alignleft")
+                            }
+                            SymbolView {
+                                Symbol(system: "text.alignright")
+                            }
+                            SymbolView {
+                                Symbol(system: "tresor")
+                            }
+                            SymbolView {
+                                Symbol(system: "window.maximize")
+                            }
+                            SymbolView {
+                                Symbol(system: "window.minimize")
+                            }
                         }
                         .contentSpace(.small)
                     }

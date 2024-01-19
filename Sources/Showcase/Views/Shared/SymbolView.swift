@@ -1,7 +1,7 @@
 import HTMLKit
 import HTMLKitComponents
 
-public struct IconView: View {
+public struct SymbolView: View {
     
     public var content: [Content]
     
