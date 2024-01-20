@@ -6,35 +6,56 @@ struct ButtonExample: View {
     var body: Content {
         ViewContainer {
             HStack(alignment: .top) {
-                VStack {
-                    VStack {
+                VStack(spacing: .large) {
+                    VStack(spacing: .small) {
                         Text {
                             "Button"
                         }
                         .fontSize(.large)
-                        .foregroundColor(.primary)
+                        .foregroundColor(.accent)
                         Text {
                             "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet."
                         }
                         .fontSize(.medium)
+                        .foregroundColor(.white)
                     }
-                    .contentSpace(.small)
-                    VStack {
+                    VStack(spacing: .small) {
+                        ExampleView {
+                            Button(role: .button) {
+                                "Button"
+                            }
+                        }
+                        .frame(width: .twelve)
+                        Snippet(highlight: .plaintext) {
+                            """
+                            Button(role: .button) {
+                                "Button"
+                            }
+                            """
+                        }
+                        .backgroundColor(.custom("control-background"))
+                        .borderColor(.custom("control-border"))
+                        .borderShape(.smallrounded)
+                    }
+                    VStack(spacing: .small) {
                         Text {
                             "Button appearance"
                         }
                         .fontSize(.medium)
-                        .foregroundColor(.primary)
+                        .foregroundColor(.accent)
                         Text {
                             "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo."
                         }
-                        ScrollView(direction: .horizontal) {
-                            for style in Tokens.ButtonStyle.allCases {
-                                ExampleView {
-                                    Button(role: .button) {
-                                        "Button"
+                        .foregroundColor(.white)
+                        Scroll {
+                            HStack(spacing: .small) {
+                                for style in Tokens.ButtonStyle.allCases {
+                                    ExampleView {
+                                        Button(role: .button) {
+                                            "Button"
+                                        }
+                                        .buttonStyle(style)
                                     }
-                                    .buttonStyle(style)
                                 }
                             }
                         }
@@ -49,17 +70,17 @@ struct ButtonExample: View {
                         .borderColor(.custom("control-border"))
                         .borderShape(.smallrounded)
                     }
-                    .contentSpace(.small)
                     .tag("appearance")
-                    VStack {
+                    VStack(spacing: .small) {
                         Text {
                             "Button grouping"
                         }
                         .fontSize(.medium)
-                        .foregroundColor(.primary)
+                        .foregroundColor(.accent)
                         Text {
                             "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo."
                         }
+                        .foregroundColor(.white)
                         ExampleView {
                             Grouping {
                                 Button(role: .button) {
@@ -76,27 +97,48 @@ struct ButtonExample: View {
                             }
                         }
                         .frame(width: .twelve)
+                        Snippet(highlight: .plaintext) {
+                            """
+                            Grouping {
+                                Button(role: .button) {
+                                    "Left"
+                                }
+                                .borderShape(.smallrounded)
+                                Button(role: .button) {
+                                    "Middle"
+                                }
+                                Button(role: .button) {
+                                    "Right"
+                                }
+                                .borderShape(.smallrounded)
+                            }
+                            """
+                        }
+                        .backgroundColor(.custom("control-background"))
+                        .borderColor(.custom("control-border"))
+                        .borderShape(.smallrounded)
                     }
-                    .contentSpace(.small)
                     .tag("group")
                 }
                 .frame(width: .nine)
-                .contentSpace(.large)
                 .padding()
-                VStack {
+                VStack(spacing: .small) {
                     Text {
                         "Quick navigation"
                     }
-                    .fontSize(.small)
-                    .fontWeight(.bold)
-                    .foregroundColor(.primary)
-                    .fontTransformation(.uppercase)
+                    .textStyle(SubtitleStyle())
                     List(direction: .vertical) {
                         Link(destination: "#appearance") {
-                            "Button appearance"
+                            Text {
+                                "Button appearance"
+                            }
+                            .foregroundColor(.white)
                         }
                         Link(destination: "#group") {
-                            "Button grouping"
+                            Text {
+                                "Button grouping"
+                            }
+                            .foregroundColor(.white)
                         }
                     }
                     .frame(width: .twelve)

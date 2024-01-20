@@ -42,17 +42,18 @@ public struct PageContainer: View {
             }
             Body {
                 Header {
-                    HStack {
+                    HStack(spacing: .between) {
                         Link(destination: "/home/index") {
                             "Showcase"
                         }
                         .fontSize(.large)
+                        .foregroundColor(.white)
                         .bold()
                         Link(destination: "/components/index") {
                             "Components"
                         }
+                        .foregroundColor(.white)
                     }
-                    .contentSpace(.between)
                 }
                 Main {
                     content
@@ -62,6 +63,7 @@ public struct PageContainer: View {
                         Text {
                             "2023 Showcase"
                         }
+                        .foregroundColor(.white)
                     }
                 }
                 Script {

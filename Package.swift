@@ -9,7 +9,7 @@ let package = Package(
     ],
     dependencies: [
         .package(url: "https://github.com/vapor/vapor.git", from: "4.88.0"),
-        .package(url: "https://github.com/vapor-community/HTMLKit.git", from: "3.0.0-alpha.7")
+        .package(url: "https://github.com/vapor-community/HTMLKit.git", branch: "upgrade/htmlkit-3.0-9")
     ],
     targets: [
         .executableTarget(

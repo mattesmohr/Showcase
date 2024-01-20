@@ -6,33 +6,54 @@ struct ImageExample: View {
     var body: Content {
         ViewContainer {
             HStack(alignment: .top) {
-                VStack {
-                    VStack {
+                VStack(spacing: .large) {
+                    VStack(spacing: .small) {
                         Text {
                             "Image"
                         }
                         .fontSize(.large)
-                        .foregroundColor(.primary)
+                        .foregroundColor(.accent)
                         Text {
                             "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet."
                         }
                         .fontSize(.medium)
+                        .foregroundColor(.white)
                     }
-                    .contentSpace(.small)
-                    VStack {
+                    VStack(spacing: .small) {
+                        ExampleView {
+                            Image(source: "/assets/bamberg.jpeg")
+                                .imageScale(.medium)
+                                .borderShape(.smallrounded)
+                        }
+                        .frame(width: .twelve)
+                        Snippet(highlight: .plaintext) {
+                            """
+                            Image(source: "/assets/bamberg.jpeg")
+                                .imageScale(.medium)
+                                .borderShape(.smallrounded)
+                            """
+                        }
+                        .backgroundColor(.custom("control-background"))
+                        .borderColor(.custom("control-border"))
+                        .borderShape(.smallrounded)
+                    }
+                    VStack(spacing: .small) {
                         Text {
                             "View size"
                         }
                         .fontSize(.medium)
-                        .foregroundColor(.primary)
+                        .foregroundColor(.accent)
                         Text {
                             "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo."
                         }
-                        ScrollView(direction: .horizontal) {
-                            for scale in Tokens.ImageScale.allCases {
-                                ExampleView {
-                                    Image(source: "/assets/bamberg.jpeg")
-                                        .imageScale(scale)
+                        .foregroundColor(.white)
+                        Scroll {
+                            HStack(spacing: .small) {
+                                for scale in Tokens.ImageScale.allCases {
+                                    ExampleView {
+                                        Image(source: "/assets/bamberg.jpeg")
+                                            .imageScale(scale)
+                                    }
                                 }
                             }
                         }
@@ -46,23 +67,25 @@ struct ImageExample: View {
                         .borderColor(.custom("control-border"))
                         .borderShape(.smallrounded)
                     }
-                    .contentSpace(.small)
                     .tag("size")
-                    VStack {
+                    VStack(spacing: .small) {
                         Text {
                             "View shape"
                         }
                         .fontSize(.medium)
-                        .foregroundColor(.primary)
+                        .foregroundColor(.accent)
                         Text {
                             "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo."
                         }
-                        ScrollView(direction: .horizontal) {
-                            for shape in Tokens.BorderShape.allCases {
-                                ExampleView {
-                                    Image(source: "/assets/bamberg.jpeg")
-                                        .imageScale(.small)
-                                        .borderShape(shape)
+                        .foregroundColor(.white)
+                        Scroll {
+                            HStack(spacing: .small) {
+                                for shape in Tokens.BorderShape.allCases {
+                                    ExampleView {
+                                        Image(source: "/assets/bamberg.jpeg")
+                                            .imageScale(.small)
+                                            .borderShape(shape)
+                                    }
                                 }
                             }
                         }
@@ -76,23 +99,25 @@ struct ImageExample: View {
                         .borderColor(.custom("control-border"))
                         .borderShape(.smallrounded)
                     }
-                    .contentSpace(.small)
                     .tag("shape")
-                    VStack {
+                    VStack(spacing: .small) {
                         Text {
                             "Aspect ratio"
                         }
                         .fontSize(.medium)
-                        .foregroundColor(.primary)
+                        .foregroundColor(.accent)
                         Text {
                             "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo."
                         }
-                        ScrollView(direction: .horizontal) {
-                            for fit in Tokens.ObjectFit.allCases {
-                                ExampleView {
-                                    Image(source: "/assets/bamberg.jpeg")
-                                        .imageScale(.medium)
-                                        .aspectRatio(.unequal, fit: fit)
+                        .foregroundColor(.white)
+                        Scroll {
+                            HStack(spacing: .small) {
+                                for fit in Tokens.ObjectFit.allCases {
+                                    ExampleView {
+                                        Image(source: "/assets/bamberg.jpeg")
+                                            .imageScale(.medium)
+                                            .aspectRatio(.unequal, fit: fit)
+                                    }
                                 }
                             }
                         }
@@ -106,17 +131,17 @@ struct ImageExample: View {
                         .borderColor(.custom("control-border"))
                         .borderShape(.smallrounded)
                     }
-                    .contentSpace(.small)
                     .tag("aspect")
-                    VStack {
+                    VStack(spacing: .small) {
                         Text {
                             "Image grouping"
                         }
                         .fontSize(.medium)
-                        .foregroundColor(.primary)
+                        .foregroundColor(.accent)
                         Text {
                             "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo."
                         }
+                        .foregroundColor(.white)
                         ExampleView {
                             Grouping {
                                 Image(source: "/assets/bamberg.jpeg")
@@ -138,33 +163,65 @@ struct ImageExample: View {
                             }
                         }
                         .frame(width: .twelve)
+                        Snippet(highlight: .plaintext) {
+                            """
+                            Grouping {
+                                Image(source: "/assets/bamberg.jpeg")
+                                    .imageScale(.small)
+                                    .aspectRatio(.equal, fit: .cover)
+                                    .clipShape(.circle)
+                                Image(source: "/assets/bamberg.jpeg")
+                                    .imageScale(.small)
+                                    .aspectRatio(.equal, fit: .cover)
+                                    .clipShape(.circle)
+                                Image(source: "/assets/bamberg.jpeg")
+                                    .imageScale(.small)
+                                    .aspectRatio(.equal, fit: .cover)
+                                    .clipShape(.circle)
+                                Image(source: "/assets/bamberg.jpeg")
+                                    .imageScale(.small)
+                                    .aspectRatio(.equal, fit: .cover)
+                                    .clipShape(.circle)
+                            }
+                            """
+                        }
+                        .backgroundColor(.custom("control-background"))
+                        .borderColor(.custom("control-border"))
+                        .borderShape(.smallrounded)
                     }
-                    .contentSpace(.small)
                     .tag("group")
                 }
                 .frame(width: .nine)
-                .contentSpace(.large)
                 .padding()
-                VStack {
+                VStack(spacing: .small) {
                     Text {
                         "Quick navigation"
                     }
-                    .fontSize(.small)
-                    .fontWeight(.bold)
-                    .foregroundColor(.primary)
-                    .fontTransformation(.uppercase)
+                    .textStyle(SubtitleStyle())
                     List(direction: .vertical) {
                         Link(destination: "#size") {
-                            "View size"
+                            Text {
+                                "View size"
+                            }
+                            .foregroundColor(.white)
                         }
                         Link(destination: "#shape") {
-                            "View shape"
+                            Text {
+                                "View shape"
+                            }
+                            .foregroundColor(.white)
                         }
                         Link(destination: "#aspect") {
-                            "Aspect ratio"
+                            Text {
+                                "Aspect ratio"
+                            }
+                            .foregroundColor(.white)
                         }
                         Link(destination: "#group") {
-                            "Image grouping"
+                            Text {
+                                "Image grouping"
+                            }
+                            .foregroundColor(.white)
                         }
                     }
                     .frame(width: .twelve)

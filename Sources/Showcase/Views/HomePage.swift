@@ -12,80 +12,78 @@ enum HomePage {
                         Text {
                             "Slide One"
                         }
-                        .foregroundColor(.primary)
+                        .foregroundColor(.accent)
                     }
                     .tag("slide_1")
                     Slide {
                         Text {
                             "Slide Two"
                         }
-                        .foregroundColor(.primary)
+                        .foregroundColor(.accent)
                     }
                     .tag("slide_2")
                 }
                 .borderShape(.smallrounded)
-                VStack {
-                    VStack {
+                VStack(spacing: .large) {
+                    VStack(spacing: .small) {
                         Text {
                             "Motivation"
                         }
                         .fontSize(.large)
-                        .foregroundColor(.primary)
+                        .foregroundColor(.accent)
                         Text {
                             "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet."
                         }
+                        .foregroundColor(.white)
                     }
-                    .contentSpace(.small)
-                    HStack {
-                        VStack {
+                    HStack(spacing: .small) {
+                        VStack(spacing: .small) {
                             Text {
                                 "Documentation"
                             }
                             .fontSize(.large)
-                            .foregroundColor(.primary)
+                            .foregroundColor(.accent)
                             Text {
                                 "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo."
                             }
+                            .foregroundColor(.white)
                             Link(destination: "#") {
                                 "Read more"
                             }
-                            .foregroundColor(.primary)
+                            .foregroundColor(.accent)
                         }
-                        .contentSpace(.small)
-                        VStack {
+                        VStack(spacing: .small) {
                             Text {
                                 "Tutorials"
                             }
                             .fontSize(.large)
-                            .foregroundColor(.primary)
+                            .foregroundColor(.accent)
                             Text {
                                 "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo."
                             }
+                            .foregroundColor(.white)
                             Link(destination: "#") {
                                 "Read more"
                             }
-                            .foregroundColor(.primary)
+                            .foregroundColor(.accent)
                         }
-                        .contentSpace(.small)
-                        VStack {
+                        VStack(spacing: .small) {
                             Text {
                                 "Examples"
                             }
                             .fontSize(.large)
-                            .foregroundColor(.primary)
+                            .foregroundColor(.accent)
                             Text {
                                 "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo."
                             }
+                            .foregroundColor(.white)
                             Link(destination: "#") {
                                 "Read more"
                             }
-                            .foregroundColor(.primary)
+                            .foregroundColor(.accent)
                         }
-                        .contentSpace(.small)
                     }
-                    .contentSpace(.small)
                 }
-                .contentSpace(.large)
             }
         }
     }

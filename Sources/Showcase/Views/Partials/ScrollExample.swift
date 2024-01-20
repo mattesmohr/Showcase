@@ -6,36 +6,55 @@ struct ScrollExample: View {
     var body: Content {
         ViewContainer {
             HStack(alignment: .top) {
-                VStack {
-                    VStack {
+                VStack(spacing: .large) {
+                    VStack(spacing: .small) {
                         Text {
                             "Scroll"
                         }
                         .fontSize(.large)
-                        .foregroundColor(.primary)
+                        .foregroundColor(.accent)
                         Text {
                             "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet."
                         }
                         .fontSize(.medium)
+                        .foregroundColor(.white)
                     }
-                    .contentSpace(.small)
-                    VStack {
+                    VStack(spacing: .small) {
+                        ExampleView {
+                            Scroll {
+                            }
+                        }
+                        .frame(width: .twelve)
+                        Snippet(highlight: .plaintext) {
+                            """
+                            Scroll {
+                            }
+                            """
+                        }
+                        .backgroundColor(.custom("control-background"))
+                        .borderColor(.custom("control-border"))
+                        .borderShape(.smallrounded)
+                    }
+                    VStack(spacing: .small) {
                         Text {
                             "Flow direction"
                         }
                         .fontSize(.medium)
-                        .foregroundColor(.primary)
+                        .foregroundColor(.accent)
                         Text {
                             "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo."
                         }
-                        HStack {
+                        .foregroundColor(.white)
+                        HStack(spacing: .small) {
                             VStack {
                                 ExampleView {
-                                    ScrollView(direction: .horizontal) {
-                                        for _ in 1...10 {
-                                            Card {
-                                                Text {
-                                                    "Text"
+                                    Scroll {
+                                        HStack {
+                                            for _ in 1...10 {
+                                                Card {
+                                                    Text {
+                                                        "Text"
+                                                    }
                                                 }
                                             }
                                         }
@@ -46,11 +65,13 @@ struct ScrollExample: View {
                             .frame(width: .six)
                             VStack {
                                 ExampleView {
-                                    ScrollView(direction: .horizontal) {
-                                        for _ in 1...10 {
-                                            Card {
-                                                Text {
-                                                    "Text"
+                                    Scroll {
+                                        VStack {
+                                            for _ in 1...10 {
+                                                Card {
+                                                    Text {
+                                                        "Text"
+                                                    }
                                                 }
                                             }
                                         }
@@ -60,7 +81,6 @@ struct ScrollExample: View {
                             }
                             .frame(width: .six)
                         }
-                        .contentSpace(.small)
                         Snippet(highlight: .plaintext) {
                             """
                             Scroll {
@@ -73,23 +93,21 @@ struct ScrollExample: View {
                         .borderColor(.custom("control-border"))
                         .borderShape(.smallrounded)
                     }
-                    .contentSpace(.small)
                     .tag("direction")
                 }
                 .frame(width: .nine)
-                .contentSpace(.large)
                 .padding()
-                VStack {
+                VStack(spacing: .small) {
                     Text {
                         "Quick navigation"
                     }
-                    .fontSize(.small)
-                    .fontWeight(.bold)
-                    .foregroundColor(.primary)
-                    .fontTransformation(.uppercase)
+                    .textStyle(SubtitleStyle())
                     List(direction: .vertical) {
                         Link(destination: "#direction") {
-                            "Flow direction"
+                            Text {
+                                "Flow direction"
+                            }
+                            .foregroundColor(.white)
                         }
                     }
                     .frame(width: .twelve)

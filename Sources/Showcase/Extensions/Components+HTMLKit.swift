@@ -3,7 +3,7 @@ import HTMLKitComponents
 extension Tokens.BackgroundColor: CaseIterable {
     
     public static var allCases: [HTMLKitComponents.Tokens.BackgroundColor] {
-        return [.black, .gray, .silver, .white, .red, .brown, .blue, .cyan, .green, .indigo, .mint, .orange, .yellow, .pink, .purple, .secondary, .primary]
+        return [.black, .gray, .silver, .white, .red, .brown, .blue, .cyan, .green, .indigo, .mint, .orange, .yellow, .pink, .purple, .accent]
     }
 }
 
@@ -98,9 +98,16 @@ extension Tokens.TextDecoration: CaseIterable {
     }
 }
 
-extension Tokens.TextTransformation: CaseIterable {
+extension Tokens.TextCase: CaseIterable {
     
-    public static var allCases: [HTMLKitComponents.Tokens.TextTransformation] {
+    public static var allCases: [HTMLKitComponents.Tokens.TextCase] {
         return [.capitalize, .lowercase, .uppercase]
+    }
+}
+
+extension Symbol.SymbolNames: CaseIterable {
+    
+    public static var allCases: [HTMLKitComponents.Symbol.SymbolNames] {
+        return [.bell, .bookmark, .calendar, .chart(.pie), .chevron(.down), .chevron(.left), .chevron(.right), .chevron(.up), .clock, .cloud, .ellipsis(.horizontal), .ellipsis(.vertical), .envelope, .eye, .file, .filter, .flask, .folder, .house, .key, .lifepreserver, .lightbulb, .location, .lock, .pencil, .person, .photo, .refresh, .scope, .sidebar(.left), .sidebar(.right), .sidebar(.split), .sidebar(.split), .target, .target, .text(.center), .text(.justify), .text(.left), .text(.right), .trash, .tresor]
     }
 }

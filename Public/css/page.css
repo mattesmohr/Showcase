@@ -1,6 +1,4 @@
 html {
-    
-    color: #FFFFFF;
     background-color: #0D1117;
 }
 
@@ -34,14 +32,13 @@ footer {
 .example {
     position: relative;
     display: inline-block;
-    min-inline-size: 400px;
+    min-inline-size: 0;
     block-size: 200px;
     border: 1px solid #30363D;
     border-radius: 10px;
     background: #fbfdfe;
     background-image: linear-gradient(#e5f0f5 1px, transparent 1px), linear-gradient(to right, #e5f0f5 1px, transparent 1px);
     background-size: 25px 25px;
-    overflow: clip;
 }
 
 .example.scheme\:dark {
@@ -143,6 +140,6 @@ footer {
     aspect-ratio: 1/1;
 }
 
-.scrollview {
-    gap: 25px;
+.scroll > .hstack .example {
+    min-inline-size: 400px;
 }

@@ -6,20 +6,20 @@ struct GridExample: View {
     var body: Content {
         ViewContainer {
             HStack(alignment: .top) {
-                VStack {
-                    VStack {
+                VStack(spacing: .large) {
+                    VStack(spacing: .small) {
                         Text {
                             "Grid"
                         }
                         .fontSize(.large)
-                        .foregroundColor(.primary)
+                        .foregroundColor(.accent)
                         Text {
                             "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet."
                         }
+                        .foregroundColor(.white)
                         .fontSize(.medium)
                     }
-                    .contentSpace(.small)
-                    VStack {
+                    VStack(spacing: .small) {
                         ExampleView {
                             Grid(ratio: .third) {
                                 for _ in 1...8 {
@@ -32,51 +32,68 @@ struct GridExample: View {
                             }
                         }
                         .frame(width: .twelve)
+                        Snippet(highlight: .plaintext) {
+                            """
+                            Grid(ratio: .sixth) {
+                            }
+                            """
+                        }
+                        .backgroundColor(.custom("control-background"))
+                        .borderColor(.custom("control-border"))
+                        .borderShape(.smallrounded)
                     }
-                    .contentSpace(.small)
-                    VStack {
+                    VStack(spacing: .small) {
                         Text {
                             "Content space"
                         }
                         .fontSize(.medium)
-                        .foregroundColor(.primary)
+                        .foregroundColor(.accent)
                         Text {
                             "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo."
                         }
-                        ScrollView(direction: .horizontal) {
-                            for space in Tokens.ContentSpace.allCases {
-                                ExampleView {
-                                    Grid(ratio: .third) {
-                                        for _ in 1...8 {
-                                            Card {
-                                                Text {
-                                                    "Text"
+                        .foregroundColor(.white)
+                        Scroll {
+                            HStack(spacing: .small) {
+                                for space in Tokens.ContentSpace.allCases {
+                                    ExampleView {
+                                        Grid(ratio: .third, spacing: space) {
+                                            for _ in 1...8 {
+                                                Card {
+                                                    Text {
+                                                        "Text"
+                                                    }
                                                 }
                                             }
                                         }
                                     }
-                                    .contentSpace(space)
                                 }
                             }
                         }
+                        Snippet(highlight: .plaintext) {
+                            """
+                            Grid(ratio: .sixth, spacing: .small) {
+                            }
+                            """
+                        }
+                        .backgroundColor(.custom("control-background"))
+                        .borderColor(.custom("control-border"))
+                        .borderShape(.smallrounded)
                     }
-                    .contentSpace(.small)
                     .tag("space")
                 }
                 .frame(width: .nine)
-                .contentSpace(.large)
                 .padding()
-                VStack {
+                VStack(spacing: .small) {
                     Text {
                         "Quick navigation"
                     }
-                    .fontSize(.small)
-                    .fontWeight(.bold)
-                    .foregroundColor(.primary)
-                    .fontTransformation(.uppercase)
+                    .textStyle(SubtitleStyle())
                     List(direction: .vertical) {
                         Link(destination: "#space") {
-                            "Content space"
+                            Text {
+                                "Content space"
+                            }
+                            .foregroundColor(.white)
                         }
                     }
                     .frame(width: .twelve)

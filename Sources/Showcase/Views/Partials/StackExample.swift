@@ -6,43 +6,62 @@ struct StackExample: View {
     var body: Content {
         ViewContainer {
             HStack(alignment: .top) {
-                VStack {
-                    VStack {
+                VStack(spacing: .large) {
+                    VStack(spacing: .small) {
                         Text {
                             "Stack"
                         }
                         .fontSize(.large)
-                        .foregroundColor(.primary)
+                        .foregroundColor(.accent)
                         Text {
                             "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet."
                         }
                         .fontSize(.medium)
+                        .foregroundColor(.white)
                     }
-                    .contentSpace(.small)
-                    VStack {
+                    VStack(spacing: .small) {
+                        ExampleView {
+                            HStack {
+                            }
+                        }
+                        .frame(width: .twelve)
+                        Snippet(highlight: .plaintext) {
+                            """
+                            HStack {
+                            }
+                            """
+                        }
+                        .backgroundColor(.custom("control-background"))
+                        .borderColor(.custom("control-border"))
+                        .borderShape(.smallrounded)
+                    }
+                    VStack(spacing: .small) {
                         Text {
                             "Flow direction"
                         }
                         .fontSize(.medium)
-                        .foregroundColor(.primary)
+                        .foregroundColor(.accent)
                         Text {
                             "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo."
                         }
-                        ScrollView(direction: .horizontal) {
-                            ExampleView {
-                                HStack {
-                                    for _ in 1...3 {
-                                        Text {
-                                            "Item"
+                        .foregroundColor(.white)
+                        Scroll {
+                            HStack(spacing: .small) {
+                                ExampleView {
+                                    HStack {
+                                        for _ in 1...3 {
+                                            Text {
+                                                "Item"
+                                            }
                                         }
                                     }
                                 }
-                            }
-                            ExampleView {
-                                VStack {
-                                    for _ in 1...3 {
-                                        Text {
-                                            "Item"
+                                ExampleView {
+                                    VStack {
+                                        for _ in 1...3 {
+                                            Text {
+                                                "Item"
+                                            }
                                         }
                                     }
                                 }
@@ -58,30 +77,31 @@ struct StackExample: View {
                         .borderColor(.custom("control-border"))
                         .borderShape(.smallrounded)
                     }
-                    .contentSpace(.small)
                     .tag("direction")
-                    VStack {
+                    VStack(spacing: .small) {
                         Text {
                             "Content space"
                         }
                         .fontSize(.medium)
-                        .foregroundColor(.primary)
+                        .foregroundColor(.accent)
                         Text {
                             "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo."
                         }
-                        ScrollView(direction: .horizontal) {
-                            for space in Tokens.ContentSpace.allCases {
-                                ExampleView {
-                                    HStack {
-                                        for _ in 1...3 {
-                                            Card {
-                                                Text {
-                                                    "Text"
+                        .foregroundColor(.white)
+                        Scroll {
+                            HStack(spacing: .small) {
+                                for space in Tokens.ContentSpace.allCases {
+                                    ExampleView {
+                                        HStack(spacing: space) {
+                                            for _ in 1...3 {
+                                                Card {
+                                                    Text {
+                                                        "Text"
+                                                    }
                                                 }
                                             }
                                         }
                                     }
-                                    .contentSpace(space)
                                 }
                             }
                         }
@@ -95,48 +115,48 @@ struct StackExample: View {
                         .borderColor(.custom("control-border"))
                         .borderShape(.smallrounded)
                     }
-                    .contentSpace(.small)
                     .tag("space")
-                    VStack {
+                    VStack(spacing: .small) {
                         Text {
                             "Content alignment"
                         }
                         .fontSize(.medium)
-                        .foregroundColor(.primary)
+                        .foregroundColor(.accent)
                         Text {
                             "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo."
                         }
-                        ScrollView(direction: .horizontal) {
-                            for alignment in Tokens.VerticalAlignment.allCases {
-                                ExampleView {
-                                    HStack(alignment: alignment) {
-                                        for _ in 1...3 {
-                                            Card {
-                                                Text {
-                                                    "Text"
+                        .foregroundColor(.white)
+                        Scroll {
+                            HStack(spacing: .small) {
+                                for alignment in Tokens.VerticalAlignment.allCases {
+                                    ExampleView {
+                                        HStack(alignment: alignment, spacing: .small) {
+                                            for _ in 1...3 {
+                                                Card {
+                                                    Text {
+                                                        "Text"
+                                                    }
                                                 }
                                             }
                                         }
                                     }
-                                    .backgroundColor(.custom("shadow"))
-                                    .contentSpace(.small)
                                 }
                             }
                         }
-                        ScrollView(direction: .horizontal) {
-                            for alignment in Tokens.HorizontalAlignment.allCases {
-                                ExampleView {
-                                    VStack(alignment: alignment) {
-                                        for _ in 1...3 {
-                                            Card {
-                                                Text {
-                                                    "Text"
+                        Scroll {
+                            HStack(spacing: .small) {
+                                for alignment in Tokens.HorizontalAlignment.allCases {
+                                    ExampleView {
+                                        VStack(alignment: alignment, spacing: .small) {
+                                            for _ in 1...3 {
+                                                Card {
+                                                    Text {
+                                                        "Text"
+                                                    }
                                                 }
                                             }
                                         }
                                     }
-                                    .backgroundColor(.custom("shadow"))
-                                    .contentSpace(.small)
                                 }
                             }
                         }
@@ -153,29 +173,33 @@ struct StackExample: View {
                         .borderColor(.custom("control-border"))
                         .borderShape(.smallrounded)
                     }
-                    .contentSpace(.small)
                     .tag("alignment")
                 }
                 .frame(width: .nine)
-                .contentSpace(.large)
                 .padding()
-                VStack {
+                VStack(spacing: .small) {
                     Text {
                         "Quick navigation"
                     }
-                    .fontSize(.small)
-                    .fontWeight(.bold)
-                    .foregroundColor(.primary)
-                    .fontTransformation(.uppercase)
+                    .textStyle(SubtitleStyle())
                     List(direction: .vertical) {
                         Link(destination: "#direction") {
-                            "Flow direction"
+                            Text {
+                                "Flow direction"
+                            }
+                            .foregroundColor(.white)
                         }
                         Link(destination: "#space") {
-                            "Content space"
+                            Text {
+                                "Content space"
+                            }
+                            .foregroundColor(.white)
                         }
                         Link(destination: "#alignment") {
-                            "Content alignment"
+                            Text {
+                                "Content alignment"
+                            }
+                            .foregroundColor(.white)
                         }
                     }
                     .frame(width: .twelve)

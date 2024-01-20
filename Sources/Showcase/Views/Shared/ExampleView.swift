@@ -82,7 +82,7 @@ public struct ExampleView: View {
             .class("example-gradient")
             Division {
                 Division {
-                    Symbol(system: "house")
+                    Symbol(system: .lightbulb)
                 }
                 .class("example-tool tool-scheme")
             }
@@ -94,7 +94,7 @@ public struct ExampleView: View {
     public func frame(width: ColumnSize) -> ExampleView {
         
         var newSelf = self
-        newSelf.classes.append("size:\(width.value)")
+        newSelf.classes.append("width:\(width.value)")
         
         return newSelf
     }

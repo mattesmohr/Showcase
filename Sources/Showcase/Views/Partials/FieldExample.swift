@@ -6,35 +6,48 @@ struct FieldExample: View {
     var body: Content {
         ViewContainer {
             HStack(alignment: .top) {
-                VStack {
-                    VStack {
+                VStack(spacing: .large) {
+                    VStack(spacing: .small) {
                         Text {
                             "Fields"
                         }
                         .fontSize(.large)
-                        .foregroundColor(.primary)
+                        .foregroundColor(.accent)
                         Text {
                             "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet."
                         }
                         .fontSize(.medium)
+                        .foregroundColor(.white)
                     }
-                    .contentSpace(.small)
-                    VStack {
-                        VStack {
+                    VStack(spacing: .small) {
+                        ExampleView {
+                        }
+                        .frame(width: .twelve)
+                        Snippet(highlight: .plaintext) {
+                            """
+                            """
+                        }
+                        .backgroundColor(.custom("control-background"))
+                        .borderColor(.custom("control-border"))
+                        .borderShape(.smallrounded)
+                    }
+                    VStack(spacing: .large) {
+                        VStack(spacing: .small) {
                             Text {
                                 "Various fields"
                             }
                             .fontSize(.medium)
-                            .foregroundColor(.primary)
+                            .foregroundColor(.accent)
                             Text {
                                 "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo."
                             }
+                            .foregroundColor(.white)
                         }
-                        .contentSpace(.small)
-                        VStack {
+                        VStack(spacing: .small) {
                             Text {
                                 "TextField"
                             }
+                            .foregroundColor(.white)
                             .bold()
                             ExampleView {
                                 TextField(name: "textfield", value: "value")
@@ -49,11 +62,11 @@ struct FieldExample: View {
                             .borderColor(.custom("control-border"))
                             .borderShape(.smallrounded)
                         }
-                        .contentSpace(.small)
-                        VStack {
+                        VStack(spacing: .small) {
                             Text {
                                 "TextEditor"
                             }
+                            .foregroundColor(.white)
                             .bold()
                             ExampleView {
                                 TextEditor(name: "texteditor") {
@@ -72,11 +85,11 @@ struct FieldExample: View {
                             .borderColor(.custom("control-border"))
                             .borderShape(.smallrounded)
                         }
-                        .contentSpace(.small)
-                        VStack {
+                        VStack(spacing: .small) {
                             Text {
                                 "TextPad"
                             }
+                            .foregroundColor(.white)
                             .bold()
                             ExampleView {
                                 TextPad(name: "textpad") {
@@ -95,11 +108,11 @@ struct FieldExample: View {
                             .borderColor(.custom("control-border"))
                             .borderShape(.smallrounded)
                         }
-                        .contentSpace(.small)
-                        VStack {
+                        VStack(spacing: .small) {
                             Text {
                                 "SecureField"
                             }
+                            .foregroundColor(.white)
                             .bold()
                             ExampleView {
                                 SecureField(name: "securefield", value: "value")
@@ -114,12 +127,12 @@ struct FieldExample: View {
                             .borderColor(.custom("control-border"))
                             .borderShape(.smallrounded)
                         }
-                        .contentSpace(.small)
-                        HStack {
-                            VStack {
+                        HStack(spacing: .small) {
+                            VStack(spacing: .small) {
                                 Text {
                                     "CheckField"
                                 }
+                                .foregroundColor(.white)
                                 .bold()
                                 ExampleView {
                                     CheckField(value: "") {
@@ -137,11 +150,12 @@ struct FieldExample: View {
                                 .borderColor(.custom("control-border"))
                                 .borderShape(.smallrounded)
                             }
-                            .contentSpace(.small)
-                            VStack {
+                            .frame(width: .six)
+                            VStack(spacing: .small) {
                                 Text {
                                     "RadioSelect"
                                 }
+                                .foregroundColor(.white)
                                 .bold()
                                 ExampleView {
                                     RadioSelect(value: "") {
@@ -159,13 +173,13 @@ struct FieldExample: View {
                                 .borderColor(.custom("control-border"))
                                 .borderShape(.smallrounded)
                             }
-                            .contentSpace(.small)
+                            .frame(width: .six)
                         }
-                        .contentSpace(.small)
-                        VStack {
+                        VStack(spacing: .small) {
                             Text {
                                 "SelectField"
                             }
+                            .foregroundColor(.white)
                             .bold()
                             ExampleView {
                                 SelectField(name: "selectfield") {
@@ -188,11 +202,11 @@ struct FieldExample: View {
                             .borderColor(.custom("control-border"))
                             .borderShape(.smallrounded)
                         }
-                        .contentSpace(.small)
-                        VStack {
+                        VStack(spacing: .small) {
                             Text {
                                 "SelectField"
                             }
+                            .foregroundColor(.white)
                             .bold()
                             ExampleView {
                                 SearchField(name: "searchfield", value: "value")
@@ -207,11 +221,11 @@ struct FieldExample: View {
                             .borderColor(.custom("control-border"))
                             .borderShape(.smallrounded)
                         }
-                        .contentSpace(.small)
-                        VStack {
+                        VStack(spacing: .small) {
                             Text {
                                 "Slider"
                             }
+                            .foregroundColor(.white)
                             .bold()
                             ExampleView {
                                 Slider(name: "slider")
@@ -226,11 +240,11 @@ struct FieldExample: View {
                             .borderColor(.custom("control-border"))
                             .borderShape(.smallrounded)
                         }
-                        .contentSpace(.small)
-                        VStack {
+                        VStack(spacing: .small) {
                             Text {
                                 "DatePicker"
                             }
+                            .foregroundColor(.white)
                             .bold()
                             ExampleView {
                                 DatePicker(name: "datepicker")
@@ -245,11 +259,11 @@ struct FieldExample: View {
                             .borderColor(.custom("control-border"))
                             .borderShape(.smallrounded)
                         }
-                        .contentSpace(.small)
-                        VStack {
+                        VStack(spacing: .small) {
                             Text {
                                 "FileDialog"
                             }
+                            .foregroundColor(.white)
                             .bold()
                             ExampleView {
                                 FileDialog(name: "filedialog")
@@ -264,48 +278,50 @@ struct FieldExample: View {
                             .borderColor(.custom("control-border"))
                             .borderShape(.smallrounded)
                         }
-                        .contentSpace(.small)
                     }
-                    .contentSpace(.large)
                     .tag("field")
-                    VStack {
+                    VStack(spacing: .small) {
                         Text {
                             "View Shape"
                         }
                         .fontSize(.medium)
-                        .foregroundColor(.primary)
+                        .foregroundColor(.accent)
                         Text {
                             "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo."
                         }
-                        ScrollView(direction: .horizontal) {
-                            for shape in Tokens.BorderShape.allCases {
-                                ExampleView {
-                                    TextField(name: "textfield", value: "value")
-                                        .borderShape(shape)
+                        .foregroundColor(.white)
+                        Scroll {
+                            HStack(spacing: .small) {
+                                for shape in Tokens.BorderShape.allCases {
+                                    ExampleView {
+                                        TextField(name: "textfield", value: "value")
+                                            .borderShape(shape)
+                                    }
                                 }
                             }
                         }
                     }
-                    .contentSpace(.small)
                     .tag("shape")
                 }
                 .frame(width: .nine)
-                .contentSpace(.large)
                 .padding()
-                VStack {
+                VStack(spacing: .small) {
                     Text {
                         "Quick navigation"
                     }
-                    .fontSize(.small)
-                    .fontWeight(.bold)
-                    .foregroundColor(.primary)
-                    .fontTransformation(.uppercase)
+                    .textStyle(SubtitleStyle())
                     List(direction: .vertical) {
                         Link(destination: "#field") {
-                            "Various fields"
+                            Text {
+                                "Various fields"
+                            }
+                            .foregroundColor(.white)
                         }
                         Link(destination: "#shape") {
-                            "View shape"
+                            Text {
+                                "View shape"
+                            }
+                            .foregroundColor(.white)
                         }
                     }
                     .frame(width: .twelve)

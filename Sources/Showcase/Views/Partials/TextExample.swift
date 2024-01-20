@@ -6,35 +6,62 @@ struct TextExample: View {
     var body: Content {
         ViewContainer {
             HStack(alignment: .top) {
-                VStack {
-                    VStack {
+                VStack(spacing: .large) {
+                    VStack(spacing: .small) {
                         Text {
                             "Text"
                         }
                         .fontSize(.large)
-                        .foregroundColor(.primary)
+                        .foregroundColor(.accent)
                         Text {
                             "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet."
                         }
                         .fontSize(.medium)
+                        .foregroundColor(.white)
                     }
-                    .contentSpace(.small)
-                    VStack {
+                    VStack(spacing: .small) {
+                        ExampleView {
+                            Text {
+                                "Example"
+                            }
+                            .fontSize(.large)
+                            .fontWeight(.black)
+                            .fontStyle(.italic)
+                        }
+                        .frame(width: .twelve)
+                        Snippet(highlight: .plaintext) {
+                            """
+                            Text {
+                                "Example"
+                            }
+                            .fontSize(.large)
+                            .fontWeight(.black)
+                            .fontStyle(.italic)
+                            """
+                        }
+                        .backgroundColor(.custom("control-background"))
+                        .borderColor(.custom("control-border"))
+                        .borderShape(.smallrounded)
+                    }
+                    VStack(spacing: .small) {
                         Text {
                             "Text style"
                         }
                         .fontSize(.medium)
-                        .foregroundColor(.primary)
+                        .foregroundColor(.accent)
                         Text {
                             "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo."
                         }
-                        ScrollView(direction: .horizontal) {
-                            for style in Tokens.TextStyle.allCases {
-                                ExampleView {
-                                    Text {
-                                        "Title"
+                        .foregroundColor(.white)
+                        Scroll {
+                            HStack(spacing: .small) {
+                                for style in Tokens.TextStyle.allCases {
+                                    ExampleView {
+                                        Text {
+                                            "Title"
+                                        }
+                                        .textStyle(style)
                                     }
-                                    .font(style)
                                 }
                             }
                         }
@@ -50,23 +77,25 @@ struct TextExample: View {
                         .borderShape(.smallrounded)
                     }
                     .tag("style")
-                    .contentSpace(.small)
-                    VStack {
+                    VStack(spacing: .small) {
                         Text {
                             "Font style"
                         }
                         .fontSize(.medium)
-                        .foregroundColor(.primary)
+                        .foregroundColor(.accent)
                         Text {
                             "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo."
                         }
-                        ScrollView(direction: .horizontal) {
-                            for style in Tokens.FontStyle.allCases {
-                                ExampleView {
-                                    Text {
-                                        "Lorem ipsum"
+                        .foregroundColor(.white)
+                        Scroll {
+                            HStack(spacing: .small) {
+                                for style in Tokens.FontStyle.allCases {
+                                    ExampleView {
+                                        Text {
+                                            "Lorem ipsum"
+                                        }
+                                        .fontStyle(style)
                                     }
-                                    .fontStyle(style)
                                 }
                             }
                         }
@@ -82,23 +111,25 @@ struct TextExample: View {
                         .borderShape(.smallrounded)
                     }
                     .tag("style")
-                    .contentSpace(.small)
-                    VStack {
+                    VStack(spacing: .small) {
                         Text {
                             "Font weight"
                         }
                         .fontSize(.medium)
-                        .foregroundColor(.primary)
+                        .foregroundColor(.accent)
                         Text {
                             "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo."
                         }
-                        ScrollView(direction: .horizontal) {
-                            for weight in Tokens.FontWeight.allCases {
-                                ExampleView {
-                                    Text {
-                                        "Lorem ipsum"
+                        .foregroundColor(.white)
+                        Scroll {
+                            HStack(spacing: .small) {
+                                for weight in Tokens.FontWeight.allCases {
+                                    ExampleView {
+                                        Text {
+                                            "Lorem ipsum"
+                                        }
+                                        .fontWeight(weight)
                                     }
-                                    .fontWeight(weight)
                                 }
                             }
                         }
@@ -114,23 +145,25 @@ struct TextExample: View {
                         .borderShape(.smallrounded)
                     }
                     .tag("weight")
-                    .contentSpace(.small)
-                    VStack {
+                    VStack(spacing: .small) {
                         Text {
                             "Text case"
                         }
                         .fontSize(.medium)
-                        .foregroundColor(.primary)
+                        .foregroundColor(.accent)
                         Text {
                             "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo."
                         }
-                        ScrollView(direction: .horizontal) {
-                            for transformation in Tokens.TextTransformation.allCases {
-                                ExampleView {
-                                    Text {
-                                        "Lowercase"
+                        .foregroundColor(.white)
+                        Scroll {
+                            HStack(spacing: .small) {
+                                for transformation in Tokens.TextCase.allCases {
+                                    ExampleView {
+                                        Text {
+                                            "Lowercase"
+                                        }
+                                        .textCase(transformation)
                                     }
-                                    .fontTransformation(transformation)
                                 }
                             }
                         }
@@ -146,23 +179,25 @@ struct TextExample: View {
                         .borderShape(.smallrounded)
                     }
                     .tag("transformation")
-                    .contentSpace(.small)
-                    VStack {
+                    VStack(spacing: .small) {
                         Text {
                             "Font size"
                         }
                         .fontSize(.medium)
-                        .foregroundColor(.primary)
+                        .foregroundColor(.accent)
                         Text {
                             "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo."
                         }
-                        ScrollView(direction: .horizontal) {
-                            for size in Tokens.FontSize.allCases {
-                                ExampleView {
-                                    Text {
-                                        "Lorem ipsum"
+                        .foregroundColor(.white)
+                        Scroll {
+                            HStack(spacing: .small) {
+                                for size in Tokens.FontSize.allCases {
+                                    ExampleView {
+                                        Text {
+                                            "Lorem ipsum"
+                                        }
+                                        .fontSize(size)
                                     }
-                                    .fontSize(size)
                                 }
                             }
                         }
@@ -177,35 +212,45 @@ struct TextExample: View {
                         .borderColor(.custom("control-border"))
                         .borderShape(.smallrounded)
                     }
-                    .contentSpace(.small)
                     .tag("size")
                 }
                 .frame(width: .nine)
                 .padding()
-                .contentSpace(.large)
-                VStack {
+                VStack(spacing: .small) {
                     Text {
                         "Quick navigation"
                     }
-                    .fontSize(.small)
-                    .fontWeight(.bold)
-                    .foregroundColor(.primary)
-                    .fontTransformation(.uppercase)
+                    .textStyle(SubtitleStyle())
                     List(direction: .vertical) {
                         Link(destination: "#style") {
-                            "Text style"
+                            Text {
+                                "Text style"
+                            }
+                            .foregroundColor(.white)
                         }
                         Link(destination: "#style") {
-                            "Font style"
+                            Text {
+                                "Font style"
+                            }
+                            .foregroundColor(.white)
                         }
                         Link(destination: "#weight") {
-                            "Font weight"
+                            Text {
+                                "Font weight"
+                            }
+                            .foregroundColor(.white)
                         }
                         Link(destination: "#case") {
-                            "Text case"
+                            Text {
+                                "Text case"
+                            }
+                            .foregroundColor(.white)
                         }
                         Link(destination: "#size") {
-                            "Font size"
+                            Text {
+                                "Font size"
+                            }
+                            .foregroundColor(.white)
                         }
                     }
                     .frame(width: .twelve)

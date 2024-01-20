@@ -12,10 +12,13 @@ struct ViewContainer: View {
     var body: Content {
         PageContainer {
             HStack(alignment: .top) {
-                VStack {
+                VStack(spacing: .small) {
                     List(direction: .vertical) {
                         Link(destination: "/components/index") {
-                            "Introduction"
+                            Text {
+                                "Introduction"
+                            }
+                            .foregroundColor(.white)
                         }
                     }
                     .frame(width: .twelve)
@@ -24,17 +27,26 @@ struct ViewContainer: View {
                     }
                     .fontSize(.small)
                     .fontWeight(.bold)
-                    .foregroundColor(.primary)
-                    .fontTransformation(.uppercase)
+                    .foregroundColor(.accent)
+                    .textCase(.uppercase)
                     List(direction: .vertical) {
                         Link(destination: "/components/form") {
-                            "Form"
+                            Text {
+                                "Form"
+                            }
+                            .foregroundColor(.white)
                         }
                         Link(destination: "/components/field") {
-                            "Fields"
+                            Text {
+                                "Fields"
+                            }
+                            .foregroundColor(.white)
                         }
                         Link(destination: "/components/button") {
-                            "Button"
+                            Text {
+                                "Button"
+                            }
+                            .foregroundColor(.white)
                         }
                     }
                     .frame(width: .twelve)
@@ -43,17 +55,26 @@ struct ViewContainer: View {
                     }
                     .fontSize(.small)
                     .fontWeight(.bold)
-                    .foregroundColor(.primary)
-                    .fontTransformation(.uppercase)
+                    .foregroundColor(.accent)
+                    .textCase(.uppercase)
                     List(direction: .vertical) {
                         Link(destination: "/components/text") {
-                            "Text"
+                            Text {
+                                "Text"
+                            }
+                            .foregroundColor(.white)
                         }
                         Link(destination: "/components/symbol") {
-                            "Symbol"
+                            Text {
+                                "Symbol"
+                            }
+                            .foregroundColor(.white)
                         }
                         Link(destination: "/components/color") {
-                            "Color"
+                            Text {
+                                "Color"
+                            }
+                            .foregroundColor(.white)
                         }
                     }
                     .frame(width: .twelve)
@@ -62,17 +83,26 @@ struct ViewContainer: View {
                     }
                     .fontSize(.small)
                     .fontWeight(.bold)
-                    .foregroundColor(.primary)
-                    .fontTransformation(.uppercase)
+                    .foregroundColor(.accent)
+                    .textCase(.uppercase)
                     List(direction: .vertical) {
                         Link(destination: "/components/image") {
-                            "Image"
+                            Text {
+                                "Image"
+                            }
+                            .foregroundColor(.white)
                         }
                         Link(destination: "/components/card") {
-                            "Card"
+                            Text {
+                                "Card"
+                            }
+                            .foregroundColor(.white)
                         }
                         Link(destination: "/components/snippet") {
-                            "Snippet"
+                            Text {
+                                "Snippet"
+                            }
+                            .foregroundColor(.white)
                         }
                     }
                     .frame(width: .twelve)
@@ -81,17 +111,26 @@ struct ViewContainer: View {
                     }
                     .fontSize(.small)
                     .fontWeight(.bold)
-                    .foregroundColor(.primary)
-                    .fontTransformation(.uppercase)
+                    .foregroundColor(.accent)
+                    .textCase(.uppercase)
                     List(direction: .vertical) {
                         Link(destination: "/components/stack") {
-                            "Stack"
+                            Text {
+                                "Stack"
+                            }
+                            .foregroundColor(.white)
                         }
                         Link(destination: "/components/grid") {
-                            "Grid"
+                            Text {
+                                "Grid"
+                            }
+                            .foregroundColor(.white)
                         }
                         Link(destination: "/components/list") {
-                            "List"
+                            Text {
+                                "List"
+                            }
+                            .foregroundColor(.white)
                         }
                     }
                     .frame(width: .twelve)
@@ -100,17 +139,26 @@ struct ViewContainer: View {
                     }
                     .fontSize(.small)
                     .fontWeight(.bold)
-                    .foregroundColor(.primary)
-                    .fontTransformation(.uppercase)
+                    .foregroundColor(.accent)
+                    .textCase(.uppercase)
                     List(direction: .vertical) {
                         Link(destination: "/components/scroll") {
-                            "Scroll"
+                            Text {
+                                "Scroll"
+                            }
+                            .foregroundColor(.white)
                         }
                         Link(destination: "/components/dropdown") {
-                            "Dropdown"
+                            Text {
+                                "Dropdown"
+                            }
+                            .foregroundColor(.white)
                         }
                         Link(destination: "/components/modal") {
-                            "Modal"
+                            Text {
+                                "Modal"
+                            }
+                            .foregroundColor(.white)
                         }
 
                     }
@@ -120,23 +168,24 @@ struct ViewContainer: View {
                     }
                     .fontSize(.small)
                     .fontWeight(.bold)
-                    .foregroundColor(.primary)
-                    .fontTransformation(.uppercase)
+                    .foregroundColor(.accent)
+                    .textCase(.uppercase)
                     List(direction: .vertical) {
                         Link(destination: "/components/action") {
-                            "Action"
+                            Text {
+                                "Action"
+                            }
+                            .foregroundColor(.white)
                         }
                     }
                     .frame(width: .twelve)
                 }
                 .frame(width: .two)
-                .contentSpace(.small)
-                VStack {
+                VStack(spacing: .small) {
                     content
                 }
                 .frame(width: .ten)
                 .padding()
-                .contentSpace(.small)
             }
         }
     }

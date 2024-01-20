@@ -6,117 +6,44 @@ struct SymbolExample: View {
     var body: Content {
         ViewContainer {
             HStack(alignment: .top) {
-                VStack {
-                    VStack {
+                VStack(spacing: .large) {
+                    VStack(spacing: .small) {
                         Text {
                             "Symbols"
                         }
                         .fontSize(.large)
-                        .foregroundColor(.primary)
+                        .foregroundColor(.accent)
                         Text {
                             "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet."
                         }
                         .fontSize(.medium)
+                        .foregroundColor(.white)
                     }
-                    .contentSpace(.small)
-                    VStack {
-                        Grid(ratio: .fifth) {
+                    Grid(ratio: .sixth, spacing: .small) {
+                        for name in Symbol.SymbolNames.allCases {
                             SymbolView {
-                                Symbol(system: "bookmark")
-                            }
-                            SymbolView {
-                                Symbol(system: "calendar")
-                            }
-                            SymbolView {
-                                Symbol(system: "chart.pie")
-                            }
-                            SymbolView {
-                                Symbol(system: "clock")
-                            }
-                            SymbolView {
-                                Symbol(system: "cloud")
-                            }
-                            SymbolView {
-                                Symbol(system: "envelope")
-                            }
-                            SymbolView {
-                                Symbol(system: "file")
-                            }
-                            SymbolView {
-                                Symbol(system: "folder")
-                            }
-                            SymbolView {
-                                Symbol(system: "house")
-                            }
-                            SymbolView {
-                                Symbol(system: "lifepreserver")
-                            }
-                            SymbolView {
-                                Symbol(system: "location")
-                            }
-                            SymbolView {
-                                Symbol(system: "lock")
-                            }
-                            SymbolView {
-                                Symbol(system: "person")
-                            }
-                            SymbolView {
-                                Symbol(system: "photo")
-                            }
-                            SymbolView {
-                                Symbol(system: "scope")
-                            }
-                            SymbolView {
-                                Symbol(system: "sidebar.left")
-                            }
-                            SymbolView {
-                                Symbol(system: "sidebar.right")
-                            }
-                            SymbolView {
-                                Symbol(system: "square.split")
-                            }
-                            SymbolView {
-                                Symbol(system: "target")
-                            }
-                            SymbolView {
-                                Symbol(system: "text.aligncenter")
-                            }
-                            SymbolView {
-                                Symbol(system: "text.alignjustify")
-                            }
-                            SymbolView {
-                                Symbol(system: "text.alignleft")
-                            }
-                            SymbolView {
-                                Symbol(system: "text.alignright")
-                            }
-                            SymbolView {
-                                Symbol(system: "tresor")
-                            }
-                            SymbolView {
-                                Symbol(system: "window.maximize")
-                            }
-                            SymbolView {
-                                Symbol(system: "window.minimize")
+                                Symbol(system: name)
+                                    .fontSize(.medium)
                             }
                         }
-                        .contentSpace(.small)
                     }
-                    .contentSpace(.small)
-                    VStack {
+                    VStack(spacing: .small) {
                         Text {
                             "Font size"
                         }
                         .fontSize(.medium)
-                        .foregroundColor(.primary)
+                        .foregroundColor(.accent)
                         Text {
                             "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo."
                         }
-                        ScrollView(direction: .horizontal) {
-                            for size in Tokens.FontSize.allCases {
-                                ExampleView {
-                                    Symbol(system: "house")
-                                        .fontSize(size)
+                        .foregroundColor(.white)
+                        Scroll {
+                            HStack(spacing: .small) {
+                                for size in Tokens.FontSize.allCases {
+                                    ExampleView {
+                                        Symbol(system: .house)
+                                            .fontSize(size)
+                                    }
                                 }
                             }
                         }
@@ -130,38 +57,39 @@ struct SymbolExample: View {
                         .borderColor(.custom("control-border"))
                         .borderShape(.smallrounded)
                     }
-                    .contentSpace(.small)
                     .tag("size")
-                    VStack {
+                    VStack(spacing: .small) {
                         Text {
                             "Color tones"
                         }
                         .fontSize(.medium)
-                        .foregroundColor(.primary)
+                        .foregroundColor(.accent)
                         Text {
                             "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo."
                         }
+                        .foregroundColor(.white)
                     }
-                    .contentSpace(.small)
                     .tag("tone")
                 }
                 .frame(width: .nine)
-                .contentSpace(.large)
                 .padding()
-                VStack {
+                VStack(spacing: .small) {
                     Text {
                         "Quick navigation"
                     }
-                    .fontSize(.small)
-                    .fontWeight(.bold)
-                    .foregroundColor(.primary)
-                    .fontTransformation(.uppercase)
+                    .textStyle(SubtitleStyle())
                     List(direction: .vertical) {
                         Link(destination: "#size") {
-                            "Font size"
+                            Text {
+                                "Font size"
+                            }
+                            .foregroundColor(.white)
                         }
                         Link(destination: "#tone") {
-                            "Color tone"
+                            Text {
+                                "Color tone"
+                            }
+                            .foregroundColor(.white)
                         }
                     }
                     .frame(width: .twelve)

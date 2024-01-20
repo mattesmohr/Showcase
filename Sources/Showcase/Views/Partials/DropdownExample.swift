@@ -6,43 +6,86 @@ struct DropdownExample: View {
     var body: Content {
         ViewContainer {
             HStack(alignment: .top) {
-                VStack {
-                    VStack {
+                VStack(spacing: .large) {
+                    VStack(spacing: .small) {
                         Text {
                             "Dropdown"
                         }
                         .fontSize(.large)
-                        .foregroundColor(.primary)
+                        .foregroundColor(.accent)
                         Text {
                             "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet."
                         }
                         .fontSize(.medium)
+                        .foregroundColor(.white)
                     }
-                    .contentSpace(.small)
-                    VStack {
+                    VStack(spacing: .small) {
+                        ExampleView {
+                            Dropdown {
+                                List(direction: .vertical) {
+                                    Grouping {
+                                        Symbol(system: .pencil)
+                                        Text {
+                                            "Edit"
+                                        }
+                                    }
+                                    Grouping {
+                                        Symbol(system: .trash)
+                                        Text {
+                                            "Delete"
+                                        }
+                                    }
+                                    .foregroundColor(.red)
+                                }
+                            } label: {
+                                Button(role: .button) {
+                                    "Button"
+                                }
+                                .buttonStyle(.outline)
+                            }
+                        }
+                        .frame(width: .twelve)
+                        Snippet(highlight: .plaintext) {
+                            """
+                            Dropdown {
+                            } label: {
+                                Text {
+                                    "Label"
+                                }
+                            }
+                            """
+                        }
+                        .backgroundColor(.custom("control-background"))
+                        .borderColor(.custom("control-border"))
+                        .borderShape(.smallrounded)
+                    }
+                    VStack(spacing: .small) {
                         Text {
                             "Dropdown appearance"
                         }
                         .fontSize(.medium)
-                        .foregroundColor(.primary)
+                        .foregroundColor(.accent)
                         Text {
                             "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo."
                         }
-                        ScrollView(direction: .horizontal) {
-                            ExampleView {
-                                Dropdown {
-                                    List(direction: .vertical) {
-                                        Link(destination: "") {
-                                            "Link"
+                        .foregroundColor(.white)
+                        Scroll {
+                            HStack {
+                                ExampleView {
+                                    Dropdown {
+                                        List(direction: .vertical) {
+                                            Link(destination: "") {
+                                                "Link"
+                                            }
                                         }
+                                    } label: {
+                                        Button(role: .button) {
+                                            "Button"
+                                        }
+                                        .buttonStyle(.outline)
                                     }
-                                } label: {
-                                    Button(role: .button) {
-                                        "Button"
-                                    }
-                                    .buttonStyle(.outline)
-                                }
 
+                                }
                             }
                         }
                         Snippet(highlight: .plaintext) {
@@ -65,23 +108,21 @@ struct DropdownExample: View {
                         .borderColor(.custom("control-border"))
                         .borderShape(.smallrounded)
                     }
-                    .contentSpace(.small)
                     .tag("appearance")
                 }
                 .frame(width: .nine)
-                .contentSpace(.large)
                 .padding()
-                VStack {
+                VStack(spacing: .small) {
                     Text {
                         "Quick navigation"
                     }
-                    .fontSize(.small)
-                    .fontWeight(.bold)
-                    .foregroundColor(.primary)
-                    .fontTransformation(.uppercase)
+                    .textStyle(SubtitleStyle())
                     List(direction: .vertical) {
                         Link(destination: "#appearance") {
-                            "Appearance"
+                            Text {
+                                "Dropdown appearance"
+                            }
+                            .foregroundColor(.white)
                         }
                     }
                     .frame(width: .twelve)
