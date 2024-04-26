@@ -1,0 +1,249 @@
+[
+    {
+        "name": "viewmodifier",
+        "type": "protocol",
+        "symbols": [
+            {
+                "code": "func opacity(_ value: OpacityValue) -> Self",
+                "comment": "Sets the opacity of the view.",
+                "type": "method",
+                "reference": "opacity"
+            },
+            {
+                "code": "func zIndex(_ index: PositionIndex) -> Self",
+                "comment": "Sets the position of the view.",
+                "type": "method",
+                "reference": "zindex"
+            },
+            {
+                "code": "func backgroundColor(_ color: BackgroundColor) -> Self",
+                "comment": "Sets the background color for the view.",
+                "type": "method",
+                "reference": "background-color"
+            },
+            {
+                "code": "func colorScheme(_ scheme: ColorScheme) -> Self",
+                "comment": "Sets the color appearence of the view.",
+                "type": "method",
+                "reference": "color-scheme"
+            },
+            {
+                "code": "func padding(insets: EdgeSet, length: PaddingLength) -> Self",
+                "comment": "Sets the padding of the view.",
+                "type": "method",
+                "reference": "padding"
+            },
+            {
+                "code": "func borderShape(_ shape: BorderShape) -> Self",
+                "comment": "Sets the shape of the view border.",
+                "type": "method",
+                "reference": "border-shape"
+            },
+            {
+                "code": "func border(_ color: BorderColor, width: BorderWidth) -> Self",
+                "comment": "Sets the border for the view.",
+                "type": "method",
+                "reference": "border"
+            },
+            {
+                "code": "func frame(width: ViewWidth, height: ViewHeight?, alignment: FrameAlignment?) -> Self",
+                "comment": "Sets the frame size for the view.",
+                "type": "method",
+                "reference": "frame"
+            },
+            {
+                "code": "func margin(insets: EdgeSet, length: MarginLength) -> Self",
+                "comment": " Sets the margin of the view.",
+                "type": "method",
+                "reference": "margin"
+            }
+        ]
+    },
+    {
+        "name": "buttonmodifier",
+        "type": "protocol",
+        "symbols": [
+            {
+                "code": "func controlSize(_ size: ControlSize) -> Self",
+                "comment": "Sets the size of the button.",
+                "type": "method",
+                "reference": "control-size"
+            },
+            {
+                "code": "func buttonStyle(_ style: ButtonStyle) -> Self",
+                "comment": "Sets the style of the button.",
+                "type": "method",
+                "reference": "button-style"
+            },
+            {
+                "code": "func buttonStyle(_ style: ButtonConfiguration) -> Self",
+                "comment": "Sets the style of the button.",
+                "type": "method",
+                "reference": "button-style"
+            },
+            {
+                "code": "func disabled(_ condition: Bool) -> Self",
+                "comment": "Sets the state of the button.",
+                "type": "method",
+                "reference": "disabled"
+            }
+        ]
+    },
+    {
+        "name": "imagemodifier",
+        "type": "protocol",
+        "symbols": [
+            {
+                "code": "func aspectRatio(_ ratio: AspectRatio, fit: ObjectFit) -> Self",
+                "comment": "Sets how the content should be resized to fit its parent.",
+                "type": "method",
+                "reference": "aspect-ratio"
+            },
+            {
+                "code": "func imageScale(_ scale: ImageScale) -> Self",
+                "comment": "Sets the scale of the image.",
+                "type": "method",
+                "reference": "image-scale"
+            },
+            {
+                "code": "func clipShape(_ shape: ClipShape) -> Self",
+                "comment": "Initializes the HTML element.",
+                "type": "method",
+                "reference": "clip-shape"
+            }
+        ]
+    },
+    {
+        "name": "inputmodifier",
+        "type": "protocol",
+        "symbols": [
+            {
+                "code": "func focusColor(_ color: Tokens.FocusColor) -> Self",
+                "comment": "Sets the focus color for the input field.",
+                "type": "method",
+                "reference": "focus-color"
+            }
+        ]
+    },
+    {
+        "name": "textmodifier",
+        "type": "protocol",
+        "symbols": [
+            {
+                "code": "func font(_ family: FontFamily) -> Self",
+                "comment": "Sets the focus color of the input.",
+                "type": "method",
+                "reference": "font"
+            },
+            {
+                "code": "func textStyle(_ style: TextStyle) -> Self",
+                "comment": "Sets the style of the text.",
+                "type": "method",
+                "reference": "text-style"
+            },
+            {
+                "code": "func textStyle(_ style: TextConfiguration) -> Self",
+                "comment": "Sets the style of the text.",
+                "type": "method",
+                "reference": "text-style"
+            },
+            {
+                "code": "func foregroundColor(_ color: ForegroundColor) -> Self",
+                "comment": "Sets the foreground color of the text.",
+                "type": "method",
+                "reference": "foreground-color"
+            },
+            {
+                "code": "func fontSize(_ size: FontSize) -> Self",
+                "comment": "Sets the font size of the text.",
+                "type": "method",
+                "reference": "font-size"
+            },
+            {
+                "code": "func fontWeight(_ weight: FontWeight) -> Self",
+                "comment": "Sets the font weight of the text.",
+                "type": "method",
+                "reference": "font-weight"
+            },
+            {
+                "code": "func textCase(_ case: TextCase) -> Self",
+                "comment": "Sets the text case of the text.",
+                "type": "method",
+                "reference": "text-case"
+            },
+            {
+                "code": "func fontStyle(_ style: FontStyle) -> Self",
+                "comment": "Sets the font style of the text.",
+                "type": "method",
+                "reference": "font-style"
+            },
+            {
+                "code": "func textDecoration(_ decoration: TextDecoration) -> Self",
+                "comment": "Sets the decoration for the text.",
+                "type": "method",
+                "reference": "text-decoration"
+            },
+            {
+                "code": "func lineSpacing(_ height: LineHeight) -> Self",
+                "comment": "Sets the line height for the text.",
+                "type": "method",
+                "reference": "line-spacing"
+            },
+            {
+                "code": "func lineLimit(_ limit: LineLimit) -> Self",
+                "comment": "Limits the amount of lines.",
+                "type": "method",
+                "reference": "line-limit"
+            },
+            {
+                "code": "func shadow(_ radius: Tokens.BlurRadius, color: ShadowColor) -> Self",
+                "comment": "Adds drop shadow to the text",
+                "type": "method",
+                "reference": "shadow"
+            }
+        ]
+    },
+    {
+        "name": "graphicsmodifier",
+        "type": "protocol",
+        "symbols": [
+            {
+                "code": "func blur(_ size: BlurLevel) -> Self",
+                "comment": "Specifies the intensity of blur for the view.",
+                "type": "method",
+                "reference": "blur"
+            },
+            {
+                "code": "func grayscale(_ size: GrayscaleDepth) -> Self",
+                "comment": "Adjusts the grayscale depth of the view.",
+                "type": "method",
+                "reference": "grayscale"
+            },
+            {
+                "code": "func brightness(_ size: BrightnessLevel) -> Self",
+                "comment": "Sets the level of brightness of the view.",
+                "type": "method",
+                "reference": "brightness"
+            },
+            {
+                "code": "func saturation(_ size: SaturationLevel) -> Self",
+                "comment": "Sets the level of saturation of the view.",
+                "type": "method",
+                "reference": "saturation"
+            },
+            {
+                "code": "func contrast(_ size: ContrastLevel) -> Self",
+                "comment": "Specifies the level of contrast for the view.",
+                "type": "method",
+                "reference": "contrast"
+            },
+            {
+                "code": "func shadow(_ radius: BlurRadius, color: ShadowColor) -> Self",
+                "comment": "Adds drop shadow to the view.",
+                "type": "method",
+                "reference": "shadow"
+            }
+        ]
+    },
+]
+

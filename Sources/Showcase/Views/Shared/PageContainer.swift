@@ -29,7 +29,7 @@ public struct PageContainer: View {
                     .reference("/css/page.css")
                 Link()
                     .relationship(.stylesheet)
-                    .reference("/highlight/highlight.css")
+                    .reference("/highlight/swift.css")
                 Script {
                 }
                 .source("/htmlkit/query.js")
@@ -42,28 +42,135 @@ public struct PageContainer: View {
             }
             Body {
                 Header {
-                    HStack(spacing: .between) {
-                        Link(destination: "/home/index") {
-                            "Showcase"
+                    Section {
+                        HStack(spacing: .between) {
+                            Link(destination: "/home") {
+                                Text {
+                                    "HTMLKit"
+                                }
+                                .fontSize(.large)
+                                .bold()
+                            }
+                            List(direction: .horizontal) {
+                                Link(destination: "/documentation") {
+                                    Text {
+                                        "Documentation"
+                                    }
+                                }
+                                Link(destination: "/blog") {
+                                    Text {
+                                        "Blog"
+                                    }
+                                }
+                                LinkButton(destination: "/downloads") {
+                                    Text {
+                                        "Download"
+                                    }
+                                }
+                                .buttonStyle(.primary)
+                                .borderShape(.smallrounded)
+                                .margin(insets: .leading, length: .large)
+                            }
+                            .listSpacing(.small)
                         }
-                        .fontSize(.large)
-                        .foregroundColor(.white)
-                        .bold()
-                        Link(destination: "/components/index") {
-                            "Components"
-                        }
-                        .foregroundColor(.white)
                     }
                 }
                 Main {
                     content
                 }
                 Footer {
-                    HStack {
-                        Text {
-                            "2023 Showcase"
+                    Section {
+                        HStack(alignment: .top, spacing: .between) {
+                            VStack {
+                                Text {
+                                    "HTMLKit"
+                                }
+                                .bold()
+                                Text {
+                                    "A Vapor community project licensed under the MIT."
+                                }
+                            }
+                            HStack(alignment: .top) {
+                                VStack {
+                                    Text {
+                                        "Community"
+                                    }
+                                    .fontSize(.small)
+                                    .textCase(.uppercase)
+                                    .bold()
+                                    List(direction: .vertical) {
+                                        Link(destination: "https://github.com/vapor-community/HTMLKit/issues", target: .blank) {
+                                            Text {
+                                                "Issues"
+                                            }
+                                        }
+                                        Link(destination: "https://github.com/vapor-community/HTMLKit/discussions", target: .blank) {
+                                            Text {
+                                                "Discussions"
+                                            }
+                                        }
+                                        Link(destination: "https://github.com/vapor-community/HTMLKit/releases", target: .blank) {
+                                            Text {
+                                                "Releases"
+                                            }
+                                        }
+                                    }
+                                }
+                                VStack {
+                                    Text {
+                                        "Resources"
+                                    }
+                                    .fontSize(.small)
+                                    .textCase(.uppercase)
+                                    .bold()
+                                    List(direction: .vertical) {
+                                        Link(destination: "/tool") {
+                                            Text {
+                                                "Tools"
+                                            }
+                                        }
+                                        Link(destination: "/documentation") {
+                                            Text {
+                                                "Documentation"
+                                            }
+                                        }
+                                        Link(destination: "/tutorial") {
+                                            Text {
+                                                "Tutorials"
+                                            }
+                                        }
+                                        Link(destination: "/example") {
+                                            Text {
+                                                "Examples"
+                                            }
+                                        }
+                                    }
+                                }
+                            }
                         }
-                        .foregroundColor(.white)
+                        .padding(insets: .vertical)
+                        HStack(spacing: .between) {
+                            Text {
+                                "2024 HTMLKit"
+                            }
+                            Link(destination: "https://github.com/vapor-community/HTMLKit", target: .blank) {
+                                Image(source: "/assets/github.svg")
+                            }
+                            List(direction: .horizontal) {
+                                Link(destination: "/legal") {
+                                    Text {
+                                        "Legal"
+                                    }
+                                }
+                                Link(destination: "/privacy") {
+                                    Text {
+                                        "Privacy"
+                                    }
+                                }
+                            }
+                            .listSpacing(.small)
+                        }
+                        .padding(insets: .vertical)
                     }
                 }
                 Script {

@@ -20,6 +20,7 @@ struct Setup {
         do {
     
             try await routes(application)
+            try await services(application)
             
         } catch {
             
@@ -34,6 +35,17 @@ struct Setup {
     static func routes(_ application: Application) async throws {
         
         try application.routes.register(collection: HomeController())
-        try application.routes.register(collection: ComponentsController())
+        try application.routes.register(collection: DocumentationPageController())
+        try application.routes.register(collection: LegalPageController())
+        try application.routes.register(collection: PrivacyPageController())
+        try application.routes.register(collection: BlogPageController())
+        try application.routes.register(collection: ToolPageController())
+        try application.routes.register(collection: TutorialPageController())
+        try application.routes.register(collection: ExamplePageController())
+    }
+    
+    static func services(_ application: Application) async throws {
+    
+        application.htmlkit.features = [.markdown]
     }
 }

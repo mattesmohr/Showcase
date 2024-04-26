@@ -1,22 +1,24 @@
 import HTMLKitVapor
 import Vapor
 
-// [/home]
-final class HomeController {
+// [/legal]
+final class LegalPageController {
     
     // [/]
     func getIndex(_ request: Request) async throws -> View {
-        return try await request.htmlkit.render(HomePage.IndexView())
+        
+        return try await request.htmlkit.render(LegalPage.IndexView())
     }
 }
 
-extension HomeController: RouteCollection {
+extension LegalPageController: RouteCollection {
     
     func boot(routes: RoutesBuilder) throws {
         
-        routes.group("home") { routes in
+        routes.group("legal") { routes in
             
             routes.get("", use: self.getIndex)
         }
     }
 }
+    

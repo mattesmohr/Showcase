@@ -1,7 +1,7 @@
 import HTMLKit
 import HTMLKitComponents
 
-public struct ExampleView: View {
+struct ThumbnailView: View {
     
     /// A size for column.
     public enum RowSize {
@@ -80,37 +80,27 @@ public struct ExampleView: View {
         }
     }
     
-    public var content: [Content]
-    
     public var classes: [String]
     
-    public init(@ContentBuilder<Content> content: () -> [Content]) {
+    var content: [Content]
+    
+    init(@ContentBuilder<Content> content: () -> [Content]) {
         
         self.content = content()
-        self.classes = ["example"]
+        self.classes = ["thumbnail"]
     }
-    
-    public var body: Content {
+
+    var body: Content {
         Division {
+            content
             Division {
-                Division {
-                    content
-                }
-                .class("example-content")
             }
-            .class("example-gradient")
-            Division {
-                Division {
-                    Symbol(system: .lightbulb)
-                }
-                .class("example-tool tool-scheme")
-            }
-            .class("example-toolbar")
+            .class("thumbnail-gradient")
         }
         .class(classes.joined(separator: " "))
     }
     
-    public func frame(width: ColumnSize, height: RowSize? = nil) -> ExampleView {
+    func frame(width: ColumnSize, height: RowSize? = nil) -> ThumbnailView {
         
         var newSelf = self
         newSelf.classes.append("width:\(width.value)")

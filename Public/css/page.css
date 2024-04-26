@@ -1,32 +1,83 @@
+@font-face {
+  font-family: 'Mona Sans';
+  src: url('../fonts/mona-sans.woff2') format('woff2 supports variations'), url('../fonts/mona-sans.woff2') format('woff2-variations');
+  font-weight: 200 900;
+  font-stretch: 75% 125%;
+}
+
+@font-face {
+  font-family: 'Hubot Sans';
+  src: url('../fonts/hubot-sans.woff2') format('woff2 supports variations'), url('../fonts/hubot-sans.woff2') format('woff2-variations');
+  font-weight: 200 900;
+  font-stretch: 75% 125%;
+}
+
+:root {
+    --fontFamily: 'Mona Sans';
+    --accentColor: var(--blackColor);
+    --systemBorderColor: 199, 44%, 93%;
+    --systemBackgroundColor: 200, 43%, 99%;
+    --containerSize: 75%;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box
+}
+
 html {
-    background-color: #0D1117;
+    background-color: #FFFFFF;
 }
 
 body {
+    min-height: 100vh;
     display: flex;
     flex-direction: column;
 }
 
-header {
-    inline-size: 80%;
-    margin-inline: auto;
-    padding: 0.75rem;
-    border-bottom: 1px solid #161B22;
+body > header {
+    padding-top: 2.75rem;
 }
 
-main {
+body > header > section {
+    inline-size: var(--containerSize);
+    margin-inline: auto;
+    padding: 0.75rem;
+}
+
+body > main {
     flex-grow: 1;
-    
-    inline-size: 80%;
-    margin-inline: auto;
-    padding: 0.75rem;
 }
 
-footer {
-    inline-size: 80%;
+body > main > header {
+    inline-size: var(--containerSize);
+    margin-inline: auto;
+    padding: 2.75rem 0.75rem;
+}
+
+body > main > section {
+    inline-size: var(--containerSize);
+    margin-inline: auto;
+    padding: 2.75rem 0.75rem;
+}
+
+body > main > footer {
+    inline-size: var(--containerSize);
+    margin-inline: auto;
+    padding: 2.75rem 0.75rem;
+}
+
+body > footer {
+    padding-top: 2.75rem;
+    background-color: #FAFCFD;
+    border-top: 1px solid #E5F0F5;
+}
+
+body > footer > section {
+    inline-size: var(--containerSize);
     margin-inline: auto;
     padding: 0.75rem;
-    border-top: 1px solid #161B22;
 }
 
 .example {
@@ -34,24 +85,27 @@ footer {
     display: inline-block;
     min-inline-size: 0;
     block-size: 200px;
-    border: 1px solid #30363D;
+    border: 1px solid hsla(var(--systemBorderColor), 1.0);
     border-radius: 10px;
-    background: #fbfdfe;
-    background-image: linear-gradient(#e5f0f5 1px, transparent 1px), linear-gradient(to right, #e5f0f5 1px, transparent 1px);
+    background: linear-gradient(#E5F0F5 1px, transparent 1px), linear-gradient(to right, #E5F0F5 1px, transparent 1px), linear-gradient(#FBFDFE, #FBFDFE);
     background-size: 25px 25px;
+    background-origin: border-box;
+    overflow: hidden;
+}
+
+.example.height\:100 {
+    height: 500px;
 }
 
 .example.scheme\:dark {
-    background: #161B22;
-    background-image: linear-gradient(#2b3440 1px, transparent 1px), linear-gradient(to right, #2b3440 1px, transparent 1px);
+    background: linear-gradient(#2B3440 1px, transparent 1px), linear-gradient(to right, #2B3440 1px, transparent 1px), linear-gradient(#161B22, #161B22);
     background-size: 25px 25px;
 }
 
 .example-gradient {
     inline-size: inherit;
     block-size: inherit;
-    border-radius: 10px;
-    background: linear-gradient(145deg, transparent 0%, #fbfdfe 60%);
+    background: linear-gradient(145deg, transparent 0%, #FBFDFE 60%);
 }
 
 .example.scheme\:dark > .example-gradient {
@@ -63,7 +117,6 @@ footer {
     inline-size: inherit;
     block-size: inherit;
     padding: 14px 16px;
-    
     display: flex;
     justify-content: center;
     align-items: center;
@@ -78,55 +131,65 @@ footer {
 }
 
 .example-tool {
-    --foregroundColor: var(--whiteColor);
+    --foregroundColor: var(--blackColor);
     
     padding: 10px;
-    border: 1px solid #30363D;
+    border-width: 1px;
+    border-style: solid;
+    border-color: #FFFFFF;
     border-radius: 5px;
-    background: #2b3440;
+    background-color: #E5F0F5;
 }
 
-.snippet {
+.example.scheme\:dark > .example-toolbar > .example-tool {
     --foregroundColor: var(--whiteColor);
     
-    font-size: 14px;
+    border-color: #30363D;
+    background-color: #2B3440;
 }
 
-.snippet p::before {
-    color: var(--whiteColor);
-}
-
-.background\:control-background {
-    --backgroundColor: 215, 21%, 11%;
-    --backgroundOpacity: 1.0;
-}
-
-.border\:control-border {
-    --borderColor: 212, 12%, 21%;
+.thumbnail {
+    --inlineSize: 100%;
     
-    border: 1px solid #30363D;
+    display: grid;
+    grid-template-rows: 1fr;
+    place-items: center;
+    place-content: center;
+    block-size: 180px;
+    border: 1px solid #E5F0F5;
+    border-radius: 5px;
+    background-color: #FAFCFD;
+    text-align: center;
+    overflow: hidden;
 }
+
+.thumbnail > * {
+    inline-size: inherit;
+    block-size: inherit;
+    grid-area: 1 / 1;
+}
+
+.thumbnail-gradient {
+    position: relative;
+    background: linear-gradient(to top, #FAFCFD 1%, transparent 25%);
+}
+
 
 .icon {
-    --foregroundColor: var(--whiteColor);
-    
     position: relative;
     display: inline-block;
-    border: 1px solid #30363D;
+    border: 1px solid hsla(var(--systemBorderColor), 1.0);
     border-radius: 10px;
-    background: #161B22;
-    background-image: linear-gradient(#2b3440 1px, transparent 1px), linear-gradient(to right, #2b3440 1px, transparent 1px);
+    background: linear-gradient(#E5F0F5 1px, transparent 1px), linear-gradient(to right, #E5F0F5 1px, transparent 1px), linear-gradient(#FBFDFE, #FBFDFE);
     background-size: 25px 25px;
-    overflow: clip;
+    background-origin: border-box;
+    overflow: hidden;
 }
 
 .icon-gradient {
     inline-size: inherit;
     block-size: inherit;
-    
-    border-radius: 10px;
-    background: linear-gradient(145deg, transparent 0%, #161B22 60%);
-    box-shadow: inset 2px 2px 2px #161B22;
+    background: linear-gradient(145deg, transparent 0%, #FBFDFE 60%);
 }
 
 .icon-content {
@@ -142,4 +205,110 @@ footer {
 
 .scroll > .hstack .example {
     min-inline-size: 400px;
+}
+
+.snippet > p {
+    font-family: 'Hubot Sans';
+    font-size: 15px;
+}
+
+.step {
+    padding: 0.75rem 1.75rem;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    background-color: #FAFCFD;
+    border-radius: 0.313rem;
+}
+
+.step.current {
+    background-color: #E5F0F5;
+}
+
+.step > .description {
+    flex-grow: 1;
+    
+    font-family: var(--fontFamily);
+    font-size: 0.83rem;
+}
+
+.step > .note {
+    font-family: var(--fontFamily);
+    font-style: italic;
+    font-size: 0.83rem;
+}
+
+.console {
+    position: relative;
+    padding-block: 10px;
+    inline-size: 100%;
+    block-size: 100%;
+    min-block-size: 500px;
+    background-color: #E5F0F5;
+    overflow-x: auto;
+}
+
+.console > .code > p {
+    display: block;
+    font-size: 14px;
+    word-wrap: normal;
+    white-space: pre;
+    counter-increment: line;
+}
+
+.console > .code > p::before {
+    position: relative;
+    display: inline-block;
+    margin-inline-end: 0.938rem;
+    padding-inline: 0.938rem;
+    white-space: nowrap;
+    text-align: right;
+    content: counter(line);
+    color: #000000;
+    -webkit-user-select: none;
+}
+
+.code {
+    font-size: 16px;
+}
+
+#modal {
+    width: 800px;
+    height: 500px;  
+}
+
+.test {
+    padding-inline: 2px;
+    padding-block: 1px;
+    width: 20px;
+    height: 20px;
+    display: grid;
+    place-items: center;
+    place-content: center;
+    border: 1px solid black;
+    border-radius: 2px;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.scroll {
+    width: 100%;
+}
+
+.zstack {
+    position: relative;
+    display: grid;
+    grid-template-rows: minmax(0, 1fr);
+    grid-template-columns: 100%;
+    place-items: center;
+    place-content: center;
+}
+
+.zstack > * {
+    grid-area: 1 / 1;
+}
+
+.change {
+    background-color: hsla(var(--blueColor), 0.5);
 }

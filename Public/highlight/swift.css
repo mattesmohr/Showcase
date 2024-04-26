@@ -38,7 +38,7 @@ code.hljs {
 }
 
 .hljs-bullet, .hljs-number, .hljs-symbol, .hljs-title {
-    color:#1c00cf
+    color: #007FFF
 }
 
 .hljs-meta, .hljs-section {
@@ -46,7 +46,7 @@ code.hljs {
 }
 
 .hljs-built_in, .hljs-class .hljs-title, .hljs-params, .hljs-title.class_, .hljs-type {
-    color: #AEF2E4
+    color: #007FFF
 }
 
 .hljs-attr {

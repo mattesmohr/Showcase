@@ -1,20 +1,22 @@
 import HTMLKitVapor
 import Vapor
+import HTMLKitConverter
 
-// [/home]
-final class HomeController {
+// [/tool]
+final class ToolPageController {
     
     // [/]
     func getIndex(_ request: Request) async throws -> View {
-        return try await request.htmlkit.render(HomePage.IndexView())
+        
+        return try await request.htmlkit.render(ToolPage.IndexView())
     }
 }
 
-extension HomeController: RouteCollection {
+extension ToolPageController: RouteCollection {
     
     func boot(routes: RoutesBuilder) throws {
         
-        routes.group("home") { routes in
+        routes.group("tool") { routes in
             
             routes.get("", use: self.getIndex)
         }

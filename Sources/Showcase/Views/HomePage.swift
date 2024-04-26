@@ -7,77 +7,97 @@ enum HomePage {
         
         var body: Content {
             PageContainer {
-                Carousel {
-                    Slide {
-                        Text {
-                            "Slide One"
+                Header {
+                    Carousel {
+                        Slide {
+                            Text {
+                                "Slide One"
+                            }
+                            .foregroundColor(.accent)
                         }
-                        .foregroundColor(.accent)
-                    }
-                    .tag("slide_1")
-                    Slide {
-                        Text {
-                            "Slide Two"
+                        .tag("slide_1")
+                        Slide {
+                            Text {
+                                "Slide Two"
+                            }
+                            .foregroundColor(.accent)
                         }
-                        .foregroundColor(.accent)
+                        .tag("slide_2")
                     }
-                    .tag("slide_2")
+                    .borderShape(.smallrounded)
+                    .frame(width: .twelve)
                 }
-                .borderShape(.smallrounded)
-                VStack(spacing: .large) {
+                Section {
                     VStack(spacing: .small) {
+                        Text {
+                            MarkdownString {
+                                "HTMLKit is a declarative HTML framework writtin in Swift. It helps you create and render HTML templates in a type-safe and performant way. It consists of a list of features, like **declarative syntax**, **language localization**, **dynamic context**."
+                            }
+                        }
+                        .fontSize(.medium)
                         Text {
                             "Motivation"
                         }
                         .fontSize(.large)
                         .foregroundColor(.accent)
                         Text {
-                            "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet."
+                            MarkdownString {
+                                "HTMLKit aims to broaden Vapor's frontend capabilities while simplifying website creation for you."
+                            }
                         }
-                        .foregroundColor(.white)
+                        .fontSize(.medium)
                     }
+                }
+                Footer {
                     HStack(spacing: .small) {
                         VStack(spacing: .small) {
+                            ThumbnailView {
+                            }
+                            .frame(width: .twelve)
                             Text {
                                 "Documentation"
                             }
                             .fontSize(.large)
                             .foregroundColor(.accent)
                             Text {
-                                "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo."
+                                "Browse the latest API documentation."
                             }
-                            .foregroundColor(.white)
-                            Link(destination: "#") {
+                            Link(destination: "/documentation") {
                                 "Read more"
                             }
                             .foregroundColor(.accent)
                         }
                         VStack(spacing: .small) {
+                            ThumbnailView {
+                                Image(source: "/assets/test.svg")
+                            }
+                            .frame(width: .twelve)
                             Text {
                                 "Tutorials"
                             }
                             .fontSize(.large)
                             .foregroundColor(.accent)
                             Text {
-                                "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo."
+                                "Follow the step by step instructions."
                             }
-                            .foregroundColor(.white)
-                            Link(destination: "#") {
+                            Link(destination: "/tutorial") {
                                 "Read more"
                             }
                             .foregroundColor(.accent)
                         }
                         VStack(spacing: .small) {
+                            ThumbnailView {
+                            }
+                            .frame(width: .twelve)
                             Text {
                                 "Examples"
                             }
                             .fontSize(.large)
                             .foregroundColor(.accent)
                             Text {
-                                "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo."
+                                "See live examples."
                             }
-                            .foregroundColor(.white)
-                            Link(destination: "#") {
+                            Link(destination: "/example") {
                                 "Read more"
                             }
                             .foregroundColor(.accent)
