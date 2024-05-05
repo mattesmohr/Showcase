@@ -36,6 +36,7 @@ struct TutorialSection: Codable {
 
 struct TutorialStep: Codable {
     
+    let index: Int
     let description: String
     let note: String?
     var code: TutorialCode?
@@ -60,6 +61,7 @@ struct ApiArticle: Codable {
         case enumeration
         case method
         case initializer
+        case article
     }
     
     let slug: String

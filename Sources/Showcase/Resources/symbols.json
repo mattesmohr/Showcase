@@ -18,7 +18,7 @@
                 "title": "Initializers",
                 "symbols": [
                     {
-                        "code": "init(@ContentBuilder<Content> content: () -> [Content]) -> Alert",
+                        "code": "init(@ContentBuilder<Content> content: () &minus;> [Content]) &minus;> Alert",
                         "comment": "Creates a alert.",
                         "type": "initializer",
                         "reference": "alert"
@@ -29,7 +29,7 @@
                 "title": "Methods",
                 "symbols": [
                     {
-                        "code": "func tag(_ value: String) -> Alert",
+                        "code": "func tag(_ value: String) &minus;> Alert",
                         "comment": "Identifies an alert.",
                         "type": "method",
                         "reference": "tag"
@@ -66,7 +66,8 @@
                     }
                 ]
             }
-        ]
+        ],
+        "snippet": "Alert {\n}"
     },
     {
         "slug": "button",
@@ -78,7 +79,7 @@
         ],
         "title": "Button",
         "type": "structure",
-        "conformance": ["viewmodifier", "buttonmodifier"],
+        "conformance": ["viewmodifier", "buttonmodifier", "pressevent"],
         "description": "The element represents the document’s root element.",
         "platforms": ["Linux"],
         "targets": ["HTMLKitComponents"],
@@ -87,7 +88,7 @@
                 "title": "Initializers",
                 "symbols": [
                     {
-                        "code": "init(role: Button, @ContentBuilder<Content> content: () -> [Content]) -> Button",
+                        "code": "init(role: Button, @ContentBuilder<Content> content: () &minus;> [Content]) &minus;> Button",
                         "comment": "Creates an action button.",
                         "type": "initializer",
                         "reference": "button"
@@ -98,7 +99,7 @@
                 "title": "Methods",
                 "symbols": [
                     {
-                        "code": "func tag(_ value: String) -> Button",
+                        "code": "func tag(_ value: String) &minus;> Button",
                         "comment": "Identifies an action button.",
                         "type": "initializer",
                         "reference": "tag"
@@ -141,7 +142,8 @@
                     }
                 ]
             }
-        ]
+        ],
+        "snippet": "Button(role: .submit) {\n\t\"Submit\"\n}"
     },
     {
         "slug": "card",
@@ -162,13 +164,13 @@
                 "title": "Initializers",
                 "symbols": [
                     {
-                        "code": "init(@ContentBuilder<Content> content: () -> [Content]) -> Card",
+                        "code": "init(@ContentBuilder<Content> content: () &minus;> [Content]) &minus;> Card",
                         "comment": "Creates a card.",
                         "type": "initializer",
                         "reference": "card"
                     },
                     {
-                        "code": "init(@ContentBuilder<Content> content: () -> [Content], @ContentBuilder<Content> header: () -> [Content]) -> Card",
+                        "code": "init(@ContentBuilder<Content> content: () &minus;> [Content], @ContentBuilder<Content> header: () &minus;> [Content]) &minus;> Card",
                         "comment": "Creates a card with a header.",
                         "type": "initializer",
                         "reference": "card"
@@ -179,13 +181,13 @@
                 "title": "Methods",
                 "symbols": [
                     {
-                        "code": "func cardStyle(_ style: CardConfiguration) -> Card",
+                        "code": "func cardStyle(_ style: CardConfiguration) &minus;> Card",
                         "comment": "Defines the card appearance.",
                         "type": "method",
                         "reference": "card-style"
                     },
                     {
-                        "code": "func tag(_ value: String) -> Card",
+                        "code": "func tag(_ value: String) &minus;> Card",
                         "comment": "Identifies the card.",
                         "type": "method",
                         "reference": "tag"
@@ -227,7 +229,8 @@
                     }
                 ]
             }
-        ]
+        ],
+        "snippet": "Card {\n}"
     },
     {
         "slug": "carousel",
@@ -248,8 +251,8 @@
                 "title": "Initializers",
                 "symbols": [
                     {
-                        "code": "init(@ContentBuilder<Slide> content: () -> [Slide]) -> Carousel",
-                        "comment": "Initializes the HTML element.",
+                        "code": "init(@ContentBuilder<Slide> content: () &minus;> [Slide]) &minus;> Carousel",
+                        "comment": "Creates a carousel.",
                         "type": "initializer",
                         "reference": "carousel"
                     }
@@ -259,13 +262,13 @@
                 "title": "Methods",
                 "symbols": [
                     {
-                        "code": "func carouselStyle(_ style: CarouselConfiguration) -> Carousel",
+                        "code": "func carouselStyle(_ style: CarouselConfiguration) &minus;> Carousel",
                         "comment": "Sets the style for the carousel.",
                         "type": "method",
                         "reference": "carousel-style"
                     },
                     {
-                        "code": "func tag(_ value: String) -> Carousel",
+                        "code": "func tag(_ value: String) &minus;> Carousel",
                         "comment": "Sets the identifier for the carousel",
                         "type": "method",
                         "reference": "tag"
@@ -297,12 +300,13 @@
                 "symbols": [
                     {
                         "code": "content: [Slide]",
-                        "comment": "Initializes the HTML element.",
+                        "comment": "The content of the carousel.",
                         "type": "parameter"
                     }
                 ]
             }
-        ]
+        ],
+        "snippet": "Carousel {\n\tSlide {\n\t}\n\t.tag(\"slide1\")\n}"
     },
     {
         "slug": "slide",
@@ -323,7 +327,7 @@
                 "title": "Initializers",
                 "symbols": [
                     {
-                        "code": "init(@ContentBuilder<Slide> content: () -> [Content]) -> Slide",
+                        "code": "init(@ContentBuilder<Slide> content: () &minus;> [Content]) &minus;> Slide",
                         "comment": "Initializes the HTML element.",
                         "type": "initializer",
                         "reference": "slide"
@@ -334,7 +338,7 @@
                 "title": "Methods",
                 "symbols": [
                     {
-                        "code": "func tag(_ value: String) -> Slide",
+                        "code": "func tag(_ value: String) &minus;> Slide",
                         "comment": "Sets the identifier for the Slide",
                         "type": "method",
                         "reference": "tag"
@@ -367,7 +371,8 @@
                     }
                 ]
             }
-        ]
+        ],
+        "snippet": "Slide {\n}"
     },
     {
         "slug": "chart",
@@ -388,7 +393,7 @@
                 "title": "Initializers",
                 "symbols": [
                     {
-                        "code": "init(@ContentBuilder<VectorElement> content: () -> [VectorElement]) -> Chart",
+                        "code": "init(@ContentBuilder<VectorElement> content: () &minus;> [VectorElement]) &minus;> Chart",
                         "comment": "Initializes the HTML element.",
                         "type": "initializer",
                         "reference": "chart"
@@ -399,7 +404,7 @@
                 "title": "Methods",
                 "symbols": [
                     {
-                        "code": "func tag(_ value: String) -> Chart",
+                        "code": "func tag(_ value: String) &minus;> Chart",
                         "comment": "Sets the identifier for the chart.",
                         "type": "method",
                         "reference": "tag"
@@ -436,7 +441,8 @@
                     }
                 ]
             }
-        ]
+        ],
+        "snippet": "Chart {\n}"
     },
     {
         "slug": "barmark",
@@ -456,7 +462,7 @@
                 "title": "Initializers",
                 "symbols": [
                     {
-                        "code": "init(value: Int, label: String) -> BarMark",
+                        "code": "init(value: Int, label: String) &minus;> BarMark",
                         "comment": "Initializes the HTML element.",
                         "type": "initializer",
                         "reference": "barmark"
@@ -503,7 +509,8 @@
                     }
                 ]
             }
-        ]
+        ],
+        "snippet": "BarMark(value: 100, label: \"iOS\")"
     },
     {
         "slug": "sectormark",
@@ -523,7 +530,7 @@
                 "title": "Initializers",
                 "symbols": [
                     {
-                        "code": "init(value: Int, label: String) -> SectorMark",
+                        "code": "init(value: Int, label: String) &minus;> SectorMark",
                         "comment": "Initializes the HTML element.",
                         "type": "initializer",
                         "reference": "sectormark"
@@ -570,7 +577,8 @@
                     }
                 ]
             }
-        ]
+        ],
+        "snippet": "SectorMark(value: 100, label: \"iOS\")"
     },
     {
         "slug": "divider",
@@ -591,7 +599,7 @@
                 "title": "Initializers",
                 "symbols": [
                     {
-                        "code": "init() -> Divider",
+                        "code": "init() &minus;> Divider",
                         "comment": "Initializes the HTML element.",
                         "type": "initializer",
                         "reference": "divider"
@@ -623,7 +631,8 @@
                 "symbols": [
                 ]
             }
-        ]
+        ],
+        "snippet": "Divider()"
     },
     {
         "slug": "dropdown",
@@ -644,7 +653,7 @@
                 "title": "Initializers",
                 "symbols": [
                     {
-                        "code": "init(@ContentBuilder<Content> content: () -> [Content], @ContentBuilder<Content> label: () -> [Content]) -> Dropdown",
+                        "code": "init(@ContentBuilder<Content> content: () &minus;> [Content], @ContentBuilder<Content> label: () &minus;> [Content]) &minus;> Dropdown",
                         "comment": "Initializes the HTML element.",
                         "type": "initializer",
                         "reference": "dropdown"
@@ -655,7 +664,7 @@
                 "title": "Methods",
                 "symbols": [
                     {
-                        "code": "func tag(_ value: String) -> Dropdown",
+                        "code": "func tag(_ value: String) &minus;> Dropdown",
                         "comment": "Sets the identifier for the dropdown",
                         "type": "method",
                         "reference": "tag"
@@ -697,7 +706,8 @@
                     }
                 ]
             }
-        ]
+        ],
+        "snippet": "Dropdown {\n} label: {\n}"
     },
     {
         "slug": "form",
@@ -709,7 +719,7 @@
         ],
         "title": "Form",
         "type": "structure",
-        "conformance": ["viewmodifier"],
+        "conformance": ["viewmodifier", "formevent"],
         "description": "The element represents the document’s root element.",
         "platforms": ["Linux"],
         "targets": ["HTMLKitComponents"],
@@ -718,7 +728,7 @@
                 "title": "Initializers",
                 "symbols": [
                     {
-                        "code": "init(method: method, encoding: Encoding = .urlEncoded, @ContentBuilder<FormElement> content: () -> [FormElement]) -> Form",
+                        "code": "init(method: method, encoding: Encoding = .urlEncoded, @ContentBuilder<FormElement> content: () &minus;> [FormElement]) &minus;> Form",
                         "comment": "Initializes the HTML element.",
                         "type": "initializer",
                         "reference": "form"
@@ -772,7 +782,8 @@
                     }
                 ]
             }
-        ]
+        ],
+        "snippet": "Form(method: .post) {\n}"
     },
     {
         "slug": "textfield",
@@ -793,7 +804,7 @@
                 "title": "Initializers",
                 "symbols": [
                     {
-                        "code": "init(name: String, prompt: String? = nil, value: String? = nil) -> TextField",
+                        "code": "init(name: String, prompt: String? = nil, value: String? = nil) &minus;> TextField",
                         "comment": "Initializes the HTML element.",
                         "type": "initializer",
                         "reference": "textfield"
@@ -804,7 +815,7 @@
                 "title": "Methods",
                 "symbols": [
                     {
-                        "code": "func tag(_ value: String) -> TextField",
+                        "code": "func tag(_ value: String) &minus;> TextField",
                         "comment": "Sets the identifier for the textfield",
                         "type": "method",
                         "reference": "tag"
@@ -851,7 +862,8 @@
                     }
                 ]
             }
-        ]
+        ],
+        "snippet": "TextField(name: \"Postcode\", prompt: \"Postcode\")"
     },
     {
         "slug": "texteditor",
@@ -872,7 +884,7 @@
                 "title": "Initializers",
                 "symbols": [
                     {
-                        "code": "init(name: String, prompt: String? = nil, @ContentBuilder<String> content: () -> [String]) -> TextEditor",
+                        "code": "init(name: String, prompt: String? = nil, @ContentBuilder<String> content: () &minus;> [String]) &minus;> TextEditor",
                         "comment": "Initializes the HTML element.",
                         "type": "initializer",
                         "reference": "texteditor"
@@ -883,7 +895,7 @@
                 "title": "Methods",
                 "symbols": [
                     {
-                        "code": "func tag(_ value: String) -> TextEditor",
+                        "code": "func tag(_ value: String) &minus;> TextEditor",
                         "comment": "Sets the identifier for the text editor",
                         "type": "method",
                         "reference": "tag"
@@ -930,7 +942,8 @@
                     }
                 ]
             }
-        ]
+        ],
+        "snippet": "TextEditor(name: String, prompt: \"Lastname\") {\n}"
     },
     {
         "slug": "checkfield",
@@ -951,7 +964,7 @@
                 "title": "Initializers",
                 "symbols": [
                     {
-                        "code": "init(name: String, prompt: String? = nil, @ContentBuilder<String> content: () -> [String]) -> TextEditor",
+                        "code": "init(value: String, content: () &minus;> String) &minus;> CheckField",
                         "comment": "Initializes the HTML element.",
                         "type": "initializer",
                         "reference": "checkfield"
@@ -962,7 +975,7 @@
                 "title": "Methods",
                 "symbols": [
                     {
-                        "code": "func tag(_ value: String) -> CheckField",
+                        "code": "func tag(_ value: String) &minus;> CheckField",
                         "comment": "Sets the identifier for the checkfield",
                         "type": "method",
                         "reference": "tag"
@@ -1004,7 +1017,8 @@
                     }
                 ]
             }
-        ]
+        ],
+        "snippet": "CheckField(value: \"value\") {\n\t\"Label\"\n}"
     },
     {
         "slug": "radioselect",
@@ -1025,7 +1039,7 @@
                 "title": "Initializers",
                 "symbols": [
                     {
-                        "code": "init(name: String, prompt: String? = nil, @ContentBuilder<String> content: () -> [String]) -> TextEditor",
+                        "code": "init(value: String, content: () &minus;> String) &minus;> RadioSelect",
                         "comment": "Initializes the HTML element.",
                         "type": "initializer",
                         "reference": "radioselect"
@@ -1036,7 +1050,7 @@
                 "title": "Methods",
                 "symbols": [
                     {
-                        "code": "func tag(_ value: String) -> RadioSelect",
+                        "code": "func tag(_ value: String) &minus;> RadioSelect",
                         "comment": "Sets the identifier for the radioselect",
                         "type": "method",
                         "reference": "tag"
@@ -1078,7 +1092,8 @@
                     }
                 ]
             }
-        ]
+        ],
+        "snippet": "RadioSelect(value: \"value\") {\n\t\"Label\"\n}"
     },
     {
         "slug": "selectfield",
@@ -1099,7 +1114,13 @@
                 "title": "Initializers",
                 "symbols": [
                     {
-                        "code": "init(name: String, prompt: String? = nil, @ContentBuilder<String> content: () -> [String]) -> TextEditor",
+                        "code": "init(name: String, prompt: String? = nil, selection: String? = nil, @ContentBuilder<RadioSelect> content: () &minus;> [RadioSelect]) &minus;> SelectField",
+                        "comment": "Initializes the HTML element.",
+                        "type": "initializer",
+                        "reference": "selectfield"
+                    },
+                    {
+                        "code": "init(name: String, prompt: String? = nil, selection: String? = nil, @ContentBuilder<CheckField> content: () &minus;> [CheckField]) &minus;> SelectField",
                         "comment": "Initializes the HTML element.",
                         "type": "initializer",
                         "reference": "selectfield"
@@ -1110,7 +1131,7 @@
                 "title": "Methods",
                 "symbols": [
                     {
-                        "code": "func tag(_ value: String) -> SelectField",
+                        "code": "func tag(_ value: String) &minus;> SelectField",
                         "comment": "Sets the identifier for the selectfield",
                         "type": "method",
                         "reference": "tag"
@@ -1162,7 +1183,8 @@
                     }
                 ]
             }
-        ]
+        ],
+        "snippet": "SelectField(name: \"selectfield\") {\n\tRadioSelect(value: \"\") {\n\t\t\"Value\"\n\t}\n}"
     },
     {
         "slug": "securefield",
@@ -1183,7 +1205,7 @@
                 "title": "Initializers",
                 "symbols": [
                     {
-                        "code": "init(name: String, prompt: String? = nil, @ContentBuilder<String> content: () -> [String]) -> TextEditor",
+                        "code": "init(name: String, prompt: String? = nil, value: String? = nil) &minus;> SecureField",
                         "comment": "Initializes the HTML element.",
                         "type": "initializer",
                         "reference": "securefield"
@@ -1194,7 +1216,7 @@
                 "title": "Methods",
                 "symbols": [
                     {
-                        "code": "func tag(_ value: String) -> SecureField",
+                        "code": "func tag(_ value: String) &minus;> SecureField",
                         "comment": "Sets the identifier for the securefield",
                         "type": "method",
                         "reference": "tag"
@@ -1241,7 +1263,8 @@
                     }
                 ]
             }
-        ]
+        ],
+        "snippet": "SecureField(name: \"password\", prompt: \"Password\")"
     },
     {
         "slug": "slider",
@@ -1262,7 +1285,7 @@
                 "title": "Initializers",
                 "symbols": [
                     {
-                        "code": "init(name: String, prompt: String? = nil, @ContentBuilder<String> content: () -> [String]) -> TextEditor",
+                        "code": "init(name: String)",
                         "comment": "Initializes the HTML element.",
                         "type": "initializer",
                         "reference": "slider"
@@ -1273,7 +1296,7 @@
                 "title": "Methods",
                 "symbols": [
                     {
-                        "code": "func tag(_ value: String) -> Slider",
+                        "code": "func tag(_ value: String) &minus;> Slider",
                         "comment": "Sets the identifier for the slider",
                         "type": "method",
                         "reference": "tag"
@@ -1310,7 +1333,8 @@
                     }
                 ]
             }
-        ]
+        ],
+        "snippet": "Slider(name: \"amount\")"
     },
     {
         "slug": "datepicker",
@@ -1331,7 +1355,7 @@
                 "title": "Initializers",
                 "symbols": [
                     {
-                        "code": "init(name: String, prompt: String? = nil, @ContentBuilder<String> content: () -> [String]) -> TextEditor",
+                        "code": "init(name: String, value: String? = nil) &minus;> DatePicker",
                         "comment": "Initializes the HTML element.",
                         "type": "initializer",
                         "reference": "datepicker"
@@ -1342,7 +1366,7 @@
                 "title": "Methods",
                 "symbols": [
                     {
-                        "code": "func tag(_ value: String) -> DatePicker",
+                        "code": "func tag(_ value: String) &minus;> DatePicker",
                         "comment": "Sets the identifier for the datepicker",
                         "type": "method",
                         "reference": "tag"
@@ -1384,7 +1408,8 @@
                     }
                 ]
             }
-        ]
+        ],
+        "snippet": "DatePicker(name: \"\", value: \"\")"
     },
     {
         "slug": "searchfield",
@@ -1405,7 +1430,7 @@
                 "title": "Initializers",
                 "symbols": [
                     {
-                        "code": "init(name: String, prompt: String? = nil, @ContentBuilder<String> content: () -> [String]) -> TextEditor",
+                        "code": "init(name: String, prompt: String? = nil, value: String? = nil) &minus;> SearchField",
                         "comment": "Initializes the HTML element.",
                         "type": "initializer",
                         "reference": "searchfield"
@@ -1416,7 +1441,7 @@
                 "title": "Methods",
                 "symbols": [
                     {
-                        "code": "func tag(_ value: String) -> SearchField",
+                        "code": "func tag(_ value: String) &minus;> SearchField",
                         "comment": "Sets the identifier for the searchfield",
                         "type": "method",
                         "reference": "tag"
@@ -1463,7 +1488,8 @@
                     }
                 ]
             }
-        ]
+        ],
+        "snippet": "SearchField(name: \"\", prompt: \"\")"
     },
     {
         "slug": "progress",
@@ -1484,7 +1510,7 @@
                 "title": "Initializers",
                 "symbols": [
                     {
-                        "code": "init(name: String, prompt: String? = nil, @ContentBuilder<String> content: () -> [String]) -> TextEditor",
+                        "code": "init(maximum: Float, value: Float, @ContentBuilder<Content> content: () &minus;> [Content]) &minus;> Progress",
                         "comment": "Initializes the HTML element.",
                         "type": "initializer",
                         "reference": "progress"
@@ -1536,7 +1562,8 @@
                     }
                 ]
             }
-        ]
+        ],
+        "snippet": "Progress(maximum: 100, value: 50)"
     },
     {
         "slug": "textpad",
@@ -1557,7 +1584,7 @@
                 "title": "Initializers",
                 "symbols": [
                     {
-                        "code": "init(name: String, prompt: String? = nil, @ContentBuilder<String> content: () -> [String]) -> TextEditor",
+                        "code": "init(name: String, prompt: String? = nil, @ContentBuilder<String> content: () &minus;> [String]) &minus;> TextPad",
                         "comment": "Initializes the HTML element.",
                         "type": "initializer",
                         "reference": "textpad"
@@ -1568,7 +1595,7 @@
                 "title": "Methods",
                 "symbols": [
                     {
-                        "code": "func tag(_ value: String) -> TextPad",
+                        "code": "func tag(_ value: String) &minus;> TextPad",
                         "comment": "Sets the identifier for the textpad",
                         "type": "method",
                         "reference": "tag"
@@ -1615,7 +1642,8 @@
                     }
                 ]
             }
-        ]
+        ],
+        "snippet": "TextPad(name: \"content\") {\n}"
     },
     {
         "slug": "filedialog",
@@ -1636,7 +1664,7 @@
                 "title": "Initializers",
                 "symbols": [
                     {
-                        "code": "init(name: String, prompt: String? = nil, @ContentBuilder<String> content: () -> [String]) -> TextEditor",
+                        "code": "init(name: String) &minus;> FileDialog",
                         "comment": "Initializes the HTML element.",
                         "type": "initializer",
                         "reference": "filedialog"
@@ -1678,7 +1706,8 @@
                     }
                 ]
             }
-        ]
+        ],
+        "snippet": "FileDialog(name: \"avatar\")"
     },
     {
         "slug": "grid",
@@ -1699,7 +1728,7 @@
                 "title": "Initializers",
                 "symbols": [
                     {
-                        "code": "init(ratio: GridRatio = .fit, spacing: ContentSpace? = nil, @ContentBuilder<Content> content: () -> [Content]) -> Grid",
+                        "code": "init(ratio: GridRatio = .fit, spacing: ContentSpace? = nil, @ContentBuilder<Content> content: () &minus;> [Content]) &minus;> Grid",
                         "comment": "Initializes the HTML element.",
                         "type": "initializer",
                         "reference": "grid"
@@ -1710,7 +1739,7 @@
                 "title": "Methods",
                 "symbols": [
                     {
-                        "code": "func tag(_ value: String) -> Grid",
+                        "code": "func tag(_ value: String) &minus;> Grid",
                         "comment": "Sets the identifier for the grid",
                         "type": "method",
                         "reference": "tag"
@@ -1757,10 +1786,16 @@
                         "comment": "Sets the identifier for the dropdown",
                         "type": "enumeration",
                         "reference": "content-space"
+                    },
+                    {
+                        "code": "content: [Content]",
+                        "comment": "Sets the identifier for the dropdown",
+                        "type": "parameter"
                     }
                 ]
             }
-        ]
+        ],
+        "snippet": "Grid(ratio: .fifth) {\n}"
     },
     {
         "slug": "grouping",
@@ -1781,7 +1816,7 @@
                 "title": "Initializers",
                 "symbols": [
                     {
-                        "code": "init(@ContentBuilder<Content> content: () -> [Content]) -> Grouping",
+                        "code": "init(@ContentBuilder<Content> content: () &minus;> [Content]) &minus;> Grouping",
                         "comment": "Initializes the HTML element.",
                         "type": "initializer",
                         "reference": "grouping"
@@ -1792,7 +1827,7 @@
                 "title": "Methods",
                 "symbols": [
                     {
-                        "code": "func tag(_ value: String) -> Grouping",
+                        "code": "func tag(_ value: String) &minus;> Grouping",
                         "comment": "Sets the identifier for the grouping",
                         "type": "method",
                         "reference": "tag"
@@ -1823,26 +1858,14 @@
                 "title": "Parameters",
                 "symbols": [
                     {
-                        "code": "width: ViewWidth",
-                        "comment": "Sets the identifier for the dropdown",
-                        "type": "enumeration",
-                        "enumeration": "view-width"
-                    },
-                    {
-                        "code": "height: ViewHeight",
-                        "comment": "Sets the identifier for the dropdown",
-                        "type": "enumeration",
-                        "reference": "view-height"
-                    },
-                    {
-                        "code": "alignment: FrameAlignment",
-                        "comment": "Sets the identifier for the dropdown",
-                        "type": "enumeration",
-                        "reference": "frame-alignmnet"
+                        "code": "content: [Content]",
+                        "comment": "Initializes the HTML element.",
+                        "type": "parameter"
                     }
                 ]
             }
-        ]
+        ],
+        "snippet": "Grouping {\n}"
     },
     {
         "slug": "image",
@@ -1863,13 +1886,13 @@
                 "title": "Initializers",
                 "symbols": [
                     {
-                        "code": "init(source: String) -> Image",
+                        "code": "init(source: String) &minus;> Image",
                         "comment": "Initializes the HTML element.",
                         "type": "initializer",
                         "reference": "image"
                     },
                     {
-                        "code": "init(source: EnvironmentValue) -> Image",
+                        "code": "init(source: EnvironmentValue) &minus;> Image",
                         "comment": "Initializes the HTML element.",
                         "type": "initializer",
                         "reference": "image"
@@ -1880,7 +1903,7 @@
                 "title": "Methods",
                 "symbols": [
                     {
-                        "code": "func tag(_ value: String) -> Image",
+                        "code": "func tag(_ value: String) &minus;> Image",
                         "comment": "Sets the identifier for the image.",
                         "type": "method",
                         "reference": "tag"
@@ -1917,7 +1940,8 @@
                     }
                 ]
             }
-        ]
+        ],
+        "snippet": "Image(source: \"/assets/image.jpg\")"
     },
     {
         "slug": "link",
@@ -1938,13 +1962,13 @@
                 "title": "Initializers",
                 "symbols": [
                     {
-                        "code": "init(destination: String, target: Target = .current, @ContentBuilder<Content> content: () -> [Content]) -> Link",
+                        "code": "init(destination: String, target: Target = .current, @ContentBuilder<Content> content: () &minus;> [Content]) &minus;> Link",
                         "comment": "Initializes the HTML element.",
                         "type": "initializer",
                         "reference": "link"
                     },
                     {
-                        "code": "init(destination: URL, target: Target = .current, @ContentBuilder<Content> content: () -> [Content]) -> Link",
+                        "code": "init(destination: URL, target: Target = .current, @ContentBuilder<Content> content: () &minus;> [Content]) &minus;> Link",
                         "comment": "Initializes the HTML element.",
                         "type": "initializer",
                         "reference": "link"
@@ -1996,7 +2020,8 @@
                     }
                 ]
             }
-        ]
+        ],
+        "snippet": "Link(destination: \"\", target: \"\") {\n}"
     },
     {
         "slug": "list",
@@ -2017,7 +2042,7 @@
                 "title": "Initializers",
                 "symbols": [
                     {
-                        "code": "init(direction: FlowDirection, @ContentBuilder<ListElement> content: () -> [ListElement]) -> List",
+                        "code": "init(direction: FlowDirection, @ContentBuilder<ListElement> content: () &minus;> [ListElement]) &minus;> List",
                         "comment": "Initializes the HTML element.",
                         "type": "initializer",
                         "reference": "list"
@@ -2028,25 +2053,25 @@
                 "title": "Methods",
                 "symbols": [
                     {
-                        "code": "func listStyle(_ style: ListStyle) -> List",
+                        "code": "func listStyle(_ style: ListStyle) &minus;> List",
                         "comment": "Sets the style for the list.",
                         "type": "method",
                         "reference": "list-style"
                     },
                     {
-                        "code": "func listStyle(_ style: ListConfiguration) -> List",
+                        "code": "func listStyle(_ style: ListConfiguration) &minus;> List",
                         "comment": "Sets the style for the list.",
                         "type": "method",
                         "reference": "list-style"
                     },
                     {
-                        "code": "func listSpacing(_ size: ListSpace) -> List",
+                        "code": "func listSpacing(_ size: ListSpace) &minus;> List",
                         "comment": "Initializes the HTML element.",
                         "type": "method",
                         "reference": "list-spacing"
                     },
                     {
-                        "code": "func tag(_ value: String) -> List",
+                        "code": "func tag(_ value: String) &minus;> List",
                         "comment": "Initializes the HTML element.",
                         "type": "method",
                         "reference": "tag"
@@ -2089,7 +2114,8 @@
                     }
                 ]
             }
-        ]
+        ],
+        "snippet": "List(direction: .horizontal) {\n}"
     },
     {
         "slug": "modal",
@@ -2110,7 +2136,7 @@
                 "title": "Initializers",
                 "symbols": [
                     {
-                        "code": "init(@ContentBuilder<Content> content: () -> [Content]) -> Modal",
+                        "code": "init(@ContentBuilder<Content> content: () &minus;> [Content]) &minus;> Modal",
                         "comment": "Initializes the HTML element.",
                         "type": "initializer",
                         "reference": "modal"
@@ -2121,13 +2147,13 @@
                 "title": "Methods",
                 "symbols": [
                     {
-                        "code": "func modalStyle(_ style: ModalConfiguration) -> Modal",
+                        "code": "func modalStyle(_ style: ModalConfiguration) &minus;> Modal",
                         "comment": "Initializes the HTML element.",
                         "type": "method",
                         "reference": "modal-style"
                     },
                     {
-                        "code": "func tag(_ value: String) -> Modal",
+                        "code": "func tag(_ value: String) &minus;> Modal",
                         "comment": "Initializes the HTML element.",
                         "type": "method",
                         "reference": "tag"
@@ -2164,7 +2190,8 @@
                     }
                 ]
             }
-        ]
+        ],
+        "snippet": "Modal {\n}"
     },
     {
         "slug": "navigation",
@@ -2185,7 +2212,7 @@
                 "title": "Initializers",
                 "symbols": [
                     {
-                        "code": "init(@ContentBuilder<BodyElement> content: () -> [BodyElement]) -> Navigation",
+                        "code": "init(@ContentBuilder<BodyElement> content: () &minus;> [BodyElement]) &minus;> Navigation",
                         "comment": "Initializes the HTML element.",
                         "type": "initializer",
                         "reference": "navigation"
@@ -2196,19 +2223,19 @@
                 "title": "Methods",
                 "symbols": [
                     {
-                        "code": "func navigationStyle(_ style: NavigationStyle) -> Navigation",
+                        "code": "func navigationStyle(_ style: NavigationStyle) &minus;> Navigation",
                         "comment": "Initializes the HTML element.",
                         "type": "method",
                         "reference": "navigation-style"
                     },
                     {
-                        "code": "func navigationStyle(_ style: NavigationConfiguration) -> Navigation",
+                        "code": "func navigationStyle(_ style: NavigationConfiguration) &minus;> Navigation",
                         "comment": "Initializes the HTML element.",
                         "type": "method",
                         "reference": "navigation-style"
                     },
                     {
-                        "code": "func tag(_ value: String) -> Navigation",
+                        "code": "func tag(_ value: String) &minus;> Navigation",
                         "comment": "Initializes the HTML element.",
                         "type": "method",
                         "reference": "tag"
@@ -2245,7 +2272,8 @@
                     }
                 ]
             }
-        ]
+        ],
+        "snippet": "Navigation {\n}"
     },
     {
         "slug": "scroll",
@@ -2266,7 +2294,7 @@
                 "title": "Initializers",
                 "symbols": [
                     {
-                        "code": "init(showIndicators: Bool = true, @ContentBuilder<Content> content: () -> [Content]) -> Scroll",
+                        "code": "init(showIndicators: Bool = true, @ContentBuilder<Content> content: () &minus;> [Content]) &minus;> Scroll",
                         "comment": "Initializes the HTML element.",
                         "type": "initializer",
                         "reference": "scroll"
@@ -2313,7 +2341,8 @@
                     }
                 ]
             }
-        ]
+        ],
+        "snippet": "Scroll(showIndicators: true) {\n}"
     },
     {
         "slug": "snippet",
@@ -2334,7 +2363,7 @@
                 "title": "Initializers",
                 "symbols": [
                     {
-                        "code": "init(highlight: SyntaxHighlight, content: () -> String) -> Snippet",
+                        "code": "init(highlight: SyntaxHighlight, content: () &minus;> String) &minus;> Snippet",
                         "comment": "Initializes the HTML element.",
                         "type": "initializer",
                         "reference": "snippet"
@@ -2345,13 +2374,13 @@
                 "title": "Methods",
                 "symbols": [
                     {
-                        "code": "func snippetStyle(_ style: SnippetConfiguration) -> Snippet",
+                        "code": "func snippetStyle(_ style: SnippetConfiguration) &minus;> Snippet",
                         "comment": "Initializes the HTML element.",
                         "type": "method",
                         "reference": "snippet-style"
                     },
                     {
-                        "code": "func tag(_ value: String) -> Snippet",
+                        "code": "func tag(_ value: String) &minus;> Snippet",
                         "comment": "Initializes the HTML element.",
                         "type": "method",
                         "reference": "tag"
@@ -2394,7 +2423,8 @@
                     }
                 ]
             }
-        ]
+        ],
+        "snippet": "Snippet(highlight: .js) {\n}"
     },
     {
         "slug": "vstack",
@@ -2415,7 +2445,7 @@
                 "title": "Initializers",
                 "symbols": [
                     {
-                        "code": "init(alignment: HorizontalAlignment = .leading, spacing: ContentSpace? = nil, @ContentBuilder<Content> content: () -> [Content]) -> VStack",
+                        "code": "init(alignment: HorizontalAlignment = .leading, spacing: ContentSpace? = nil, @ContentBuilder<Content> content: () &minus;> [Content]) &minus;> VStack",
                         "comment": "Initializes the HTML element.",
                         "type": "initializer",
                         "reference": "vstack"
@@ -2451,10 +2481,10 @@
                 "title": "Parameters",
                 "symbols": [
                     {
-                        "code": "alignment: VerticalAlignment",
+                        "code": "alignment: HorizontalAlignment",
                         "comment": "Sets the identifier for the dropdown",
                         "type": "enumeration",
-                        "reference": "vertical-alignment"
+                        "reference": "horizontal-alignment"
                     },
                     {
                         "code": "spacing: ContentSpace",
@@ -2469,7 +2499,8 @@
                     }
                 ]
             }
-        ]
+        ],
+        "snippet": "VStack(alignment: .center, spacing: .small) {\n}"
     },
     {
         "slug": "hstack",
@@ -2490,7 +2521,7 @@
                 "title": "Initializers",
                 "symbols": [
                     {
-                        "code": "init(alignment: VerticalAlignment = .center, spacing: ContentSpace? = nil, @ContentBuilder<Content> content: () -> [Content]) -> HStack",
+                        "code": "init(alignment: VerticalAlignment = .center, spacing: ContentSpace? = nil, @ContentBuilder<Content> content: () &minus;> [Content]) &minus;> HStack",
                         "comment": "Initializes the HTML element.",
                         "type": "initializer",
                         "reference": "hstack"
@@ -2539,7 +2570,8 @@
                     }
                 ]
             }
-        ]
+        ],
+        "snippet": "HStack(alignment: .trailing, spacing: .small) {\n}"
     },
     {
         "slug": "zstack",
@@ -2560,7 +2592,7 @@
                 "title": "Initializers",
                 "symbols": [
                     {
-                        "code": "init(@ContentBuilder<Content> content: () -> [Content]) -> ZStack",
+                        "code": "init(@ContentBuilder<Content> content: () &minus;> [Content]) &minus;> ZStack",
                         "comment": "Initializes the HTML element.",
                         "type": "initializer",
                         "reference": "zstack"
@@ -2602,7 +2634,8 @@
                     }
                 ]
             }
-        ]
+        ],
+        "snippet": "ZStack {\n}"
     },
     {
         "slug": "symbol",
@@ -2623,7 +2656,7 @@
                 "title": "Initializers",
                 "symbols": [
                     {
-                        "code": "init(system name: SymbolNames) -> Symbol",
+                        "code": "init(system name: SymbolNames) &minus;> Symbol",
                         "comment": "Initializes the HTML element.",
                         "type": "initializer",
                         "reference": "symbol"
@@ -2634,19 +2667,19 @@
                 "title": "Methods",
                 "symbols": [
                     {
-                        "code": "func fontSize(_ size: FontSize) -> Symbol",
+                        "code": "func fontSize(_ size: FontSize) &minus;> Symbol",
                         "comment": "Initializes the HTML element.",
                         "type": "method",
                         "reference": "font-size"
                     },
                     {
-                        "code": "func foregroundColor(_ color: ForegroundColor) -> Symbol",
+                        "code": "func foregroundColor(_ color: ForegroundColor) &minus;> Symbol",
                         "comment": "Initializes the HTML element.",
                         "type": "method",
                         "reference": "foreground-color"
                     },
                     {
-                        "code": "func shadow(_ radius: BlurRadius, color: ShadowColor = .black) -> Symbol",
+                        "code": "func shadow(_ radius: BlurRadius, color: ShadowColor = .black) &minus;> Symbol",
                         "comment": "Initializes the HTML element.",
                         "type": "method",
                         "reference": "shadow"
@@ -2684,7 +2717,8 @@
                     }
                 ]
             }
-        ]
+        ],
+        "snippet": "Symbol(system: .house)"
     },
     {
         "slug": "tabs",
@@ -2705,7 +2739,7 @@
                 "title": "Initializers",
                 "symbols": [
                     {
-                        "code": "init(direction: FlowDirection, @ContentBuilder<Pane> content: () -> [Pane]) -> Tabs",
+                        "code": "init(direction: FlowDirection, @ContentBuilder<Pane> content: () &minus;> [Pane]) &minus;> Tabs",
                         "comment": "Initializes the HTML element.",
                         "type": "initializer",
                         "reference": "tabs"
@@ -2745,10 +2779,16 @@
                         "comment": "Sets the identifier for the dropdown",
                         "type": "enumeration",
                         "reference": "flow-direction"
+                    },
+                    {
+                        "code": "content: [Pane]",
+                        "comment": "Sets the identifier for the dropdown",
+                        "type": "parameter"
                     }
                 ]
             }
-        ]
+        ],
+        "snippet": "Tabs(direction: .horizontal) {\n}"
     },
     {
         "slug": "text",
@@ -2760,7 +2800,7 @@
         ],
         "title": "Text",
         "type": "structure",
-        "conformance": ["viewmodifier", "textmodifier"],
+        "conformance": ["viewmodifier", "textmodifier", "mouseevent", "pressevent"],
         "description": "The element represents the document’s root element.",
         "platforms": ["Linux"],
         "targets": ["HTMLKitComponents"],
@@ -2769,13 +2809,13 @@
                 "title": "Initializers",
                 "symbols": [
                     {
-                        "code": "init(alignment: TextAlignment, @ContentBuilder<Content> content: () -> [Content]) -> Text",
+                        "code": "init(alignment: TextAlignment, @ContentBuilder<Content> content: () &minus;> [Content]) &minus;> Text",
                         "comment": "Initializes the HTML element.",
                         "type": "initializer",
                         "reference": "text"
                     },
                     {
-                        "code": "init(_ localizedStringKey: String, alignment: TextAlignment) -> Text",
+                        "code": "init(_ localizedStringKey: String, alignment: TextAlignment) &minus;> Text",
                         "comment": "Initializes the HTML element.",
                         "type": "initializer",
                         "reference": "text"
@@ -2786,15 +2826,14 @@
                 "title": "Methods",
                 "symbols": [
                     {
-                        "code": "func textStyle(_ style: TextStyle) -> Text",
+                        "code": "func textStyle(_ style: TextStyle) &minus;> Text",
                         "comment": "Initializes the HTML element.",
                         "type": "method",
                         "reference": "text-style"
                     }
                 ]
             }
-        ],
-        "snippet": "Text {\n\t\"Hello World\"\n}"
+        ]
     },
     {
         "slug": "text",
@@ -2830,7 +2869,8 @@
                     }
                 ]
             }
-        ]
+        ],
+        "snippet": "Text(alignment: .center) {\n\t\"Hello World\"\n}"
     },
     {
         "slug": "text",
@@ -2866,7 +2906,8 @@
                     }
                 ]
             }
-        ]
+        ],
+        "snippet": "Text(\"greeting.person\")"
     },
     {
         "slug": "font",
@@ -2999,6 +3040,27 @@
                         "type": "enumeration",
                         "reference": "font-size"
                     }
+                ]
+            }
+        ]
+    },
+    {
+        "slug": "snippet-style",
+        "path": [
+            {
+                "name": "Documentation",
+                "link": "/documentation"
+            }
+        ],
+        "title": "snippetStyle(_:)",
+        "type": "method",
+        "description": "The element represents the document’s root element.",
+        "platforms": ["Linux"],
+        "targets": ["HTMLKitComponents"],
+        "topics": [
+            {
+                "title": "Parameters",
+                "symbols": [
                 ]
             }
         ]
@@ -3314,7 +3376,7 @@
                 "link": "/documentation"
             }
         ],
-        "title": "zIndex(_:)",
+        "title": "padding(_:)",
         "type": "method",
         "description": "The element represents the document’s root element.",
         "platforms": ["Linux"],
@@ -6120,6 +6182,181 @@
         ]
     },
     {
+        "slug": "symbol-names",
+        "path": [
+            {
+                "name": "Documentation",
+                "link": "/documentation"
+            },
+            {
+                "name": "Symbol",
+                "link": "/documentation/structure/symbol"
+            }
+        ],
+        "title": "SymbolNames",
+        "type": "enumeration",
+        "description": "The element represents the document’s root element.",
+        "platforms": ["Linux"],
+        "targets": ["HTMLKitComponents"],
+        "topics": [
+            {
+                "title": "Cases",
+                "symbols": [
+                    {
+                        "code": "case bell",
+                        "comment": "Aligns the elements vertically.",
+                        "type": "case"
+                    },
+                    {
+                        "code": "case bookmark",
+                        "comment": "Aligns the elements horizontally.",
+                        "type": "case"
+                    },
+                    {
+                        "code": "case calendar",
+                        "comment": "Aligns the elements horizontally.",
+                        "type": "case"
+                    },
+                    {
+                        "code": "case chart",
+                        "comment": "Aligns the elements horizontally.",
+                        "type": "case"
+                    },
+                    {
+                        "code": "case chevron",
+                        "comment": "Aligns the elements horizontally.",
+                        "type": "case"
+                    },
+                    {
+                        "code": "case clock",
+                        "comment": "Aligns the elements horizontally.",
+                        "type": "case"
+                    },
+                    {
+                        "code": "case cloud",
+                        "comment": "Aligns the elements horizontally.",
+                        "type": "case"
+                    },
+                    {
+                        "code": "case ellipsis",
+                        "comment": "Aligns the elements horizontally.",
+                        "type": "case"
+                    },
+                    {
+                        "code": "case envelope",
+                        "comment": "Aligns the elements horizontally.",
+                        "type": "case"
+                    },
+                    {
+                        "code": "case eye",
+                        "comment": "Aligns the elements horizontally.",
+                        "type": "case"
+                    },
+                    {
+                        "code": "case file",
+                        "comment": "Aligns the elements horizontally.",
+                        "type": "case"
+                    },
+                    {
+                        "code": "case filter",
+                        "comment": "Aligns the elements horizontally.",
+                        "type": "case"
+                    },
+                    {
+                        "code": "case flask",
+                        "comment": "Aligns the elements horizontally.",
+                        "type": "case"
+                    },
+                    {
+                        "code": "case folder",
+                        "comment": "Aligns the elements horizontally.",
+                        "type": "case"
+                    },
+                    {
+                        "code": "case house",
+                        "comment": "Aligns the elements horizontally.",
+                        "type": "case"
+                    },
+                    {
+                        "code": "case key",
+                        "comment": "Aligns the elements horizontally.",
+                        "type": "case"
+                    },
+                    {
+                        "code": "case lifepreserver",
+                        "comment": "Aligns the elements horizontally.",
+                        "type": "case"
+                    },
+                    {
+                        "code": "case lightbulb",
+                        "comment": "Aligns the elements horizontally.",
+                        "type": "case"
+                    },
+                    {
+                        "code": "case location",
+                        "comment": "Aligns the elements horizontally.",
+                        "type": "case"
+                    },
+                    {
+                        "code": "case lock",
+                        "comment": "Aligns the elements horizontally.",
+                        "type": "case"
+                    },
+                    {
+                        "code": "case pencil",
+                        "comment": "Aligns the elements horizontally.",
+                        "type": "case"
+                    },
+                    {
+                        "code": "case person",
+                        "comment": "Aligns the elements horizontally.",
+                        "type": "case"
+                    },
+                    {
+                        "code": "case photo",
+                        "comment": "Aligns the elements horizontally.",
+                        "type": "case"
+                    },
+                    {
+                        "code": "case refresh",
+                        "comment": "Aligns the elements horizontally.",
+                        "type": "case"
+                    },
+                    {
+                        "code": "case sidebar",
+                        "comment": "Aligns the elements horizontally.",
+                        "type": "case"
+                    },
+                    {
+                        "code": "case scope",
+                        "comment": "Aligns the elements horizontally.",
+                        "type": "case"
+                    },
+                    {
+                        "code": "case target",
+                        "comment": "Aligns the elements horizontally.",
+                        "type": "case"
+                    },
+                    {
+                        "code": "case text",
+                        "comment": "Aligns the elements horizontally.",
+                        "type": "case"
+                    },
+                    {
+                        "code": "case trash",
+                        "comment": "Aligns the elements horizontally.",
+                        "type": "case"
+                    },
+                    {
+                        "code": "case tresor",
+                        "comment": "Aligns the elements horizontally.",
+                        "type": "case"
+                    },
+                ]
+            }
+        ]
+    },
+    {
         "slug": "edge-set",
         "path": [
             {
@@ -6169,5 +6406,631 @@
                 ]
             }
         ]
-    }
+    },
+    {
+        "slug": "button-role",
+        "path": [
+            {
+                "name": "Documentation",
+                "link": "/documentation"
+            }
+        ],
+        "title": "ButtonRole",
+        "type": "enumeration",
+        "description": "The element represents the document’s root element.",
+        "platforms": ["Linux"],
+        "targets": ["HTMLKit"],
+        "topics": [
+            {
+                "title": "Cases",
+                "symbols": [
+                    {
+                        "code": "case button",
+                        "comment": "Changes the border width of the view to 1 px.",
+                        "type": "case"
+                    },
+                    {
+                        "code": "case submit",
+                        "comment": "Changes the border width of the view to 2 px.",
+                        "type": "case"
+                    },
+                    {
+                        "code": "case reset",
+                        "comment": "Changes the border width of the view to 3 px.",
+                        "type": "case"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "slug": "form-method",
+        "path": [
+            {
+                "name": "Documentation",
+                "link": "/documentation"
+            }
+        ],
+        "title": "FormMethod",
+        "type": "enumeration",
+        "description": "The element represents the document’s root element.",
+        "platforms": ["Linux"],
+        "targets": ["HTMLKit"],
+        "topics": [
+            {
+                "title": "Cases",
+                "symbols": [
+                    {
+                        "code": "case post",
+                        "comment": "Changes the border width of the view to 1 px.",
+                        "type": "case"
+                    },
+                    {
+                        "code": "case get",
+                        "comment": "Changes the border width of the view to 2 px.",
+                        "type": "case"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "slug": "form-encoding",
+        "path": [
+            {
+                "name": "Documentation",
+                "link": "/documentation"
+            }
+        ],
+        "title": "FormEncoding",
+        "type": "enumeration",
+        "description": "The element represents the document’s root element.",
+        "platforms": ["Linux"],
+        "targets": ["HTMLKit"],
+        "topics": [
+            {
+                "title": "Cases",
+                "symbols": [
+                    {
+                        "code": "case plaintext",
+                        "comment": "Changes the border width of the view to 1 px.",
+                        "type": "case"
+                    },
+                    {
+                        "code": "case multipart",
+                        "comment": "Changes the border width of the view to 2 px.",
+                        "type": "case"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "slug": "meta-name",
+        "path": [
+            {
+                "name": "Documentation",
+                "link": "/documentation"
+            }
+        ],
+        "title": "MetaName",
+        "type": "enumeration",
+        "description": "The element represents the document’s root element.",
+        "platforms": ["Linux"],
+        "targets": ["HTMLKit"],
+        "topics": [
+            {
+                "title": "Cases",
+                "symbols": [
+                    {
+                        "code": "case applicationName",
+                        "comment": "Changes the border width of the view to 1 px.",
+                        "type": "case"
+                    },
+                    {
+                        "code": "case author",
+                        "comment": "Changes the border width of the view to 2 px.",
+                        "type": "case"
+                    },
+                    {
+                        "code": "case description",
+                        "comment": "Changes the border width of the view to 3 px.",
+                        "type": "case"
+                    },
+                    {
+                        "code": "case generator",
+                        "comment": "Changes the border width of the view to 3 px.",
+                        "type": "case"
+                    },
+                    {
+                        "code": "case keywords",
+                        "comment": "Changes the border width of the view to 3 px.",
+                        "type": "case"
+                    },
+                    {
+                        "code": "case referrer",
+                        "comment": "Changes the border width of the view to 3 px.",
+                        "type": "case"
+                    },
+                    {
+                        "code": "case themeColor",
+                        "comment": "Changes the border width of the view to 3 px.",
+                        "type": "case"
+                    },
+                    {
+                        "code": "case colorScheme",
+                        "comment": "Changes the border width of the view to 3 px.",
+                        "type": "case"
+                    },
+                    {
+                        "code": "case robots",
+                        "comment": "Changes the border width of the view to 3 px.",
+                        "type": "case"
+                    },
+                    {
+                        "code": "case viewport",
+                        "comment": "Changes the border width of the view to 3 px.",
+                        "type": "case"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "slug": "input-type",
+        "path": [
+            {
+                "name": "Documentation",
+                "link": "/documentation"
+            }
+        ],
+        "title": "InputType",
+        "type": "enumeration",
+        "description": "The element represents the document’s root element.",
+        "platforms": ["Linux"],
+        "targets": ["HTMLKit"],
+        "topics": [
+            {
+                "title": "Cases",
+                "symbols": [
+                    {
+                        "code": "case hidden",
+                        "comment": "Changes the border width of the view to 1 px.",
+                        "type": "case"
+                    },
+                    {
+                        "code": "case text",
+                        "comment": "Changes the border width of the view to 2 px.",
+                        "type": "case"
+                    },
+                    {
+                        "code": "case search",
+                        "comment": "Changes the border width of the view to 3 px.",
+                        "type": "case"
+                    },
+                    {
+                        "code": "case phone",
+                        "comment": "Changes the border width of the view to 3 px.",
+                        "type": "case"
+                    },
+                    {
+                        "code": "case url",
+                        "comment": "Changes the border width of the view to 3 px.",
+                        "type": "case"
+                    },
+                    {
+                        "code": "case email",
+                        "comment": "Changes the border width of the view to 3 px.",
+                        "type": "case"
+                    },
+                    {
+                        "code": "case password",
+                        "comment": "Changes the border width of the view to 3 px.",
+                        "type": "case"
+                    },
+                    {
+                        "code": "case date",
+                        "comment": "Changes the border width of the view to 3 px.",
+                        "type": "case"
+                    },
+                    {
+                        "code": "case month",
+                        "comment": "Changes the border width of the view to 3 px.",
+                        "type": "case"
+                    },
+                    {
+                        "code": "case week",
+                        "comment": "Changes the border width of the view to 3 px.",
+                        "type": "case"
+                    },
+                    {
+                        "code": "case time",
+                        "comment": "Changes the border width of the view to 3 px.",
+                        "type": "case"
+                    },
+                    {
+                        "code": "case dateTimeLocal",
+                        "comment": "Changes the border width of the view to 3 px.",
+                        "type": "case"
+                    },
+                    {
+                        "code": "case number",
+                        "comment": "Changes the border width of the view to 3 px.",
+                        "type": "case"
+                    },
+                    {
+                        "code": "case range",
+                        "comment": "Changes the border width of the view to 3 px.",
+                        "type": "case"
+                    },
+                    {
+                        "code": "case color",
+                        "comment": "Changes the border width of the view to 3 px.",
+                        "type": "case"
+                    },
+                    {
+                        "code": "case checkbox",
+                        "comment": "Changes the border width of the view to 3 px.",
+                        "type": "case"
+                    },
+                    {
+                        "code": "case radio",
+                        "comment": "Changes the border width of the view to 3 px.",
+                        "type": "case"
+                    },
+                    {
+                        "code": "case file",
+                        "comment": "Changes the border width of the view to 3 px.",
+                        "type": "case"
+                    },
+                    {
+                        "code": "case submit",
+                        "comment": "Changes the border width of the view to 3 px.",
+                        "type": "case"
+                    },
+                    {
+                        "code": "case image",
+                        "comment": "Changes the border width of the view to 3 px.",
+                        "type": "case"
+                    },
+                    {
+                        "code": "case reset",
+                        "comment": "Changes the border width of the view to 3 px.",
+                        "type": "case"
+                    },
+                    {
+                        "code": "case button",
+                        "comment": "Changes the border width of the view to 3 px.",
+                        "type": "case"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "slug": "meta",
+        "path": [
+            {
+                "name": "Documentation",
+                "link": "/documentation"
+            }
+        ],
+        "title": "Meta",
+        "type": "structure",
+        "conformance": [],
+        "description": "The element represents the document’s root element.",
+        "platforms": ["Linux"],
+        "targets": ["HTMLKit"],
+        "topics": [
+            {
+                "title": "Initializers",
+                "symbols": [
+                    {
+                        "code": "init()",
+                        "comment": "Initializes the HTML element.",
+                        "type": "initializer",
+                        "reference": "meta"
+                    }
+                ]
+            },
+            {
+                "title": "Methods",
+                "symbols": [
+                ]
+            }
+        ]
+    },
+    {
+        "slug": "meta",
+        "path": [
+            {
+                "name": "Documentation",
+                "link": "/documentation"
+            },
+            {
+                "name": "Meta",
+                "link": "/documentation/structure/meta"
+            }
+        ],
+        "title": "init(_:)",
+        "type": "initializer",
+        "description": "The element represents the document’s root element.",
+        "platforms": ["Linux"],
+        "targets": ["HTMLKit"],
+        "topics": [
+            {
+                "title": "Parameters",
+                "symbols": []
+            }
+        ],
+        "snippet": "Meta()"
+    },
+    {
+        "slug": "localization",
+        "path": [
+            {
+                "name": "Documentation",
+                "link": "/documentation"
+            }
+        ],
+        "title": "Localization",
+        "type": "article",
+        "description": "The elements in HTMLKit are an abstraction of the elements in HTML (Hyper Text Markup Language). If you have written HTML before, then you know there are elements with or without an end tag. An element with an end tag will be represented in HTMLKit as an element with curly brackets, while an element without an end tag will be represented with round brackets.",
+        "platforms": ["Linux"],
+        "targets": ["HTMLKit"],
+        "topics": [
+            {
+                "title": "Parameters",
+                "symbols": []
+            }
+        ]
+    },
+    {
+        "slug": "environment",
+        "path": [
+            {
+                "name": "Documentation",
+                "link": "/documentation"
+            }
+        ],
+        "title": "Environment",
+        "type": "article",
+        "description": "The elements in HTMLKit are an abstraction of the elements in HTML (Hyper Text Markup Language). If you have written HTML before, then you know there are elements with or without an end tag. An element with an end tag will be represented in HTMLKit as an element with curly brackets, while an element without an end tag will be represented with round brackets.",
+        "platforms": ["Linux"],
+        "targets": ["HTMLKit"],
+        "topics": [
+            {
+                "title": "Parameters",
+                "symbols": []
+            }
+        ]
+    },
+    {
+        "slug": "components",
+        "path": [
+            {
+                "name": "Documentation",
+                "link": "/documentation"
+            }
+        ],
+        "title": "Components",
+        "type": "article",
+        "description": "The elements in HTMLKit are an abstraction of the elements in HTML (Hyper Text Markup Language). If you have written HTML before, then you know there are elements with or without an end tag. An element with an end tag will be represented in HTMLKit as an element with curly brackets, while an element without an end tag will be represented with round brackets.",
+        "platforms": ["Linux"],
+        "targets": ["HTMLKit"],
+        "topics": [
+            {
+                "title": "Parameters",
+                "symbols": []
+            }
+        ]
+    },
+    {
+        "slug": "elements",
+        "path": [
+            {
+                "name": "Documentation",
+                "link": "/documentation"
+            }
+        ],
+        "title": "Elements",
+        "type": "article",
+        "description": "The elements in HTMLKit are an abstraction of the elements in HTML (Hyper Text Markup Language). If you have written HTML before, then you know there are elements with or without an end tag. An element with an end tag will be represented in HTMLKit as an element with curly brackets, while an element without an end tag will be represented with round brackets.",
+        "platforms": ["Linux"],
+        "targets": ["HTMLKit"],
+        "topics": [
+            {
+                "title": "Parameters",
+                "symbols": []
+            }
+        ]
+    },
+    {
+        "slug": "security",
+        "path": [
+            {
+                "name": "Documentation",
+                "link": "/documentation"
+            }
+        ],
+        "title": "Security",
+        "type": "article",
+        "description": "The elements in HTMLKit are an abstraction of the elements in HTML (Hyper Text Markup Language). If you have written HTML before, then you know there are elements with or without an end tag. An element with an end tag will be represented in HTMLKit as an element with curly brackets, while an element without an end tag will be represented with round brackets.",
+        "platforms": ["Linux"],
+        "targets": ["HTMLKit"],
+        "topics": [
+            {
+                "title": "Parameters",
+                "symbols": []
+            }
+        ]
+    },
+    {
+        "slug": "onsubmit",
+        "path": [
+            {
+                "name": "Documentation",
+                "link": "/documentation"
+            }
+        ],
+        "title": "onSubmit(_:)",
+        "type": "method",
+        "description": "The element represents the document’s root element.",
+        "platforms": ["Linux"],
+        "targets": ["HTMLKitComponents"],
+        "topics": [
+            {
+                "title": "Parameters",
+                "symbols": [
+                ]
+            }
+        ]
+    },
+    {
+        "slug": "onhover",
+        "path": [
+            {
+                "name": "Documentation",
+                "link": "/documentation"
+            }
+        ],
+        "title": "onHover(_:)",
+        "type": "method",
+        "description": "The element represents the document’s root element.",
+        "platforms": ["Linux"],
+        "targets": ["HTMLKitComponents"],
+        "topics": [
+            {
+                "title": "Parameters",
+                "symbols": [
+                ]
+            }
+        ]
+    },
+    {
+        "slug": "onleave",
+        "path": [
+            {
+                "name": "Documentation",
+                "link": "/documentation"
+            }
+        ],
+        "title": "onLeave(_:)",
+        "type": "method",
+        "description": "The element represents the document’s root element.",
+        "platforms": ["Linux"],
+        "targets": ["HTMLKitComponents"],
+        "topics": [
+            {
+                "title": "Parameters",
+                "symbols": [
+                ]
+            }
+        ]
+    },
+    {
+        "slug": "onclick",
+        "path": [
+            {
+                "name": "Documentation",
+                "link": "/documentation"
+            }
+        ],
+        "title": "onClick(_:)",
+        "type": "method",
+        "description": "The element represents the document’s root element.",
+        "platforms": ["Linux"],
+        "targets": ["HTMLKitComponents"],
+        "topics": [
+            {
+                "title": "Parameters",
+                "symbols": [
+                ]
+            }
+        ]
+    },
+    {
+        "slug": "onpress",
+        "path": [
+            {
+                "name": "Documentation",
+                "link": "/documentation"
+            }
+        ],
+        "title": "onPress(_:)",
+        "type": "method",
+        "description": "The element represents the document’s root element.",
+        "platforms": ["Linux"],
+        "targets": ["HTMLKitComponents"],
+        "topics": [
+            {
+                "title": "Parameters",
+                "symbols": [
+                ]
+            }
+        ]
+    },
+    {
+        "slug": "ontab",
+        "path": [
+            {
+                "name": "Documentation",
+                "link": "/documentation"
+            }
+        ],
+        "title": "onTab(_:)",
+        "type": "method",
+        "description": "The element represents the document’s root element.",
+        "platforms": ["Linux"],
+        "targets": ["HTMLKitComponents"],
+        "topics": [
+            {
+                "title": "Parameters",
+                "symbols": [
+                ]
+            }
+        ]
+    },
+    {
+        "slug": "ondrop",
+        "path": [
+            {
+                "name": "Documentation",
+                "link": "/documentation"
+            }
+        ],
+        "title": "onDrop(_:)",
+        "type": "method",
+        "description": "The element represents the document’s root element.",
+        "platforms": ["Linux"],
+        "targets": ["HTMLKitComponents"],
+        "topics": [
+            {
+                "title": "Parameters",
+                "symbols": [
+                ]
+            }
+        ]
+    },
+    {
+        "slug": "ondrag",
+        "path": [
+            {
+                "name": "Documentation",
+                "link": "/documentation"
+            }
+        ],
+        "title": "onDrag(_:)",
+        "type": "method",
+        "description": "The element represents the document’s root element.",
+        "platforms": ["Linux"],
+        "targets": ["HTMLKitComponents"],
+        "topics": [
+            {
+                "title": "Parameters",
+                "symbols": [
+                ]
+            }
+        ]
+    },
 ]

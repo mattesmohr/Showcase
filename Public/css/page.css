@@ -28,6 +28,7 @@
 
 html {
     background-color: #FFFFFF;
+    scroll-behavior: smooth;
 }
 
 body {
@@ -37,7 +38,7 @@ body {
 }
 
 body > header {
-    padding-top: 2.75rem;
+    padding-block-start: 2.75rem;
 }
 
 body > header > section {
@@ -69,7 +70,7 @@ body > main > footer {
 }
 
 body > footer {
-    padding-top: 2.75rem;
+    padding-block-start: 2.75rem;
     background-color: #FAFCFD;
     border-top: 1px solid #E5F0F5;
 }
@@ -175,7 +176,7 @@ body > footer > section {
 }
 
 
-.icon {
+.icon-example {
     position: relative;
     display: inline-block;
     border: 1px solid hsla(var(--systemBorderColor), 1.0);
@@ -208,21 +209,24 @@ body > footer > section {
 }
 
 .snippet > p {
+    --fontSize: 14px;
+    --lineHeight: 22px;
+    
     font-family: 'Hubot Sans';
-    font-size: 15px;
 }
 
 .step {
     padding: 0.75rem 1.75rem;
-    width: 100%;
+    inline-size: 100%;
+    min-block-size: 100px;
     display: flex;
     flex-direction: column;
     gap: 15px;
-    background-color: #FAFCFD;
     border-radius: 0.313rem;
+    background-color: #FAFCFD;
 }
 
-.step.current {
+.step.state\:focused {
     background-color: #E5F0F5;
 }
 
@@ -230,13 +234,13 @@ body > footer > section {
     flex-grow: 1;
     
     font-family: var(--fontFamily);
-    font-size: 0.83rem;
+    font-size: 0.9rem;
 }
 
 .step > .note {
     font-family: var(--fontFamily);
     font-style: italic;
-    font-size: 0.83rem;
+    font-size: 0.9rem;
 }
 
 .console {
@@ -244,14 +248,17 @@ body > footer > section {
     padding-block: 10px;
     inline-size: 100%;
     block-size: 100%;
-    min-block-size: 500px;
+    min-block-size: 1200px;
+    display: none;
     background-color: #E5F0F5;
+    border-radius: 0.313rem;
     overflow-x: auto;
 }
 
 .console > .code > p {
     display: block;
     font-size: 14px;
+    line-height: 22px;
     word-wrap: normal;
     white-space: pre;
     counter-increment: line;
@@ -270,7 +277,9 @@ body > footer > section {
 }
 
 .code {
+    font-family: 'Hubot Sans', monospace;
     font-size: 16px;
+    white-space: pre-wrap;
 }
 
 #modal {
@@ -278,7 +287,9 @@ body > footer > section {
     height: 500px;  
 }
 
-.test {
+.icon {
+    --iconColor: black;
+
     padding-inline: 2px;
     padding-block: 1px;
     width: 20px;
@@ -286,29 +297,112 @@ body > footer > section {
     display: grid;
     place-items: center;
     place-content: center;
-    border: 1px solid black;
+    border-width: 1px;
+    border-style: solid;
+    border-color: hsla(var(--iconColor), 1.0);
     border-radius: 2px;
     font-size: 14px;
     font-weight: 500;
+    color: hsla(var(--iconColor), 1.0);
+    background-color: hsla(var(--iconColor), 0.1);
+}
+
+.icon.color\:blue {
+    --iconColor: var(--blueColor);
+}
+
+.icon.color\:red {
+    --iconColor: var(--redColor);
+}
+
+.icon.color\:orange {
+    --iconColor: var(--orangeColor);
+}
+
+.icon.color\:green {
+    --iconColor: var(--greenColor);
 }
 
 .scroll {
     width: 100%;
 }
 
-.zstack {
-    position: relative;
-    display: grid;
-    grid-template-rows: minmax(0, 1fr);
-    grid-template-columns: 100%;
-    place-items: center;
-    place-content: center;
-}
-
-.zstack > * {
-    grid-area: 1 / 1;
-}
-
-.change {
+.highlight {
     background-color: hsla(var(--blueColor), 0.5);
+}
+
+.section {
+    inline-size: 100%;
+    block-size: 1500px;
+    display: flex;
+    flex-direction: column;
+    gap: 2.25rem;
+    margin-block-end: 2.25rem;
+}
+
+.example .example-content > .grid {
+    
+    background: linear-gradient(135deg, #000000 4.5%, transparent 0, transparent 50%, #000000 0, #000000 54.5%, transparent 0, transparent);
+    background-size: 7.5px 7.5px;
+}
+
+.example.scheme\:dark .example-content > .grid {
+    
+    background: linear-gradient(135deg, #FFFFFF 4.5%, transparent 0, transparent 50%, #FFFFFF 0, #FFFFFF 54.5%, transparent 0, transparent);
+    background-size: 7.5px 7.5px;
+}
+
+
+.example .example-content > .vstack {
+    
+    background: linear-gradient(135deg, #000000 4.5%, transparent 0, transparent 50%, #000000 0, #000000 54.5%, transparent 0, transparent);
+    background-size: 7.5px 7.5px;
+}
+
+.example.scheme\:dark .example-content > .vstack {
+    
+    background: linear-gradient(135deg, #FFFFFF 4.5%, transparent 0, transparent 50%, #FFFFFF 0, #FFFFFF 54.5%, transparent 0, transparent);
+    background-size: 7.5px 7.5px;
+}
+
+.example .example-content > .hstack {
+    
+    background-color: transparent;
+    background: linear-gradient(135deg, #000000 4.5%, transparent 0, transparent 50%, #000000 0, #000000 54.5%, transparent 0, transparent);
+    background-size: 7.5px 7.5px;
+}
+
+.example.scheme\:dark .example-content > .hstack {
+    
+    background: linear-gradient(135deg, #FFFFFF 4.5%, transparent 0, transparent 50%, #FFFFFF 0, #FFFFFF 54.5%, transparent 0, transparent);
+    background-size: 7.5px 7.5px;
+}
+
+.example .example-content > .zstack {
+    
+    background: linear-gradient(135deg, #000000 4.5%, transparent 0, transparent 50%, #000000 0, #000000 54.5%, transparent 0, transparent);
+    background-size: 7.5px 7.5px;
+}
+
+.example.scheme\:dark .example-content > .zstack {
+    
+    background: linear-gradient(135deg, #FFFFFF 4.5%, transparent 0, transparent 50%, #FFFFFF 0, #FFFFFF 54.5%, transparent 0, transparent);
+    background-size: 7.5px 7.5px;
+}
+
+.example .example-content > .scroll {
+    
+    background: linear-gradient(135deg, #000000 4.5%, transparent 0, transparent 50%, #000000 0, #000000 54.5%, transparent 0, transparent);
+    background-size: 7.5px 7.5px;
+}
+
+.example.scheme\:dark .example-content > .scroll {
+    
+    background: linear-gradient(135deg, #FFFFFF 4.5%, transparent 0, transparent 50%, #FFFFFF 0, #FFFFFF 54.5%, transparent 0, transparent);
+    background-size: 7.5px 7.5px;
+}
+
+#documentation .link:hover {
+    background-color: #E5F0F5;
+    border-radius: 5px;
 }

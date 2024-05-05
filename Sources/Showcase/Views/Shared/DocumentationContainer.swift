@@ -26,16 +26,15 @@ struct DocumentationContainer: View {
                 .frame(width: .twelve)
                 Modal {
                     VStack(spacing: .small) {
-                        TextField(name: "filter", prompt: "Filter")
+                        TextField(name: "filter", prompt: "Search for symbols, articles...")
                             .borderShape(.smallrounded)
-                            .tag("filter")
                         Scroll {
-                            VStack(spacing: .small) {
+                            VStack {
                             }
-                            .tag("results")
                         }
                     }
-                    .frame(width: .twelve)
+                    .frame(width: .twelve, height: .twelve)
+                    .tag("documentation")
                 }
                 .borderShape(.smallrounded)
                 .tag("modal")

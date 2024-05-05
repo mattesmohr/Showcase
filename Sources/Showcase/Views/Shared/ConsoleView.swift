@@ -3,17 +3,21 @@ import HTMLKitComponents
 
 struct ConsoleView: View {
     
-    let index: Int
-    
     let lines: [String]
     
     let highlight: [Int]
     
     var classes: [String]
     
-    init(index: Int, code: TutorialCode) {
+    init() {
         
-        self.index = index
+        self.lines = []
+        self.highlight = []
+        self.classes = ["console"]
+    }
+    
+    init(code: TutorialCode) {
+        
         self.lines = code.code.components(separatedBy: "\n")
         self.highlight = code.highlight
         self.classes = ["console"]
@@ -25,7 +29,7 @@ struct ConsoleView: View {
                 for (index, line) in lines.enumerated() {
                     if highlight.contains(where: { $0 == (index + 1) }) {
                         Paragraph { line }
-                            .class("change")
+                            .class("highlight")
                     } else {
                         Paragraph { line }
                     }
@@ -34,6 +38,5 @@ struct ConsoleView: View {
             .class("code")
         }
         .class(classes.joined(separator: " "))
-        .custom(key: "data-index", value: index)
     }
 }

@@ -2,7 +2,7 @@ import HTMLKitVapor
 import Vapor
 import Foundation
 
-// [/documentation]
+// [/tutorial]
 final class TutorialPageController {
     
     // [/]

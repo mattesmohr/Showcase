@@ -10,11 +10,11 @@ struct StepView: View {
     
     var classes: [String]
     
-    init(index: Int, description: String, note: String? = nil) {
+    init(step: TutorialStep) {
         
-        self.index = index
-        self.description = description
-        self.note = note
+        self.index = step.index
+        self.description = step.description
+        self.note = step.note
         self.classes = ["step"]
     }
     

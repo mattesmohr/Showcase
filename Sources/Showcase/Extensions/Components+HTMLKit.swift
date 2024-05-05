@@ -248,6 +248,13 @@ extension Tokens.PaddingLength: CaseIterable {
 extension Tokens.MarginLength: CaseIterable {
     
     public static var allCases: [Tokens.MarginLength] {
+        return [.large, .medium, .small, .auto]
+    }
+}
+
+extension Tokens.InnerRadius: CaseIterable {
+    
+    public static var allCases: [Tokens.InnerRadius] {
         return [.large, .medium, .small]
     }
 }

@@ -1,357 +1,398 @@
 [
-  {
-    "slug": "start-with-htmlkit",
-    "title": "Start with HTMLKit",
-    "description": "Learn how to setup a Swift package and create your ever first view.",
-    "sections": [
-      {
-        "title": "Create a package",
-        "description": "Create a new Xcode project that uses Swift Package.",
-        "steps": [
-          {
-            "description": "Open Xcode and select _File > New > Package_.",
-            "note": "",
-          },
-          {
-            "description": "In the template selector, select the template Library, and then click Next.",
-            "note": "The template creates the folder structure, wich we will need later.",
-          },
-          {
-            "description": "Enter the package name Example and choose a location to save the package. Click Create next.",
-            "note": "Xcode loads the package and shows the package manifest upfront."
-          }
+    {
+        "slug": "start-with-htmlkit",
+        "title": "Start with HTMLKit",
+        "description": "Learn how to setup a Swift package and create your ever first view.",
+        "sections": [
+            {
+                "title": "Create a package",
+                "description": "Create a new Xcode project that uses Swift Package.",
+                "steps": [
+                    {
+                        "index": 0,
+                        "description": "Open Xcode and select _File > New > Package_.",
+                        "note": "",
+                    },
+                    {
+                        "index": 1,
+                        "description": "In the template selector, select the template Library, and then click Next.",
+                        "note": "The template creates the folder structure, wich we will need later.",
+                    },
+                    {
+                        "index": 2,
+                        "description": "Enter the package name Example and choose a location to save the package. Click Create next.",
+                        "note": "Xcode loads the package and shows the package manifest upfront."
+                    }
+                ]
+            },
+            {
+                "title": "Customize the manifest",
+                "description": "Add the dependencies to use HTMLKit in your project.",
+                "steps": [
+                    {
+                        "index": 0,
+                        "description": "Change the platform to macOS and the target to executableTarget.",
+                        "note": "The platforms defines a list of minimum versions for platforms supported by the package.",
+                        "code": {
+                            "code": "// swift-tools-version: 5.9\n// The swift-tools-version declares the minimum version of Swift required to build this package.\n\nimport PackageDescription\n\nlet package = Package(\n\tname: \"Example\",\n\tplatforms: [.macOS(.v13)],\n\tdependencies: [\n\t\t// Dependencies declare other packages that this package depends on.\n\t\t// .package(url: /* package url */, from: \"1.0.0\"),\n\t],\n\ttargets: [\n\t\t// Targets are the basic building blocks of a package. A target can define a module or a test suite.\n\t\t// Targets can depend on other targets in this package, and on products in packages this package depends on.\n\t\t.executableTarget(\n\t\t\tname: \"Example\",\n\t\t\tdependencies: []),\n\t\t.testTarget(\n\t\t\tname: \"ExampleTests\",\n\t\t\tdependencies: [\"Example\"]),\n\t]\n)",
+                            "highlight": [8, 16]
+                        }
+                    },
+                    {
+                        "index": 1,
+                        "description": "Add Vapor as dependency.",
+                        "note": "The package manager updates the version to the next major version.",
+                        "code": {
+                            "code": "// swift-tools-version: 5.9\n// The swift-tools-version declares the minimum version of Swift required to build this package.\n\nimport PackageDescription\n\nlet package = Package(\n\tname: \"Example\",\n\tplatforms: [.macOS(.v13)],\n\tdependencies: [\n\t\t// Dependencies declare other packages that this package depends on.\n\t\t.package(url: \"https://github.com/vapor/vapor.git\", from: \"4.77.2\"),\n\t],\n\ttargets: [\n\t\t// Targets are the basic building blocks of a package. A target can define a module or a test suite.\n\t\t// Targets can depend on other targets in this package, and on products in packages this package depends on.\n\t\t.executableTarget(\n\t\t\tname: \"Example\",\n\t\t\tdependencies: [\n\t\t\t\t.product(name: \"Vapor\", package: \"vapor\"),\n\t\t\t],\n\t\t\tswiftSettings: [\n\t\t\t\t.unsafeFlags([\"-cross-module-optimization\"], .when(configuration: .release))\n\t\t\t]\n\t\t),\n\t\t.testTarget(\n\t\t\tname: \"ExampleTests\",\n\t\t\tdependencies: [\n\t\t\t\t.target(name: \"Example\"),\n\t\t\t\t.product(name: \"XCTVapor\", package: \"vapor\")\n\t\t\t]\n\t\t)\n\t]\n)",
+                            "highlight": [11, 18, 19, 20, 21, 22, 23, 24, 27, 28, 29, 30, 31]
+                        }
+                    },
+                    {
+                        "index": 2,
+                        "description": "Add HTMLKit as dependency.",
+                        "note": "The package manager updates the version to the next major version.",
+                        "code": {
+                            "code": "// swift-tools-version: 5.9\n// The swift-tools-version declares the minimum version of Swift required to build this package.\n\nimport PackageDescription\n\nlet package = Package(\n\tname: \"Example\",\n\tplatforms: [.macOS(.v13)],\n\tdependencies: [\n\t\t// Dependencies declare other packages that this package depends on.\n\t\t.package(url: \"https://github.com/vapor/vapor.git\", from: \"4.77.2\"),\n\t\t.package(url: \"https://github.com/vapor-community/HTMLKit.git\", from: \"3.0.0\")\n\t],\n\ttargets: [\n\t\t// Targets are the basic building blocks of a package. A target can define a module or a test suite.\n\t\t// Targets can depend on other targets in this package, and on products in packages this package depends on.\n\t\t.executableTarget(\n\t\t\tname: \"Example\",\n\t\t\tdependencies: [\n\t\t\t\t.product(name: \"Vapor\", package: \"vapor\"),\n\t\t\t\t.product(name: \"HTMLKit\", package: \"HTMLKit\"),\n\t\t\t],\n\t\t\tswiftSettings: [\n\t\t\t\t.unsafeFlags([\"-cross-module-optimization\"], .when(configuration: .release))\n\t\t\t]\n\t\t),\n\t\t.testTarget(\n\t\t\tname: \"ExampleTests\",\n\t\t\tdependencies: [\n\t\t\t\t.target(name: \"Example\"),\n\t\t\t\t.product(name: \"XCTVapor\", package: \"vapor\")\n\t\t\t]\n\t\t)\n\t]\n)",
+                            "highlight": [12, 21]
+                        }
+                    }
+                ]
+            },
+            {
+                "title": "Setup up Vapor",
+                "description": "Create the files Vapor needs.",
+                "steps": [
+                    {
+                        "index": 0,
+                        "description": "Select File > New > File to create a file called entrypoint.swift.",
+                        "note": "The file contains the entry point, that sets up, configures and runs your application.",
+                        "code": {
+                            "code": "import Vapor\nimport Dispatch\nimport Logging\n\n@main\nenum Entrypoint {\n\t\n\tstatic func main() async throws {\n\t\t\n\t\tvar env = try Environment.detect()\n\t\t\n\t\ttry LoggingSystem.bootstrap(from: &env)\n\t\t\n\t\tlet app = Application(env)\n\t\t\n\t\tdefer { app.shutdown() }\n\t\t\n\t\tdo {\n\t\t\ttry await configure(app)\n\t\t\t\n\t\t} catch {\n\t\t\tapp.logger.report(error: error)\n\t\t\t\n\t\t\tthrow error\n\t\t}\n\t\t\n\t\ttry await app.execute()\n\t}\n}",
+                            "highlight": []
+                        }
+                    },
+                    {
+                        "index": 1,
+                        "description": "Select File > New > File to create a file called routes.swift.",
+                        "note": "The file will contain the routes for your application.",
+                        "code": {
+                            "code": "import Vapor\n\nfunc routes(_ app: Application) throws {\n}",
+                            "highlight": []
+                        }
+                    },
+                    {
+                        "index": 2,
+                        "description": "Select File > New > File to create a file called configure.swift.",
+                        "note": "The file will contain your services like routes, databases, providers, and more.",
+                        "code": {
+                            "code": "import Vapor\n\nfunc configure(_ app: Application) throws {\n\n\ttry routes(app)\n}",
+                            "highlight": []
+                        }
+                    }
+                ]
+            },
+            {
+                "title": "Build a view",
+                "description": "Create and combine elements to create a view.",
+                "steps": [
+                    {
+                        "index": 0,
+                        "description": "Select File > New > File to create a new Swift file ExampleView.",
+                        "note": ""
+                    },
+                    {
+                        "index": 1,
+                        "description": "Import the module HTMLKit at the top of the file.",
+                        "note": "",
+                        "code": {
+                            "code": "import HTMLKit",
+                            "highlight": [1]
+                        }
+                    },
+                    {
+                        "index": 2,
+                        "description": "Define a structure ExampleView and add View conformance.",
+                        "note": "",
+                        "code": {
+                            "code": "import HTMLKit\n\nstruct ExampleView: View {\n\t\n\tvar body: Content {\n\t}\n}",
+                            "highlight": [2, 3, 4, 5, 6, 7]
+                        }
+                    },
+                    {
+                        "index": 3,
+                        "description": "Add the Heading1 element to the body property.",
+                        "note": "The Heading1 element represents the <h1> element in HTML.",
+                        "code": {
+                            "code": "import HTMLKit\n\nstruct ExampleView: View {\n\t\n\tvar body: Content {\n\t\tHeading1 {\n\t\t\t\"Hello World\"\n\t\t}\n\t}\n}",
+                            "highlight": [6, 7, 8]
+                        }
+                    }
+                ]
+            },
+            {
+                "title": "Render the view",
+                "description": "Render the view and transform it into a response.",
+                "steps": [
+                    {
+                        "index": 0,
+                        "description": "Select File > New > File to create a new Swift file ExampleController.",
+                        "note": ""
+                    },
+                    {
+                        "index": 1,
+                        "description": "Import the modules Vapor and HTMLKitVapor at the top of the file.",
+                        "note": "",
+                        "code": {
+                            "code": "import HTMLKitVapor\nimport Vapor",
+                            "highlight": [1, 2]
+                        }
+                    },
+                    {
+                        "index": 2,
+                        "description": "Create a class ExampleController add RouteCollection conformance.",
+                        "note": "",
+                        "code": {
+                            "code": "import HTMLKitVapor\nimport Vapor\n\nclass ExampleController: RouteCollection {\n\t\n\tfunc boot(routes: RoutesBuilder) throws {\n\t}\n}",
+                            "highlight": [3, 4, 5, 6, 7, 8]
+                        }
+                    },
+                    {
+                        "index": 3,
+                        "description": "Create a class ExampleController add RouteCollection conformance.",
+                        "note": "",
+                        "code": {
+                            "code": "import HTMLKitVapor\nimport Vapor\n\nclass ExampleController: RouteCollection {\n\t\n\tfunc boot(routes: RoutesBuilder) throws {\n\t\t\n\t\troutes.group(\"example\") { routes in\n\t\t\troutes.get(\"index\", use: self.getIndex)\n\t\t}\n\t}\n\t\n\tfunc getIndex(_ req: Request) -> View {\n\t}\n}",
+                            "highlight": [7, 8, 9, 10, 12, 13, 14]
+                        }
+                    },
+                    {
+                        "index": 4,
+                        "description": "Call the method render in the function and pass the view ExampleView to it.",
+                        "note": "",
+                        "code": {
+                            "code": "import HTMLKitVapor\nimport Vapor\n\nclass ExampleController: RouteCollection {\n\t\n\tfunc boot(routes: RoutesBuilder) throws {\n\t\t\n\t\troutes.group(\"example\") { routes in\n\t\t\troutes.get(\"index\", use: self.getIndex)\n\t\t}\n\t}\n\t\n\tfunc getIndex(_ req: Request) -> View {\n\t\t\n\t\treturn req.htmlkit.render(ExampleView())\n\t}\n}",
+                            "highlight": [14, 15]
+                        }
+                    }
+                ]
+            },
+            {
+                "title": "Register the route",
+                "description": "Announce the route to your Vapor application.",
+                "steps": [
+                    {
+                        "index": 0,
+                        "description": "Use the method register to announce the route to your application.",
+                        "note": "",
+                        "code": {
+                            "code": "import Vapor\n\nfunc routes(_ app: Application) throws {\n\t\n\ttry app.register(collection: ExampleController())\n}",
+                            "highlight": [4, 5]
+                        }
+                    },
+                    {
+                        "index": 1,
+                        "description": "Select Editor > Run to build and run the application.",
+                        "note": ""
+                    },
+                    {
+                        "index": 2,
+                        "description": "Call the route /example/index in your browser.",
+                        "note": ""
+                    }
+                ]
+            }
         ]
-      },
-      {
-        "title": "Customize the manifest",
-        "description": "Add the dependencies to use HTMLKit in your project.",
-        "steps": [
-          {
-            "description": "highlight the platform to macOS and the target to executableTarget.",
-            "note": "The platforms defines a list of minimum versions for platforms supported by the package.",
-            "code": {
-                "code": "// swift-tools-version: 5.9\n// The swift-tools-version declares the minimum version of Swift required to build this package.\n\nimport PackageDescription\n\nlet package = Package(\n\tname: \"Example\",\n\tplatforms: [.macOS(.v13)],\n\tdependencies: [\n\t\t// Dependencies declare other packages that this package depends on.\n\t\t// .package(url: /* package url */, from: \"1.0.0\"),\n\t],\n\ttargets: [\n\t\t// Targets are the basic building blocks of a package. A target can define a module or a test suite.\n\t\t// Targets can depend on other targets in this package, and on products in packages this package depends on.\n\t\t.executableTarget(\n\t\t\tname: \"Example\",\n\t\t\tdependencies: []),\n\t\t.testTarget(\n\t\t\tname: \"ExampleTests\",\n\t\t\tdependencies: [\"Example\"]),\n\t]\n)",
-                "highlight": [8, 16]
+    },
+    {
+        "slug": "localize-with-htmlkit",
+        "title": "Localize with HTMLKit",
+        "description": "Discover how to configure localization and enhance the accessibility of your web page.",
+        "sections": [
+            {
+                "title": "Create a message file",
+                "description": "Define translations strings for the given language",
+                "steps": [
+                    {
+                        "index": 0,
+                        "description": "Create a folder Localization to store the strings files.",
+                        "note": ""
+                    },
+                    {
+                        "index": 1,
+                        "description": "Select File > New > File to create a new strings file message.strings.",
+                        "note": ""
+                    },
+                    {
+                        "index": 2,
+                        "description": "Add a string.",
+                        "note": "The key and value in a given pair are strings of text enclosed in double quotation marks and separated by an equal sign.",
+                        "code": {
+                            "code": "/* a general greeting */\n\"greeting.world\" = \"Hello World\";",
+                            "highlight": [2],
+                        }
+                    }
+                ]
+            },
+            {
+                "title": "Set up the localization",
+                "description": "Add default settings for the localization.",
+                "steps": [
+                    {
+                        "index": 0,
+                        "description": "Import the module HTMLKitVapor at the top of configure.swift.",
+                        "note": "",
+                        "code": {
+                            "code": "import HTMLKitVapor\nimport Vapor\n\nfunc configure(_ app: Application) throws {\n\n\ttry routes(app)\n}",
+                            "highlight": [1],
+                        }
+                    },
+                    {
+                        "index": 1,
+                        "description": "Specify the path of the directory, where the message files are located.",
+                        "note": "",
+                        "code": {
+                            "code": "import HTMLKitVapor\nimport Vapor\n\nfunc configure(_ app: Application) throws {\n\n\tapp.htmlkit.localization.set(source: currentDirectory)\n\n\ttry routes(app)\n}",
+                            "highlight": [6],
+                        }
+                    },
+                    {
+                        "index": 2,
+                        "description": "Specify the default language, wich serves as a fallback.",
+                        "note": "HTMLKit usually uses the language specification in the response header. If the language is not available, it uses the fallback.",
+                        "code": {
+                            "code": "import HTMLKitVapor\nimport Vapor\n\nfunc configure(_ app: Application) throws {\n\n\tapp.htmlkit.localization.set(source: currentDirectory)\n\n\tapp.htmlkit.localization.set(locale: .english)\n\n\ttry routes(app)\n}",
+                            "highlight": [8],
+                        }
+                    }
+                ]
+            },
+            {
+                "title": "Prepare your interface",
+                "description": "Make the text translatable by providing the string key.",
+                "steps": [
+                    {
+                        "index": 0,
+                        "description": "Use the initializer to provide the string key to the element.",
+                        "note": "HTMLKit uses the string key to retrieve the localized value from the translation table.",
+                        "code": {
+                            "code": "import HTMLKit\n\nstruct ExampleView: View {\n\n\tvar body: Content {\n\t\tHeading1(\"greeting.world\")\n\t}\n}",
+                            "highlight": [6],
+                        }
+                    },
+                    {
+                        "index": 1,
+                        "description": "Select Editor > Run to build and rerun the application. Refresh your browser.",
+                        "note": ""
+                    }
+                ]
             }
-          },
-          {
-            "description": "Add Vapor as dependency.",
-            "note": "The package manager updates the version to the next major version.",
-            "code": {
-                "code": "// swift-tools-version: 5.9\n// The swift-tools-version declares the minimum version of Swift required to build this package.\n\nimport PackageDescription\n\nlet package = Package(\n\tname: \"Example\",\n\tplatforms: [.macOS(.v13)],\n\tdependencies: [\n\t\t// Dependencies declare other packages that this package depends on.\n\t\t.package(url: \"https://github.com/vapor/vapor.git\", from: \"4.77.2\"),\n\t],\n\ttargets: [\n\t\t// Targets are the basic building blocks of a package. A target can define a module or a test suite.\n\t\t// Targets can depend on other targets in this package, and on products in packages this package depends on.\n\t\t.executableTarget(\n\t\t\tname: \"Example\",\n\t\t\tdependencies: [\n\t\t\t\t.product(name: \"Vapor\", package: \"vapor\"),\n\t\t\t],\n\t\t\tswiftSettings: [\n\t\t\t\t.unsafeFlags([\"-cross-module-optimization\"], .when(configuration: .release))\n\t\t\t]\n\t\t),\n\t\t.testTarget(\n\t\t\tname: \"ExampleTests\",\n\t\t\tdependencies: [\n\t\t\t\t.target(name: \"Example\"),\n\t\t\t\t.product(name: \"XCTVapor\", package: \"vapor\")\n\t\t\t]\n\t\t)\n\t]\n)",
-                "highlight": [11, 18, 19, 20, 21, 22, 23, 24, 27, 28, 29, 30, 31]
-            }
-          },
-          {
-            "description": "Add HTMLKit as dependency.",
-            "note": "The package manager updates the version to the next major version.",
-            "code": {
-                "code": "// swift-tools-version: 5.9\n// The swift-tools-version declares the minimum version of Swift required to build this package.\n\nimport PackageDescription\n\nlet package = Package(\n\tname: \"Example\",\n\tplatforms: [.macOS(.v13)],\n\tdependencies: [\n\t\t// Dependencies declare other packages that this package depends on.\n\t\t.package(url: \"https://github.com/vapor/vapor.git\", from: \"4.77.2\"),\n\t\t.package(url: \"https://github.com/vapor-community/HTMLKit.git\", from: \"3.0.0\")\n\t],\n\ttargets: [\n\t\t// Targets are the basic building blocks of a package. A target can define a module or a test suite.\n\t\t// Targets can depend on other targets in this package, and on products in packages this package depends on.\n\t\t.executableTarget(\n\t\t\tname: \"Example\",\n\t\t\tdependencies: [\n\t\t\t\t.product(name: \"Vapor\", package: \"vapor\"),\n\t\t\t\t.product(name: \"HTMLKit\", package: \"HTMLKit\"),\n\t\t\t],\n\t\t\tswiftSettings: [\n\t\t\t\t.unsafeFlags([\"-cross-module-optimization\"], .when(configuration: .release))\n\t\t\t]\n\t\t),\n\t\t.testTarget(\n\t\t\tname: \"ExampleTests\",\n\t\t\tdependencies: [\n\t\t\t\t.target(name: \"Example\"),\n\t\t\t\t.product(name: \"XCTVapor\", package: \"vapor\")\n\t\t\t]\n\t\t)\n\t]\n)",
-                "highlight": [12, 21]
-            }
-          }
         ]
-      },
-      {
-        "title": "Setup up Vapor",
-        "description": "Create the files Vapor needs.",
-        "steps": [
-          {
-            "description": "Select File > New > File to create a file called entrypoint.swift.",
-            "note": "The file contains the entry point, that sets up, configures and runs your application.",
-            "code": {
-                "code": "import Vapor\nimport Dispatch\nimport Logging\n\n@main\nenum Entrypoint {\n\t\n\tstatic func main() async throws {\n\t\t\n\t\tvar env = try Environment.detect()\n\t\t\n\t\ttry LoggingSystem.bootstrap(from: &env)\n\t\t\n\t\tlet app = Application(env)\n\t\t\n\t\tdefer { app.shutdown() }\n\t\t\n\t\tdo {\n\t\t\ttry await configure(app)\n\t\t\t\n\t\t} catch {\n\t\t\tapp.logger.report(error: error)\n\t\t\t\n\t\t\tthrow error\n\t\t}\n\t\t\n\t\ttry await app.execute()\n\t}\n}",
-                "highlight": []
+    },
+    {
+        "slug": "design-with-htmlkit",
+        "title": "Design with HTMLKit",
+        "description": "Use UI components and make your design process more easy.",
+        "sections": [
+            {
+                "title": "Set up dependencies",
+                "description": "Compile the dependencies and add them to your project.",
+                "steps": [
+                    {
+                        "index": 0,
+                        "description": "Create a folder Public outside of the Sources folder.",
+                        "note": "The public folder contains any public files that will be served by your application."
+                    },
+                    {
+                        "index": 1,
+                        "description": "Make a right click on the project in the project navigator and select ComponentsPlugin. It will build the plugin and start the deployment.",
+                        "note": "HTMLKit creates a vendor folder at the public directory."
+                    },
+                    {
+                        "index": 2,
+                        "description": "Select Product > Scheme > Edit Scheme to set the working directory for your project.",
+                        "note": ""
+                    },
+                    {
+                        "index": 3,
+                        "description": "Check the working directory on the Options tab and enter the path to the root folder of your project.",
+                        "note": ""
+                    }
+                ]
+            },
+            {
+                "title": "Use a component",
+                "description": "Create an interface by using components.",
+                "steps": [
+                    {
+                        "index": 0,
+                        "description": "Import the module HTMLKitComponents at the top of ExampleView.",
+                        "note": "",
+                        "code": {
+                            "code": "import HTMLKit\nimport HTMLKitComponents\n\nstruct ExampleView: View {\n\n\tvar body: Content {\n\t\tHeading1(\"greeting.world\")\n\t}\n}",
+                            "highlight": [2]
+                        }
+                    },
+                    {
+                        "index": 1,
+                        "description": "Give the view a proper HTML structure.",
+                        "note": "",
+                        "code": {
+                            "code": "import HTMLKit\nimport HTMLKitComponents\n\nstruct ExampleView: View {\n\n\tvar body: Content {\n\t\tDocument(.html5)\n\t\tHtml {\n\t\t\tHead {\n\t\t\t\tTitle {\n\t\t\t\t\t\"Example\"\n\t\t\t\t}\n\t\t\t}\n\t\t\tBody {\n\t\t\t\tHeading1(\"greeting.world\")\n\t\t\t}\n\t\t}\n\t}\n}",
+                            "highlight": [7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18]
+                        }
+                    },
+                    {
+                        "index": 2,
+                        "description": "Place the file reference to the stylesheet.",
+                        "note": "The file is responsible for the styling and utilities.",
+                        "code": {
+                            "code": "import HTMLKit\nimport HTMLKitComponents\n\nstruct ExampleView: View {\n\n\tvar body: Content {\n\t\tDocument(.html5)\n\t\tHtml {\n\t\t\tHead {\n\t\t\t\tTitle {\n\t\t\t\t\t\"Example\"\n\t\t\t\t}\n\t\t\t\tLink()\n\t\t\t\t\t.relationship(.stylesheet)\n\t\t\t\t\t.reference(\"/htmlkit/all.css\")\n\t\t\t}\n\t\t\tBody {\n\t\t\t\tHeading1(\"greeting.world\")\n\t\t\t}\n\t\t}\n\t}\n}",
+                            "highlight": [13, 14, 15]
+                        }
+                    },
+                    {
+                        "index": 3,
+                        "description": "Place the file reference for the javascript query.",
+                        "note": "The file is responsible for…",
+                        "code": {
+                            "code": "import HTMLKit\nimport HTMLKitComponents\n\nstruct ExampleView: View {\n\n\tvar body: Content {\n\t\tDocument(.html5)\n\t\tHtml {\n\t\t\tHead {\n\t\t\t\tTitle {\n\t\t\t\t\t\"Example\"\n\t\t\t\t}\n\t\t\t\tLink()\n\t\t\t\t\t.relationship(.stylesheet)\n\t\t\t\t\t.reference(\"/htmlkit/all.css\")\n\t\t\t\tScript {\n\t\t\t\t}\n\t\t\t\t.source(\"/htmlkit/query.js\")\n\t\t\t}\n\t\t\tBody {\n\t\t\t\tHeading1(\"greeting.world\")\n\t\t\t}\n\t\t}\n\t}\n}",
+                            "highlight": [16, 17, 18]
+                        }
+                    },
+                    {
+                        "index": 4,
+                        "description": "Place the file reference to the javascript files for the components.",
+                        "note": "The file is responsible for…",
+                        "code": {
+                            "code": "import HTMLKit\nimport HTMLKitComponents\n\nstruct ExampleView: View {\n\n\tvar body: Content {\n\t\tDocument(.html5)\n\t\tHtml {\n\t\t\tHead {\n\t\t\t\tTitle {\n\t\t\t\t\t\"Example\"\n\t\t\t\t}\n\t\t\t\tLink()\n\t\t\t\t\t.relationship(.stylesheet)\n\t\t\t\t\t.reference(\"/htmlkit/all.css\")\n\t\t\t\tScript {\n\t\t\t\t}\n\t\t\t\t.source(\"/htmlkit/query.js\")\n\t\t\t}\n\t\t\tBody {\n\t\t\t\tHeading1(\"greeting.world\")\n\t\t\t\tScript {\n\t\t\t\t}\n\t\t\t\t.source(\"/htmlkit/all.js\")\n\t\t\t}\n\t\t}\n\t}\n}",
+                            "highlight": [22, 23, 24]
+                        }
+                    },
+                    {
+                        "index": 5,
+                        "description": "Surround the Heading1 element with a Card component.",
+                        "note": "",
+                        "code": {
+                            "code": "import HTMLKit\nimport HTMLKitComponents\n\nstruct ExampleView: View {\n\n\tvar body: Content {\n\t\tDocument(.html5)\n\t\tHtml {\n\t\t\tHead {\n\t\t\t\tTitle {\n\t\t\t\t\t\"Example\"\n\t\t\t\t}\n\t\t\t\tLink()\n\t\t\t\t\t.relationship(.stylesheet)\n\t\t\t\t\t.reference(\"/htmlkit/all.css\")\n\t\t\t\tScript {\n\t\t\t\t}\n\t\t\t\t.source(\"/htmlkit/query.js\")\n\t\t\t}\n\t\t\tBody {\n\t\t\t\tCard {\n\t\t\t\t\tHeading1(\"greeting.world\")\n\t\t\t\t}\n\t\t\t\tScript {\n\t\t\t\t}\n\t\t\t\t.source(\"/htmlkit/all.js\")\n\t\t\t}\n\t\t}\n\t}\n}",
+                            "highlight": [21, 22, 23]
+                        }
+                    },
+                    {
+                        "index": 6,
+                        "description": "Change the border of the card by using the borderShape modifier.",
+                        "note": "",
+                        "code": {
+                            "code": "import HTMLKit\nimport HTMLKitComponents\n\nstruct ExampleView: View {\n\n\tvar body: Content {\n\t\tDocument(.html5)\n\t\tHtml {\n\t\t\tHead {\n\t\t\t\tTitle {\n\t\t\t\t\t\"Example\"\n\t\t\t\t}\n\t\t\t\tLink()\n\t\t\t\t\t.relationship(.stylesheet)\n\t\t\t\t\t.reference(\"/htmlkit/all.css\")\n\t\t\t\tScript {\n\t\t\t\t}\n\t\t\t\t.source(\"/htmlkit/query.js\")\n\t\t\t}\n\t\t\tBody {\n\t\t\t\tCard {\n\t\t\t\t\tHeading1(\"greeting.world\")\n\t\t\t\t}\n\t\t\t\t.borderShape(.smallrounded)\n\t\t\t\tScript {\n\t\t\t\t}\n\t\t\t\t.source(\"/htmlkit/all.js\")\n\t\t\t}\n\t\t}\n\t}\n}",
+                            "highlight": [24]
+                        }
+                    },
+                    {
+                        "index": 7,
+                        "description": "Select Editor > Run to rerun the application. Refresh your browser.",
+                        "note": ""
+                    }
+                ]
             }
-          },
-          {
-            "description": "Select File > New > File to create a file called routes.swift.",
-            "note": "The file will contain the routes for your application.",
-            "code": {
-                "code": "import Vapor\n\nfunc routes(_ app: Application) throws {\n}",
-                "highlight": []
-            }
-          },
-          {
-            "description": "Select File > New > File to create a file called configure.swift.",
-            "note": "The file will contain your services like routes, databases, providers, and more.",
-            "code": {
-                "code": "import Vapor\n\nfunc configure(_ app: Application) throws {\n\n\ttry routes(app)\n}",
-                "highlight": []
-            }
-          }
         ]
-      },
-      {
-        "title": "Build a view",
-        "description": "Create and combine elements to create a view.",
-        "steps": [
-          {
-            "description": "Select File > New > File to create a new Swift file ExampleView.",
-            "note": ""
-          },
-          {
-            "description": "Import the module HTMLKit at the top of the file.",
-            "note": "",
-            "code": {
-                "code": "import HTMLKit",
-                "highlight": [1]
-            }
-          },
-          {
-            "description": "Define a structure ExampleView and add View conformance.",
-            "note": "",
-            "code": {
-                "code": "import HTMLKit\n\nstruct ExampleView: View {\n\t\n\tvar body: Content {\n\t}\n}",
-                "highlight": [2, 3, 4, 5, 6, 7]
-            }
-          },
-          {
-            "description": "Add the Heading1 element to the body property.",
-            "note": "The Heading1 element represents the <h1> element in HTML.",
-            "code": {
-                "code": "import HTMLKit\n\nstruct ExampleView: View {\n\t\n\tvar body: Content {\n\t\tHeading1 {\n\t\t\t\"Hello World\"\n\t\t}\n\t}\n}",
-                "highlight": [6, 7, 8]
-            }
-          }
-        ]
-      },
-      {
-        "title": "Render the view",
-        "description": "Render the view and transform it into a response.",
-        "steps": [
-          {
-            "description": "Select File > New > File to create a new Swift file ExampleController.",
-            "note": ""
-          },
-          {
-            "description": "Import the modules Vapor and HTMLKitVapor at the top of the file.",
-            "note": "",
-            "code": {
-                "code": "import HTMLKitVapor\nimport Vapor",
-                "highlight": [1, 2]
-            }
-          },
-          {
-            "description": "Create a class ExampleController add RouteCollection conformance.",
-            "note": "",
-            "code": {
-                "code": "import HTMLKitVapor\nimport Vapor\n\nclass ExampleController: RouteCollection {\n\t\n\tfunc boot(routes: RoutesBuilder) throws {\n\t}\n}",
-                "highlight": [3, 4, 5, 6, 7, 8]
-            }
-          },
-          {
-            "description": "Create a class ExampleController add RouteCollection conformance.",
-            "note": "",
-            "code": {
-                "code": "import HTMLKitVapor\nimport Vapor\n\nclass ExampleController: RouteCollection {\n\t\n\tfunc boot(routes: RoutesBuilder) throws {\n\t\t\n\t\troutes.group(\"example\") { routes in\n\t\t\troutes.get(\"index\", use: self.getIndex)\n\t\t}\n\t}\n\t\n\tfunc getIndex(_ req: Request) -> View {\n\t}\n}",
-                "highlight": [7, 8, 9, 10, 12, 13, 14]
-            }
-          },
-          {
-            "description": "Call the method render in the function and pass the view ExampleView to it.",
-            "note": "",
-            "code": {
-                "code": "import HTMLKitVapor\nimport Vapor\n\nclass ExampleController: RouteCollection {\n\t\n\tfunc boot(routes: RoutesBuilder) throws {\n\t\t\n\t\troutes.group(\"example\") { routes in\n\t\t\troutes.get(\"index\", use: self.getIndex)\n\t\t}\n\t}\n\t\n\tfunc getIndex(_ req: Request) -> View {\n\t\t\n\t\treturn req.htmlkit.render(ExampleView())\n\t}\n}",
-                "highlight": [14, 15]
-            }
-          }
-        ]
-      },
-      {
-        "title": "Register the route",
-        "description": "Announce the route to your Vapor application.",
-        "steps": [
-          {
-            "description": "Use the method register to announce the route to your application.",
-            "note": "",
-            "code": {
-                "code": "import Vapor\n\nfunc routes(_ app: Application) throws {\n\t\n\ttry app.register(collection: ExampleController())\n}",
-                "highlight": [4, 5]
-            }
-          },
-          {
-            "description": "Select Editor > Run to build and run the application.",
-            "note": ""
-          },
-          {
-            "description": "Call the route /example/index in your browser.",
-            "note": ""
-          }
-        ]
-      }
-    ]
-  },
-  {
-    "slug": "localize-with-htmlkit",
-    "title": "Localize with HTMLKit",
-    "description": "Discover how to configure localization and enhance the accessibility of your web page.",
-    "sections": [
-      {
-        "title": "Create a message file",
-        "description": "Define translations strings for the given language",
-        "steps": [
-          {
-            "description": "Create a folder Localization to store the strings files.",
-            "note": ""
-          },
-          {
-            "description": "Select File > New > File to create a new strings file message.strings.",
-            "note": ""
-          },
-          {
-            "description": "Add a string.",
-            "note": "The key and value in a given pair are strings of text enclosed in double quotation marks and separated by an equal sign.",
-            "code": {
-                "code": "/* a general greeting */\n\"greeting.world\" = \"Hello World\";",
-                "highlight": [2],
-            }
-          }
-        ]
-      },
-      {
-        "title": "Set up the localization",
-        "description": "Add default settings for the localization.",
-        "steps": [
-          {
-            "description": "Import the module HTMLKitVapor at the top of configure.swift.",
-            "note": "",
-            "code": {
-                "code": "import HTMLKitVapor\nimport Vapor\n\nfunc configure(_ app: Application) throws {\n\n\ttry routes(app)\n}",
-                "highlight": [1],
-            }
-          },
-          {
-            "description": "Specify the path of the directory, where the message files are located.",
-            "note": "",
-            "code": {
-                "code": "import HTMLKitVapor\nimport Vapor\n\nfunc configure(_ app: Application) throws {\n\n\tapp.htmlkit.localization.set(source: currentDirectory)\n\n\ttry routes(app)\n}",
-                "highlight": [6],
-            }
-          },
-          {
-            "description": "Specify the default language, wich serves as a fallback.",
-            "note": "HTMLKit usually uses the language specification in the response header. If the language is not available, it uses the fallback.",
-            "code": {
-                "code": "import HTMLKitVapor\nimport Vapor\n\nfunc configure(_ app: Application) throws {\n\n\tapp.htmlkit.localization.set(source: currentDirectory)\n\n\tapp.htmlkit.localization.set(locale: .english)\n\n\ttry routes(app)\n}",
-                "highlight": [8],
-            }
-          }
-        ]
-      },
-      {
-        "title": "Prepare your interface",
-        "description": "Make the text translatable by providing the string key.",
-        "steps": [
-          {
-            "description": "Use the initializer to provide the string key to the element.",
-            "note": "HTMLKit uses the string key to retrieve the localized value from the translation table.",
-            "code": {
-                "code": "import HTMLKit\n\nstruct ExampleView: View {\n\n\tvar body: Content {\n\t\tHeading1(\"greeting.world\")\n\t}\n}",
-                "highlight": [6],
-            }
-          },
-          {
-            "description": "Select Editor > Run to build and rerun the application. Refresh your browser.",
-            "note": ""
-          }
-        ]
-      }
-    ]
-  },
-  {
-    "slug": "design-with-htmlkit",
-    "title": "Design with HTMLKit",
-    "description": "Use UI components and make your design process more easy.",
-    "sections": [
-      {
-        "title": "Set up dependencies",
-        "description": "Compile the dependencies and add them to your project.",
-        "steps": [
-          {
-            "description": "Create a folder Public outside of the Sources folder.",
-            "note": "The public folder contains any public files that will be served by your application."
-          },
-          {
-            "description": "Make a right click on the project in the project navigator and select ComponentsPlugin. It will build the plugin and start the deployment.",
-            "note": "HTMLKit creates a vendor folder at the public directory."
-          },
-          {
-            "description": "Select Product > Scheme > Edit Scheme to set the working directory for your project.",
-            "note": ""
-          },
-          {
-            "description": "Check the working directory on the Options tab and enter the path to the root folder of your project.",
-            "note": ""
-          }
-        ]
-      },
-      {
-        "title": "Use a component",
-        "description": "Create an interface by using components.",
-        "steps": [
-          {
-            "description": "Import the module HTMLKitComponents at the top of ExampleView.",
-            "note": "",
-            "code": {
-                "code": "import HTMLKit\nimport HTMLKitComponents\n\nstruct ExampleView: View {\n\n\tvar body: Content {\n\t\tHeading1(\"greeting.world\")\n\t}\n}",
-                "highlight": [2]
-            }
-          },
-          {
-            "description": "Give the view a proper HTML structure.",
-            "note": "",
-            "code": {
-                "code": "import HTMLKit\nimport HTMLKitComponents\n\nstruct ExampleView: View {\n\tvar body: Content {\n\t\tDocument(.html5)\n\t\tHtml {\n\t\t\tHead {\n\t\t\t\tTitle {\n\t\t\t\t\t\"Example\"\n\t\t\t\t}\n\t\t\t}\n\t\t\tBody {\n\t\t\t\tHeading1(\"greeting.world\")\n\t\t\t}\n\t\t}\n\t}\n}",
-                "highlight": [7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18]
-            }
-          },
-          {
-            "description": "Place the file reference to the stylesheet.",
-            "note": "The file is responsible for the styling and utilities.",
-            "code": {
-                "code": "import HTMLKit\nimport HTMLKitComponents\n\nstruct ExampleView: View {\n\tvar body: Content {\n\t\tDocument(.html5)\n\t\tHtml {\n\t\t\tHead {\n\t\t\t\tTitle {\n\t\t\t\t\t\"Example\"\n\t\t\t\t}\n\t\t\t\tLink()\n\t\t\t\t\t.relationship(.stylesheet)\n\t\t\t\t\t.reference(\"/htmlkit/all.css\")\n\t\t\t}\n\t\t\tBody {\n\t\t\t\tHeading1(\"greeting.world\")\n\t\t\t}\n\t\t}\n\t}\n}",
-                "highlight": [13, 14, 15]
-            }
-          },
-          {
-            "description": "Place the file reference for the javascript query.",
-            "note": "The file is responsible for…",
-            "code": {
-                "code": "import HTMLKit\nimport HTMLKitComponents\n\nstruct ExampleView: View {\n\tvar body: Content {\n\t\tDocument(.html5)\n\t\tHtml {\n\t\t\tHead {\n\t\t\t\tTitle {\n\t\t\t\t\t\"Example\"\n\t\t\t\t}\n\t\t\t\tLink()\n\t\t\t\t\t.relationship(.stylesheet)\n\t\t\t\t\t.reference(\"/htmlkit/all.css\")\n\t\t\t\tScript {\n\t\t\t\t}\n\t\t\t\t.source(\"/htmlkit/query.js\")\n\t\t\t}\n\t\t\tBody {\n\t\t\t\tHeading1(\"greeting.world\")\n\t\t\t}\n\t\t}\n\t}\n}",
-                "highlight": [16, 17, 18]
-            }
-          },
-          {
-            "description": "Place the file reference to the javascript files for the components.",
-            "note": "The file is responsible for…",
-            "code": {
-                "code": "import HTMLKit\nimport HTMLKitComponents\n\nstruct ExampleView: View {\n\tvar body: Content {\n\t\tDocument(.html5)\n\t\tHtml {\n\t\t\tHead {\n\t\t\t\tTitle {\n\t\t\t\t\t\"Example\"\n\t\t\t\t}\n\t\t\t\tLink()\n\t\t\t\t\t.relationship(.stylesheet)\n\t\t\t\t\t.reference(\"/htmlkit/all.css\")\n\t\t\t\tScript {\n\t\t\t\t}\n\t\t\t\t.source(\"/htmlkit/query.js\")\n\t\t\t}\n\t\t\tBody {\n\t\t\t\tHeading1(\"greeting.world\")\n\t\t\t\tScript {\n\t\t\t\t}\n\t\t\t\t.source(\"/htmlkit/all.js\")\n\t\t\t}\n\t\t}\n\t}\n}",
-                "highlight": [22, 23, 24]
-            }
-          },
-          {
-            "description": "Surround the Heading1 element with a Card component.",
-            "note": "",
-            "code": {
-                "code": "import HTMLKit\nimport HTMLKitComponents\n\nstruct ExampleView: View {\n\tvar body: Content {\n\t\tDocument(.html5)\n\t\tHtml {\n\t\t\tHead {\n\t\t\t\tTitle {\n\t\t\t\t\t\"Example\"\n\t\t\t\t}\n\t\t\t\tLink()\n\t\t\t\t\t.relationship(.stylesheet)\n\t\t\t\t\t.reference(\"/htmlkit/all.css\")\n\t\t\t\tScript {\n\t\t\t\t}\n\t\t\t\t.source(\"/htmlkit/query.js\")\n\t\t\t}\n\t\t\tBody {\n\t\t\t\tCard {\n\t\t\t\t\tHeading1(\"greeting.world\")\n\t\t\t\t}\n\t\t\t\tScript {\n\t\t\t\t}\n\t\t\t\t.source(\"/htmlkit/all.js\")\n\t\t\t}\n\t\t}\n\t}\n}",
-                "highlight": [21, 22, 23]
-            }
-          },
-          {
-            "description": "highlight the border of the card by using the borderShape modifier.",
-            "note": "",
-            "code": {
-                "code": "import HTMLKit\nimport HTMLKitComponents\n\nstruct ExampleView: View {\n\tvar body: Content {\n\t\tDocument(.html5)\n\t\tHtml {\n\t\t\tHead {\n\t\t\t\tTitle {\n\t\t\t\t\t\"Example\"\n\t\t\t\t}\n\t\t\t\tLink()\n\t\t\t\t\t.relationship(.stylesheet)\n\t\t\t\t\t.reference(\"/htmlkit/all.css\")\n\t\t\t\tScript {\n\t\t\t\t}\n\t\t\t\t.source(\"/htmlkit/query.js\")\n\t\t\t}\n\t\t\tBody {\n\t\t\t\tCard {\n\t\t\t\t\tHeading1(\"greeting.world\")\n\t\t\t\t}\n\t\t\t\t.borderShape(.smallrounded)\n\t\t\t\tScript {\n\t\t\t\t}\n\t\t\t\t.source(\"/htmlkit/all.js\")\n\t\t\t}\n\t\t}\n\t}\n}",
-                "highlight": [24]
-            }
-          },
-          {
-            "description": "Select Editor > Run to rerun the application. Refresh your browser.",
-            "note": ""
-          }
-        ]
-      }
-    ]
-  }
+    }
 ]

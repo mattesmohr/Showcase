@@ -1,6 +1,5 @@
 import HTMLKitVapor
 import Vapor
-import HTMLKitConverter
 
 // [/tool]
 final class ToolPageController {

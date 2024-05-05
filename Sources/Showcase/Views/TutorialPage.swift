@@ -64,7 +64,7 @@ enum TutorialPage {
                 Section {
                     VStack(spacing: .large) {
                         for section in tutorial.sections {
-                            VStack(spacing: .large) {
+                            Division {
                                 VStack {
                                     Text {
                                         section.title
@@ -78,24 +78,28 @@ enum TutorialPage {
                                 }
                                 HStack(alignment: .top, spacing: .large) {
                                     VStack(spacing: .large) {
-                                        for (index, step) in section.steps.enumerated() {
-                                            StepView(index: index, description: step.description, note: step.note)
+                                        for step in section.steps {
+                                            StepView(step: step)
                                         }
                                     }
                                     .frame(width: .four)
                                     ZStack {
-                                        for (index, step) in section.steps.enumerated() {
+                                        for step in section.steps {
                                             if let code = step.code {
-                                                ConsoleView(index: index, code: code)
+                                                ConsoleView(code: code)
+                                            } else {
+                                                ConsoleView()
                                             }
                                         }
                                     }
                                     .frame(width: .eight)
                                 }
+                                .frame(width: .twelve, height: .twelve)
                             }
-                            .margin(insets: .bottom, length: .large)
+                            .class("section")
                         }
                     }
+                    .tag("tutorial")
                 }
             }
         }

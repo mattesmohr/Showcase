@@ -229,211 +229,217 @@
     },
     {
         "keyword": "font",
-        "title": "func font() -> some View",
+        "title": "font",
         "type": "method",
         "reference": "/documentation/method/font"
     },
     {
         "keyword": "modalstyle",
-        "title": "func modalStyle() -> some View",
+        "title": "modalStyle",
         "type": "method",
         "reference": "/documentation/method/modal-style"
     },
     {
         "keyword": "textstyle",
-        "title": "func textStyle() -> some View",
+        "title": "textStyle",
         "type": "method",
         "reference": "/documentation/method/text-style"
     },
     {
         "keyword": "foregroundcolor",
-        "title": "func foregroundColor() -> some View",
+        "title": "foregroundColor",
         "type": "method",
         "reference": "/documentation/method/foreground-color"
     },
     {
         "keyword": "fontsize",
-        "title": "func fontSize() -> some View",
+        "title": "fontSize",
         "type": "method",
         "reference": "/documentation/method/font-size"
     },
     {
+        "keyword": "snippetstyle",
+        "title": "snippetStyle",
+        "type": "method",
+        "reference": "/documentation/method/snippet-style"
+    },
+    {
         "keyword": "fontweight",
-        "title": "func fontWeight() -> some View",
+        "title": "fontWeight",
         "type": "method",
         "reference": "/documentation/method/font-weight"
     },
     {
         "keyword": "textcase",
-        "title": "func textCase() -> some View",
+        "title": "textCase",
         "type": "method",
         "reference": "/documentation/method/text-case"
     },
     {
         "keyword": "fontstyle",
-        "title": "func fontStyle() -> some View",
+        "title": "fontStyle",
         "type": "method",
         "reference": "/documentation/method/font-style"
     },
     {
         "keyword": "textdecoration",
-        "title": "func textDecoration() -> some View",
+        "title": "textDecoration",
         "type": "method",
         "reference": "/documentation/method/text-decoration"
     },
     {
         "keyword": "linespacing",
-        "title": "func lineSpacing() -> some View",
+        "title": "lineSpacing",
         "type": "method",
         "reference": "/documentation/method/line-spacing"
     },
     {
         "keyword": "linelimit",
-        "title": "func lineLimit() -> some View",
+        "title": "lineLimit",
         "type": "method",
         "reference": "/documentation/method/line-limit"
     },
     {
         "keyword": "shadow",
-        "title": "func shadow() -> some View",
+        "title": "shadow",
         "type": "method",
         "reference": "/documentation/method/shadow"
     },
     {
         "keyword": "opacity",
-        "title": "func opacity() -> some View",
+        "title": "opacity",
         "type": "method",
         "reference": "/documentation/method/opacity"
     },
     {
         "keyword": "zindex",
-        "title": "func zIndex() -> some View",
+        "title": "zIndex",
         "type": "method",
         "reference": "/documentation/method/zindex"
     },
     {
         "keyword": "backgroundcolor",
-        "title": "func backgroundColor() -> some View",
+        "title": "backgroundColor",
         "type": "method",
         "reference": "/documentation/method/background-color"
     },
     {
         "keyword": "colorscheme",
-        "title": "func colorScheme() -> some View",
+        "title": "colorScheme",
         "type": "method",
         "reference": "/documentation/method/font-style"
     },
     {
         "keyword": "padding",
-        "title": "func padding() -> some View",
+        "title": "padding",
         "type": "method",
         "reference": "/documentation/method/padding"
     },
     {
         "keyword": "bordershape",
-        "title": "func borderShape() -> some View",
+        "title": "borderShape",
         "type": "method",
         "reference": "/documentation/method/border-shape"
     },
     {
         "keyword": "tag",
-        "title": "func tag() -> some View",
+        "title": "tag",
         "type": "method",
         "reference": "/documentation/method/tag"
     },
     {
         "keyword": "border",
-        "title": "func border() -> some View",
+        "title": "border",
         "type": "method",
         "reference": "/documentation/method/border"
     },
     {
         "keyword": "frame",
-        "title": "func frame() -> some View",
+        "title": "frame",
         "type": "method",
         "reference": "/documentation/method/frame"
     },
     {
         "keyword": "margin",
-        "title": "func margin() -> some View",
+        "title": "margin",
         "type": "method",
         "reference": "/documentation/method/margin"
     },
     {
         "keyword": "focuscolor",
-        "title": "func focusColor() -> some View",
+        "title": "focusColor",
         "type": "method",
         "reference": "/documentation/method/focus-color"
     },
     {
         "keyword": "aspectratio",
-        "title": "func aspectRatio() -> some View",
+        "title": "aspectRatio",
         "type": "method",
         "reference": "/documentation/method/aspect-ratio"
     },
     {
         "keyword": "imagescale",
-        "title": "func imageScale() -> some View",
+        "title": "imageScale",
         "type": "method",
         "reference": "/documentation/method/image-scale"
     },
     {
         "keyword": "cardstyle",
-        "title": "func cardStyle() -> some View",
+        "title": "cardStyle",
         "type": "method",
         "reference": "/documentation/method/card-style"
     },
     {
         "keyword": "navigationstyle",
-        "title": "func navigationStyle() -> some View",
+        "title": "navigationStyle",
         "type": "method",
         "reference": "/documentation/method/navigation-style"
     },
     {
         "keyword": "clipshape",
-        "title": "func clipShape() -> some View",
+        "title": "clipShape",
         "type": "method",
         "reference": "/documentation/method/clip-shape"
     },
     {
         "keyword": "blur",
-        "title": "func blur() -> some View",
+        "title": "blur",
         "type": "method",
         "reference": "/documentation/method/blur"
     },
     {
         "keyword": "grayscaledepth",
-        "title": "func grayscaleDepth() -> some View",
+        "title": "grayscaleDepth",
         "type": "method",
         "reference": "/documentation/method/grayscale-depth"
     },
     {
         "keyword": "brightness",
-        "title": "func brightness() -> some View",
+        "title": "brightness",
         "type": "method",
         "reference": "/documentation/method/brightness"
     },
     {
         "keyword": "saturation",
-        "title": "func saturation() -> some View",
+        "title": "saturation",
         "type": "method",
         "reference": "/documentation/method/saturation"
     },
     {
         "keyword": "contrast",
-        "title": "func contrast() -> some View",
+        "title": "contrast",
         "type": "method",
         "reference": "/documentation/method/contrast"
     },
     {
         "keyword": "controlsize",
-        "title": "func controlSize() -> some View",
+        "title": "controlSize",
         "type": "method",
         "reference": "/documentation/method/control-size"
     },
     {
-        "keyword": "buttnostyle",
-        "title": "func buttonStyle() -> some View",
+        "keyword": "buttonstyle",
+        "title": "buttonStyle",
         "type": "method",
         "reference": "/documentation/method/button-style"
     },
@@ -730,5 +736,89 @@
         "title": "EdgeSet",
         "type": "enumeration",
         "reference": "/documentation/enumeration/edge-set"
+    },
+    {
+        "keyword": "meta",
+        "title": "Meta",
+        "type": "structure",
+        "reference": "/documentation/structure/meta"
+    },
+    {
+        "keyword": "inputtype",
+        "title": "InputType",
+        "type": "enumeration",
+        "reference": "/documentation/enumeration/input-type"
+    },
+    {
+        "keyword": "elements",
+        "title": "Elements",
+        "type": "article",
+        "reference": "/documentation/elements"
+    },
+    {
+        "keyword": "components",
+        "title": "Components",
+        "type": "article",
+        "reference": "/documentation/components"
+    },
+    {
+        "keyword": "security",
+        "title": "Security",
+        "type": "article",
+        "reference": "/documentation/security"
+    },
+    {
+        "keyword": "localization",
+        "title": "Localization",
+        "type": "article",
+        "reference": "/documentation/localization"
+    },
+    {
+        "keyword": "onhover",
+        "title": "onHover",
+        "type": "method",
+        "reference": "/documentation/method/onhover"
+    },
+    {
+        "keyword": "onleave",
+        "title": "onLeave",
+        "type": "method",
+        "reference": "/documentation/method/onleave"
+    },
+    {
+        "keyword": "onsubmit",
+        "title": "onSubmit",
+        "type": "method",
+        "reference": "/documentation/method/onsubmit"
+    },
+    {
+        "keyword": "ondrag",
+        "title": "onDrag",
+        "type": "method",
+        "reference": "/documentation/method/ondrag"
+    },
+    {
+        "keyword": "ondrop",
+        "title": "onDrop",
+        "type": "method",
+        "reference": "/documentation/method/ondrop"
+    },
+    {
+        "keyword": "onpress",
+        "title": "onPress",
+        "type": "method",
+        "reference": "/documentation/method/onpress"
+    },
+    {
+        "keyword": "ontab",
+        "title": "onTab",
+        "type": "method",
+        "reference": "/documentation/method/ontab"
+    },
+    {
+        "keyword": "onclick",
+        "title": "onClick",
+        "type": "method",
+        "reference": "/documentation/method/onclick"
     }
 ]

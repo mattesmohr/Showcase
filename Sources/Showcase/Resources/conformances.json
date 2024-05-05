@@ -4,55 +4,55 @@
         "type": "protocol",
         "symbols": [
             {
-                "code": "func opacity(_ value: OpacityValue) -> Self",
+                "code": "func opacity(_ value: OpacityValue) &minus;> Self",
                 "comment": "Sets the opacity of the view.",
                 "type": "method",
                 "reference": "opacity"
             },
             {
-                "code": "func zIndex(_ index: PositionIndex) -> Self",
+                "code": "func zIndex(_ index: PositionIndex) &minus;> Self",
                 "comment": "Sets the position of the view.",
                 "type": "method",
                 "reference": "zindex"
             },
             {
-                "code": "func backgroundColor(_ color: BackgroundColor) -> Self",
+                "code": "func backgroundColor(_ color: BackgroundColor) &minus;> Self",
                 "comment": "Sets the background color for the view.",
                 "type": "method",
                 "reference": "background-color"
             },
             {
-                "code": "func colorScheme(_ scheme: ColorScheme) -> Self",
+                "code": "func colorScheme(_ scheme: ColorScheme) &minus;> Self",
                 "comment": "Sets the color appearence of the view.",
                 "type": "method",
                 "reference": "color-scheme"
             },
             {
-                "code": "func padding(insets: EdgeSet, length: PaddingLength) -> Self",
+                "code": "func padding(insets: EdgeSet, length: PaddingLength) &minus;> Self",
                 "comment": "Sets the padding of the view.",
                 "type": "method",
                 "reference": "padding"
             },
             {
-                "code": "func borderShape(_ shape: BorderShape) -> Self",
+                "code": "func borderShape(_ shape: BorderShape) &minus;> Self",
                 "comment": "Sets the shape of the view border.",
                 "type": "method",
                 "reference": "border-shape"
             },
             {
-                "code": "func border(_ color: BorderColor, width: BorderWidth) -> Self",
+                "code": "func border(_ color: BorderColor, width: BorderWidth) &minus;> Self",
                 "comment": "Sets the border for the view.",
                 "type": "method",
                 "reference": "border"
             },
             {
-                "code": "func frame(width: ViewWidth, height: ViewHeight?, alignment: FrameAlignment?) -> Self",
+                "code": "func frame(width: ViewWidth, height: ViewHeight?, alignment: FrameAlignment?) &minus;> Self",
                 "comment": "Sets the frame size for the view.",
                 "type": "method",
                 "reference": "frame"
             },
             {
-                "code": "func margin(insets: EdgeSet, length: MarginLength) -> Self",
+                "code": "func margin(insets: EdgeSet, length: MarginLength) &minus;> Self",
                 "comment": " Sets the margin of the view.",
                 "type": "method",
                 "reference": "margin"
@@ -64,25 +64,25 @@
         "type": "protocol",
         "symbols": [
             {
-                "code": "func controlSize(_ size: ControlSize) -> Self",
+                "code": "func controlSize(_ size: ControlSize) &minus;> Self",
                 "comment": "Sets the size of the button.",
                 "type": "method",
                 "reference": "control-size"
             },
             {
-                "code": "func buttonStyle(_ style: ButtonStyle) -> Self",
+                "code": "func buttonStyle(_ style: ButtonStyle) &minus;> Self",
                 "comment": "Sets the style of the button.",
                 "type": "method",
                 "reference": "button-style"
             },
             {
-                "code": "func buttonStyle(_ style: ButtonConfiguration) -> Self",
+                "code": "func buttonStyle(_ style: ButtonConfiguration) &minus;> Self",
                 "comment": "Sets the style of the button.",
                 "type": "method",
                 "reference": "button-style"
             },
             {
-                "code": "func disabled(_ condition: Bool) -> Self",
+                "code": "func disabled(_ condition: Bool) &minus;> Self",
                 "comment": "Sets the state of the button.",
                 "type": "method",
                 "reference": "disabled"
@@ -94,19 +94,19 @@
         "type": "protocol",
         "symbols": [
             {
-                "code": "func aspectRatio(_ ratio: AspectRatio, fit: ObjectFit) -> Self",
+                "code": "func aspectRatio(_ ratio: AspectRatio, fit: ObjectFit) &minus;> Self",
                 "comment": "Sets how the content should be resized to fit its parent.",
                 "type": "method",
                 "reference": "aspect-ratio"
             },
             {
-                "code": "func imageScale(_ scale: ImageScale) -> Self",
+                "code": "func imageScale(_ scale: ImageScale) &minus;> Self",
                 "comment": "Sets the scale of the image.",
                 "type": "method",
                 "reference": "image-scale"
             },
             {
-                "code": "func clipShape(_ shape: ClipShape) -> Self",
+                "code": "func clipShape(_ shape: ClipShape) &minus;> Self",
                 "comment": "Initializes the HTML element.",
                 "type": "method",
                 "reference": "clip-shape"
@@ -118,7 +118,7 @@
         "type": "protocol",
         "symbols": [
             {
-                "code": "func focusColor(_ color: Tokens.FocusColor) -> Self",
+                "code": "func focusColor(_ color: Tokens.FocusColor) &minus;> Self",
                 "comment": "Sets the focus color for the input field.",
                 "type": "method",
                 "reference": "focus-color"
@@ -130,73 +130,73 @@
         "type": "protocol",
         "symbols": [
             {
-                "code": "func font(_ family: FontFamily) -> Self",
+                "code": "func font(_ family: FontFamily) &minus;> Self",
                 "comment": "Sets the focus color of the input.",
                 "type": "method",
                 "reference": "font"
             },
             {
-                "code": "func textStyle(_ style: TextStyle) -> Self",
+                "code": "func textStyle(_ style: TextStyle) &minus;> Self",
                 "comment": "Sets the style of the text.",
                 "type": "method",
                 "reference": "text-style"
             },
             {
-                "code": "func textStyle(_ style: TextConfiguration) -> Self",
+                "code": "func textStyle(_ style: TextConfiguration) &minus;> Self",
                 "comment": "Sets the style of the text.",
                 "type": "method",
                 "reference": "text-style"
             },
             {
-                "code": "func foregroundColor(_ color: ForegroundColor) -> Self",
+                "code": "func foregroundColor(_ color: ForegroundColor) &minus;> Self",
                 "comment": "Sets the foreground color of the text.",
                 "type": "method",
                 "reference": "foreground-color"
             },
             {
-                "code": "func fontSize(_ size: FontSize) -> Self",
+                "code": "func fontSize(_ size: FontSize) &minus;> Self",
                 "comment": "Sets the font size of the text.",
                 "type": "method",
                 "reference": "font-size"
             },
             {
-                "code": "func fontWeight(_ weight: FontWeight) -> Self",
+                "code": "func fontWeight(_ weight: FontWeight) &minus;> Self",
                 "comment": "Sets the font weight of the text.",
                 "type": "method",
                 "reference": "font-weight"
             },
             {
-                "code": "func textCase(_ case: TextCase) -> Self",
+                "code": "func textCase(_ case: TextCase) &minus;> Self",
                 "comment": "Sets the text case of the text.",
                 "type": "method",
                 "reference": "text-case"
             },
             {
-                "code": "func fontStyle(_ style: FontStyle) -> Self",
+                "code": "func fontStyle(_ style: FontStyle) &minus;> Self",
                 "comment": "Sets the font style of the text.",
                 "type": "method",
                 "reference": "font-style"
             },
             {
-                "code": "func textDecoration(_ decoration: TextDecoration) -> Self",
+                "code": "func textDecoration(_ decoration: TextDecoration) &minus;> Self",
                 "comment": "Sets the decoration for the text.",
                 "type": "method",
                 "reference": "text-decoration"
             },
             {
-                "code": "func lineSpacing(_ height: LineHeight) -> Self",
+                "code": "func lineSpacing(_ height: LineHeight) &minus;> Self",
                 "comment": "Sets the line height for the text.",
                 "type": "method",
                 "reference": "line-spacing"
             },
             {
-                "code": "func lineLimit(_ limit: LineLimit) -> Self",
+                "code": "func lineLimit(_ limit: LineLimit) &minus;> Self",
                 "comment": "Limits the amount of lines.",
                 "type": "method",
                 "reference": "line-limit"
             },
             {
-                "code": "func shadow(_ radius: Tokens.BlurRadius, color: ShadowColor) -> Self",
+                "code": "func shadow(_ radius: Tokens.BlurRadius, color: ShadowColor) &minus;> Self",
                 "comment": "Adds drop shadow to the text",
                 "type": "method",
                 "reference": "shadow"
@@ -208,42 +208,114 @@
         "type": "protocol",
         "symbols": [
             {
-                "code": "func blur(_ size: BlurLevel) -> Self",
+                "code": "func blur(_ size: BlurLevel) &minus;> Self",
                 "comment": "Specifies the intensity of blur for the view.",
                 "type": "method",
                 "reference": "blur"
             },
             {
-                "code": "func grayscale(_ size: GrayscaleDepth) -> Self",
+                "code": "func grayscale(_ size: GrayscaleDepth) &minus;> Self",
                 "comment": "Adjusts the grayscale depth of the view.",
                 "type": "method",
                 "reference": "grayscale"
             },
             {
-                "code": "func brightness(_ size: BrightnessLevel) -> Self",
+                "code": "func brightness(_ size: BrightnessLevel) &minus;> Self",
                 "comment": "Sets the level of brightness of the view.",
                 "type": "method",
                 "reference": "brightness"
             },
             {
-                "code": "func saturation(_ size: SaturationLevel) -> Self",
+                "code": "func saturation(_ size: SaturationLevel) &minus;> Self",
                 "comment": "Sets the level of saturation of the view.",
                 "type": "method",
                 "reference": "saturation"
             },
             {
-                "code": "func contrast(_ size: ContrastLevel) -> Self",
+                "code": "func contrast(_ size: ContrastLevel) &minus;> Self",
                 "comment": "Specifies the level of contrast for the view.",
                 "type": "method",
                 "reference": "contrast"
             },
             {
-                "code": "func shadow(_ radius: BlurRadius, color: ShadowColor) -> Self",
+                "code": "func shadow(_ radius: BlurRadius, color: ShadowColor) &minus;> Self",
                 "comment": "Adds drop shadow to the view.",
                 "type": "method",
                 "reference": "shadow"
             }
         ]
     },
+    {
+        "name": "dragevent",
+        "type": "protocol",
+        "symbols": [
+            {
+                "code": "func onDrag(@ActionBuilder action: (ViewAction) &minus;> [Action]) &minus;> Self",
+                "comment": "Acts on a drag event.",
+                "type": "method",
+                "reference": "ondrag"
+            },
+            {
+                "code": "func onDrop(@ActionBuilder action: (ViewAction) &minus;> [Action]) &minus;> Self",
+                "comment": "Acts on a drop event.",
+                "type": "method",
+                "reference": "ondrop"
+            }
+        ]
+    },
+    {
+        "name": "formevent",
+        "type": "protocol",
+        "symbols": [
+            {
+                "code": "func onSubmit(@ActionBuilder action: (SubmitAction) &minus;> [Action]) &minus;> Self",
+                "comment": "Acts on a drag event.",
+                "type": "method",
+                "reference": "onsubmit"
+            }
+        ]
+    },
+    {
+        "name": "mouseevent",
+        "type": "protocol",
+        "symbols": [
+            {
+                "code": "func onHover(@ActionBuilder action: (ViewAction) &minus;> [Action]) &minus;> Self",
+                "comment": "Acts on a drag event.",
+                "type": "method",
+                "reference": "onhover"
+            },
+            {
+                "code": "func onLeave(@ActionBuilder action: (ViewAction) &minus;> [Action]) &minus;> Self",
+                "comment": "Acts on a drag event.",
+                "type": "method",
+                "reference": "onleave"
+            }
+        ]
+    },
+    {
+        "name": "pressevent",
+        "type": "protocol",
+        "symbols": [
+            {
+                "code": "func onClick(@ActionBuilder action: (ViewAction) &minus;> [Action]) &minus;> Self",
+                "comment": "Acts on a drag event.",
+                "type": "method",
+                "reference": "onclick"
+            },
+            {
+                "code": "func onTap(@ActionBuilder action: (ViewAction) &minus;> [Action]) &minus;> Self",
+                "comment": "Acts on a drag event.",
+                "type": "method",
+                "reference": "ontab"
+            },
+            {
+                "code": "func onPress(@ActionBuilder action: (ViewAction) &minus;> [Action]) &minus;> Self",
+                "comment": "Acts on a drag event.",
+                "type": "method",
+                "reference": "onpress"
+            }
+        ]
+    }
 ]
 
