@@ -12,7 +12,6 @@ enum ToolPage {
                         "Tools"
                     }
                     .fontSize(.large)
-                    .foregroundColor(.accent)
                 }
                 Section {
                     Grid(ratio: .third) {
@@ -24,7 +23,6 @@ enum ToolPage {
                                 "Converter"
                             }
                             .fontSize(.large)
-                            .foregroundColor(.accent)
                             Text {
                                 "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo."
                             }
@@ -50,7 +48,6 @@ enum ToolPage {
                         "Converter"
                     }
                     .fontSize(.large)
-                    .foregroundColor(.accent)
                 }
                 Section {
                     HStack(alignment: .top, spacing: .small) {

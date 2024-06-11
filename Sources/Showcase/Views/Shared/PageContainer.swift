@@ -41,6 +41,19 @@ public struct PageContainer: View {
                 .source("/highlight/swift.js")
             }
             Body {
+                ZStack {
+                    VStack(alignment: .center) {
+                        Link(destination: "") {
+                            Text {
+                                "Watch the latest videos about Swift"
+                            }
+                            .fontSize(.small)
+                        }
+                        .foregroundColor(.white)
+                    }
+                    .backgroundColor(.accent)
+                    .padding()
+                }
                 Header {
                     Section {
                         HStack(spacing: .between) {

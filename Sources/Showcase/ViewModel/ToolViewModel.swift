@@ -131,4 +131,13 @@ struct BlogArticle: Codable {
     let subtitle: String
     let excerpt: String
     let content: String
+    let author: BlogAuthor
+    let published: Date
+    let articles: [BlogArticle]?
+}
+
+struct BlogAuthor: Codable {
+    
+    let name: String
+    let position: String
 }

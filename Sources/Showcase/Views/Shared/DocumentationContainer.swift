@@ -12,16 +12,52 @@ struct DocumentationContainer: View {
     
     var body: Content {
         PageContainer {
+            Header {
+                Text {
+                    "Documentation"
+                }
+                .fontSize(.large)
+            }
             Section {
-                Button(role: .button) {
-                    "Open"
-                }
-                .tag("button")
-                .onClick { action in
-                    action.open("modal")
-                }
-                VStack(spacing: .small) {
-                    content
+                HStack(alignment: .top, spacing: .small) {
+                    VStack(spacing: .small) {
+                        Button(role: .button) {
+                            "Search"
+                        }
+                        .borderShape(.smallrounded)
+                        .tag("button")
+                        .onClick { action in
+                            action.open("modal")
+                        }
+                        List(direction: .vertical) {
+                            Link(destination: "/documentation") {
+                                Text {
+                                    "Introduction"
+                                }
+                            }
+                            Link(destination: "#") {
+                                Text {
+                                    "Components"
+                                }
+                            }
+                            Link(destination: "#") {
+                                Text {
+                                    "Templates"
+                                }
+                            }
+                            Link(destination: "#") {
+                                Text {
+                                    "Security"
+                                }
+                            }
+                        }
+                        .listSpacing(.small)
+                    }
+                    .frame(width: .two)
+                    VStack(spacing: .small) {
+                        content
+                    }
+                    .frame(width: .nine)
                 }
                 .frame(width: .twelve)
                 Modal {

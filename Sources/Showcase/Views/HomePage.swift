@@ -28,79 +28,140 @@ enum HomePage {
                     .frame(width: .twelve)
                 }
                 Section {
-                    VStack(spacing: .small) {
-                        Text {
-                            MarkdownString {
-                                "HTMLKit is a declarative HTML framework writtin in Swift. It helps you create and render HTML templates in a type-safe and performant way. It consists of a list of features, like **declarative syntax**, **language localization**, **dynamic context**."
+                    VStack(spacing: .large) {
+                        VStack(alignment: .center) {
+                            Text {
+                                "Learn about"
                             }
-                        }
-                        .fontSize(.medium)
-                        Text {
-                            "Motivation"
-                        }
-                        .fontSize(.large)
-                        .foregroundColor(.accent)
-                        Text {
-                            MarkdownString {
-                                "HTMLKit aims to broaden Vapor's frontend capabilities while simplifying website creation for you."
+                            .fontSize(.large)
+                            .bold()
+                            Text(alignment: .center) {
+                                "Browse the latest documentation, wich provides you with comprehensive details about the features and functionalities of HTMLKit."
                             }
+                            .fontSize(.medium)
                         }
-                        .fontSize(.medium)
+                        HStack(alignment: .center, spacing: .large) {
+                            VStack(spacing: .small) {
+                                Text {
+                                    "Declarative framework"
+                                }
+                                .fontSize(.large)
+                                Text {
+                                    MarkdownString {
+                                        "Explore a declarative framework, that lets you write HTML directly in Swift. You gain the advantages of Swift's strong typing, safety features, and expressive syntax, resulting in more maintainable and error-resistant code."
+                                    }
+                                }
+                            }
+                            .frame(width: .six)
+                            ThumbnailView {
+                            }
+                            .frame(width: .six)
+                        }
+                        HStack(alignment: .center, spacing: .large) {
+                            ThumbnailView {
+                            }
+                            .frame(width: .six)
+                            VStack(spacing: .small) {
+                                Text {
+                                    "Unified codebase"
+                                }
+                                .fontSize(.large)
+                                Text {
+                                    MarkdownString {
+                                        "Alongside web frameworks like Vapor or Hummingbird, as an additional frontend option for your web application. Eliminating the need to switch between different languages and environments, creating a cohesive and efficient experience."
+                                    }
+                                }
+                            }
+                            .frame(width: .six)
+                        }
+                        HStack(alignment: .center, spacing: .large) {
+                            VStack(spacing: .small) {
+                                Text {
+                                    "Community driven"
+                                }
+                                .fontSize(.large)
+                                Text {
+                                    MarkdownString {
+                                        "Built by the community, who are passionate about the Swift language and web development to bring this two worlds together."
+                                    }
+                                }
+                            }
+                            .frame(width: .six)
+                            ThumbnailView {
+                            }
+                            .frame(width: .six)
+                        }
                     }
                 }
                 Footer {
-                    HStack(spacing: .small) {
-                        VStack(spacing: .small) {
-                            ThumbnailView {
-                            }
-                            .frame(width: .twelve)
+                    VStack(spacing: .large) {
+                        VStack(alignment: .center) {
                             Text {
-                                "Documentation"
+                                "Start developing"
                             }
                             .fontSize(.large)
-                            .foregroundColor(.accent)
-                            Text {
-                                "Browse the latest API documentation."
+                            .bold()
+                            Text(alignment: .center) {
+                                "Browse the latest documentation, wich provides you with comprehensive details about the features and functionalities of HTMLKit."
                             }
-                            Link(destination: "/documentation") {
-                                "Read more"
-                            }
-                            .foregroundColor(.accent)
+                            .fontSize(.medium)
                         }
-                        VStack(spacing: .small) {
-                            ThumbnailView {
-                                Image(source: "/assets/test.svg")
+                        HStack(alignment: .top, spacing: .small) {
+                            VStack(spacing: .small) {
+                                ThumbnailView {
+                                }
+                                .frame(width: .twelve)
+                                Text {
+                                    "Documentation"
+                                }
+                                .fontSize(.large)
+                                Text {
+                                    "Browse the latest documentation, wich provides you with comprehensive details about the features and functionalities of HTMLKit."
+                                }
+                                Link(destination: "/documentation") {
+                                    Text {
+                                        "Read more"
+                                    }
+                                }
+                                .foregroundColor(.accent)
                             }
-                            .frame(width: .twelve)
-                            Text {
-                                "Tutorials"
+                            VStack(spacing: .small) {
+                                ThumbnailView {
+                                }
+                                .frame(width: .twelve)
+                                Text {
+                                    "Tutorials"
+                                }
+                                .fontSize(.large)
+                                Text {
+                                    "Follow the step by step instructions to understand how to integrate and utilize HTMLKit effectively into your applications."
+                                }
+                                Link(destination: "/tutorial") {
+                                    Text {
+                                        "Read more"
+                                    }
+                                }
+                                .foregroundColor(.accent)
                             }
-                            .fontSize(.large)
-                            .foregroundColor(.accent)
-                            Text {
-                                "Follow the step by step instructions."
+                            VStack(spacing: .small) {
+                                ThumbnailView {
+                                }
+                                .frame(width: .twelve)
+                                Text {
+                                    "Examples"
+                                }
+                                .fontSize(.large)
+                                Text {
+                                    "Explore live examples and see the capabilities of HTMLKit in action."
+                                }
+                                Link(destination: "/example") {
+                                    Text {
+                                        "Read more"
+                                    }
+                                }
+                                .frame(width: .twelve)
+                                .foregroundColor(.accent)
                             }
-                            Link(destination: "/tutorial") {
-                                "Read more"
-                            }
-                            .foregroundColor(.accent)
-                        }
-                        VStack(spacing: .small) {
-                            ThumbnailView {
-                            }
-                            .frame(width: .twelve)
-                            Text {
-                                "Examples"
-                            }
-                            .fontSize(.large)
-                            .foregroundColor(.accent)
-                            Text {
-                                "See live examples."
-                            }
-                            Link(destination: "/example") {
-                                "Read more"
-                            }
-                            .foregroundColor(.accent)
                         }
                     }
                 }

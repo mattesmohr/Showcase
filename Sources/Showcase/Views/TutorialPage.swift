@@ -14,21 +14,18 @@ enum TutorialPage {
                         "Tutorials"
                     }
                     .fontSize(.large)
-                    .foregroundColor(.accent)
                 }
                 Section {
-                    Grid(ratio: .fifth, spacing: .small) {
+                    Grid(ratio: .third, spacing: .small) {
                         for tutorial in tutorials {
                             VStack(spacing: .small) {
                                 ThumbnailView {
-                                    Image(source: "/assets/test.svg")
                                 }
                                 .frame(width: .twelve)
                                 Text {
                                     tutorial.title
                                 }
                                 .fontSize(.large)
-                                .foregroundColor(.accent)
                                 Text {
                                     tutorial.description
                                 }
@@ -55,7 +52,6 @@ enum TutorialPage {
                         tutorial.title
                     }
                     .fontSize(.large)
-                    .foregroundColor(.accent)
                     Text {
                         tutorial.description
                     }

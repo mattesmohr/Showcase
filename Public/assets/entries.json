@@ -66,6 +66,12 @@
         "reference": "/documentation/structure/form"
     },
     {
+        "keyword": "disclosure",
+        "title": "Disclosure",
+        "type": "structure",
+        "reference": "/documentation/structure/disclosure"
+    },
+    {
         "keyword": "textfield",
         "title": "TextField",
         "type": "structure",
@@ -768,6 +774,12 @@
         "reference": "/documentation/security"
     },
     {
+        "keyword": "environment",
+        "title": "Environment",
+        "type": "article",
+        "reference": "/documentation/environment"
+    },
+    {
         "keyword": "localization",
         "title": "Localization",
         "type": "article",
@@ -820,5 +832,41 @@
         "title": "onClick",
         "type": "method",
         "reference": "/documentation/method/onclick"
+    },
+    {
+        "keyword": "tint",
+        "title": "tint",
+        "type": "method",
+        "reference": "/documentation/method/tint"
+    },
+    {
+        "keyword": "progressstyle",
+        "title": "progressStyle",
+        "type": "method",
+        "reference": "/documentation/method/progress-style"
+    },
+    {
+        "keyword": "tintcolor",
+        "title": "TintColor",
+        "type": "enumeration",
+        "reference": "/documentation/enumeration/tint-color"
+    },
+    {
+        "keyword": "progressstyle",
+        "title": "ProgressStyle",
+        "type": "enumeration",
+        "reference": "/documentation/enumeration/progress-style"
+    },
+    {
+        "keyword": "symbolname",
+        "title": "SymbolName",
+        "type": "enumeration",
+        "reference": "/documentation/enumeration/symbol-name"
+    },
+    {
+        "keyword": "video",
+        "title": "Video",
+        "type": "structure",
+        "reference": "/documentation/structure/video"
     }
 ]

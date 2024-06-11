@@ -186,6 +186,12 @@ final class DocumentationPageController {
         case "link":
             return try await request.htmlkit.render(DocumentationPage.LinkView(article: article))
             
+        case "disclosure":
+            return try await request.htmlkit.render(DocumentationPage.DisclosureView(article: article))
+            
+        case "video":
+            return try await request.htmlkit.render(DocumentationPage.VideoView(article: article))
+            
         default:
             return try await request.htmlkit.render(DocumentationPage.StructureView(article: article))
         }
@@ -324,6 +330,21 @@ final class DocumentationPageController {
             
         case "inner-radius":
             return try await request.htmlkit.render(DocumentationPage.InnerRadiusEnumView(article: article))
+            
+        case "progress-style":
+            return try await request.htmlkit.render(DocumentationPage.ProgressStyleEnumView(article: article))
+            
+        case "tint-color":
+            return try await request.htmlkit.render(DocumentationPage.TintColorEnumView(article: article))
+            
+        case "symbol-name":
+            return try await request.htmlkit.render(DocumentationPage.SymbolNameEnumView(article: article))
+            
+        case "navigation-style":
+            return try await request.htmlkit.render(DocumentationPage.NavigationStyleEnumView(article: article))
+            
+        case "button-style":
+            return try await request.htmlkit.render(DocumentationPage.ButtonStyleEnumView(article: article))
             
         default:
             return try await request.htmlkit.render(DocumentationPage.EnumerationView(article: article))

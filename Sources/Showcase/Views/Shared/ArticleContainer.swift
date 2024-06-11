@@ -41,7 +41,6 @@ struct ArticleContainer: View {
                         article.title
                     }
                     .fontSize(.large)
-                    .foregroundColor(.accent)
                     Text {
                         article.description
                     }

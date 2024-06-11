@@ -12,7 +12,6 @@ enum LegalPage {
                         "Legal notice"
                     }
                     .fontSize(.large)
-                    .foregroundColor(.accent)
                 }
                 Section {
                     VStack(spacing: .large) {

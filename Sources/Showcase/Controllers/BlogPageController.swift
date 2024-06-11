@@ -9,7 +9,10 @@ final class BlogPageController {
         
         if let url = Bundle.module.url(forResource: "articles", withExtension: "json") {
             
-            let articles = try JSONDecoder().decode([BlogArticle].self, from: Data(contentsOf: url))
+            let decoder = JSONDecoder()
+            decoder.dateDecodingStrategy = .iso8601
+            
+            let articles = try decoder.decode([BlogArticle].self, from: Data(contentsOf: url))
             
             return try await request.htmlkit.render(BlogPage.IndexView(articles: articles))
         }
@@ -28,7 +31,10 @@ final class BlogPageController {
             throw Abort(.internalServerError)
         }
         
-        let articles = try JSONDecoder().decode([BlogArticle].self, from: Data(contentsOf: url))
+        let decoder = JSONDecoder()
+        decoder.dateDecodingStrategy = .iso8601
+        
+        let articles = try decoder.decode([BlogArticle].self, from: Data(contentsOf: url))
         
         guard let article = articles.filter({ $0.slug == slug }).first else {
             throw Abort(.notFound)

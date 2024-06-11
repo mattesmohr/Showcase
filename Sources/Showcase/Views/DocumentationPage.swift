@@ -7,54 +7,62 @@ enum DocumentationPage {
         
         var body: Content {
             DocumentationContainer {
-                VStack(spacing: .small) {
-                    Text {
-                        "Documentation"
-                    }
-                    .fontSize(.large)
-                    .foregroundColor(.accent)
-                    HStack(alignment: .top, spacing: .large) {
-                        VStack(spacing: .large) {
-                            VStack {
-                                Text {
-                                    "Introduction"
+                HStack(alignment: .top, spacing: .large) {
+                    VStack(spacing: .large) {
+                        VStack {
+                            Text {
+                                "Introduction"
+                            }
+                            .fontSize(.large)
+                            Text {
+                                MarkdownString {
+                                    "The introduction section of the HTMLKit documentation should provide a comprehensive overview of the framework, highlighting its purpose, key features, and advantages. It should explain how HTMLKit allows developers to write HTML in Swift and how it integrates seamlessly with backend frameworks like Vapor and Hummingbird to create a unified full-stack development experience."
                                 }
-                                .fontSize(.large)
-                                .foregroundColor(.accent)
-                                Text {
-                                    "Elements"
-                                }
-                                .bold()
-                                Link(destination: "/documentation/elements") {
+                            }
+                            .fontSize(.medium)
+                            Grid(ratio: .fifth) {
+                                VStack {
                                     Text {
-                                        "Read more"
+                                        "Elements"
+                                    }
+                                    .bold()
+                                    Link(destination: "/documentation/elements") {
+                                        Text {
+                                            "Read more"
+                                        }
                                     }
                                 }
-                                Text {
-                                    "Localization"
-                                }
-                                .bold()
-                                Link(destination: "/documentation/localization") {
+                                VStack {
                                     Text {
-                                        "Read more"
+                                        "Localization"
+                                    }
+                                    .bold()
+                                    Link(destination: "/documentation/localization") {
+                                        Text {
+                                            "Read more"
+                                        }
                                     }
                                 }
-                                Text {
-                                    "Components"
-                                }
-                                .bold()
-                                Link(destination: "/documentation/components") {
+                                VStack {
                                     Text {
-                                        "Read more"
+                                        "Components"
+                                    }
+                                    .bold()
+                                    Link(destination: "/documentation/components") {
+                                        Text {
+                                            "Read more"
+                                        }
                                     }
                                 }
-                                Text {
-                                    "Environment"
-                                }
-                                .bold()
-                                Link(destination: "/documentation/environment") {
+                                VStack {
                                     Text {
-                                        "Read more"
+                                        "Environment"
+                                    }
+                                    .bold()
+                                    Link(destination: "/documentation/environment") {
+                                        Text {
+                                            "Read more"
+                                        }
                                     }
                                 }
                             }
@@ -252,6 +260,23 @@ enum DocumentationPage {
                                 "Card"
                             }
                         }
+                    }
+                    .frame(width: .twelve)
+                }
+            }
+        }
+    }
+    
+    struct VideoView: View {
+        
+        var article: ApiArticle
+        
+        var body: Content {
+            DocumentationContainer {
+                ArticleContainer(article: article) {
+                    ExampleView {
+                        Video(source: "")
+                            .frame(width: .minimum, height: .twelve)
                     }
                     .frame(width: .twelve)
                 }
@@ -550,6 +575,29 @@ enum DocumentationPage {
         }
     }
     
+    struct DisclosureView: View {
+        
+        var article: ApiArticle
+        
+        var body: Content {
+            DocumentationContainer {
+                ArticleContainer(article: article) {
+                    ExampleView {
+                        Disclosure("test") {
+                            HStack {
+                                Text {
+                                    "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet."
+                                }
+                            }
+                            .padding()
+                        }
+                    }
+                    .frame(width: .twelve)
+                }
+            }
+        }
+    }
+    
     struct ProgressView: View {
         
         var article: ApiArticle
@@ -558,8 +606,9 @@ enum DocumentationPage {
             DocumentationContainer {
                 ArticleContainer(article: article) {
                     ExampleView {
-                        Progress(maximum: 100, value: 30) {
+                        Progress(value: 80, total: 100) {
                         }
+                        .progressStyle(.linear)
                     }
                     .frame(width: .twelve)
                 }
@@ -1494,6 +1543,53 @@ enum DocumentationPage {
         }
     }
     
+    struct ProgressStyleEnumView: View {
+        
+        var article: ApiArticle
+        
+        var body: Content {
+            DocumentationContainer {
+                ArticleContainer(article: article) {
+                    Scroll {
+                        HStack(spacing: .small) {
+                            for style in Tokens.ProgressStyle.allCases {
+                                ExampleView {
+                                    Progress(value: 50, total: 100) {
+                                    }
+                                    .progressStyle(style)
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    
+    struct TintColorEnumView: View {
+        
+        var article: ApiArticle
+        
+        var body: Content {
+            DocumentationContainer {
+                ArticleContainer(article: article) {
+                    Scroll {
+                        HStack(spacing: .small) {
+                            for color in Tokens.TintColor.allCases {
+                                ExampleView {
+                                    Progress(value: 30, total: 100) {
+                                    }
+                                    .progressStyle(.linear)
+                                    .tint(color)
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    
     struct ObjectFitEnumView: View {
         
         var article: ApiArticle
@@ -1727,6 +1823,102 @@ enum DocumentationPage {
                                     }
                                     .innerRadius(radius)
                                 }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    
+    struct SymbolNameEnumView: View {
+        
+        var article: ApiArticle
+        
+        var body: Content {
+            DocumentationContainer {
+                ArticleContainer(article: article) {
+                    Scroll {
+                        HStack(spacing: .small) {
+                            for name in Symbol.SymbolNames.allCases {
+                                ExampleView {
+                                    Symbol(system: name)
+                                        .fontSize(.large)
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    
+    struct ButtonStyleEnumView: View {
+        
+        var article: ApiArticle
+        
+        var body: Content {
+            DocumentationContainer {
+                ArticleContainer(article: article) {
+                    Scroll {
+                        HStack(spacing: .small) {
+                            for style in Tokens.ButtonStyle.allCases {
+                                ExampleView {
+                                    Button(role: .reset) {
+                                        "Reset"
+                                    }
+                                    .buttonStyle(style)
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    
+    struct NavigationStyleEnumView: View {
+        
+        var article: ApiArticle
+        
+        var body: Content {
+            DocumentationContainer {
+                ArticleContainer(article: article) {
+                    Scroll {
+                        HStack(spacing: .small) {
+                            ExampleView {
+                                Navigation {
+                                    List(direction: .vertical) {
+                                        Link(destination: "#") {
+                                            Text {
+                                                "Item 1"
+                                            }
+                                        }
+                                        Link(destination: "#") {
+                                            Text {
+                                                "Item 2"
+                                            }
+                                        }
+                                    }
+                                }
+                                .navigationStyle(.menu)
+                            }
+                            ExampleView {
+                                Navigation {
+                                    List(direction: .horizontal) {
+                                        Link(destination: "#") {
+                                            Text {
+                                                "Item 1"
+                                            }
+                                        }
+                                        Link(destination: "#") {
+                                            Text {
+                                                "Item 2"
+                                            }
+                                        }
+                                    }
+                                }
+                                .navigationStyle(.pagination)
                             }
                         }
                     }

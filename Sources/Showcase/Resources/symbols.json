@@ -1510,7 +1510,7 @@
                 "title": "Initializers",
                 "symbols": [
                     {
-                        "code": "init(maximum: Float, value: Float, @ContentBuilder<Content> content: () &minus;> [Content]) &minus;> Progress",
+                        "code": "init(value: Float, total: Float, @ContentBuilder<Content> content: () &minus;> [Content]) &minus;> Progress",
                         "comment": "Initializes the HTML element.",
                         "type": "initializer",
                         "reference": "progress"
@@ -1520,6 +1520,18 @@
             {
                 "title": "Methods",
                 "symbols": [
+                    {
+                        "code": "func progressStyle(_ color: ProgressStyle) &minus;> Progress",
+                        "comment": "Initializes the HTML element.",
+                        "type": "method",
+                        "reference": "progress-style"
+                    },
+                    {
+                        "code": "func tintColor(_ color: TintColor) &minus;> Progress",
+                        "comment": "Initializes the HTML element.",
+                        "type": "method",
+                        "reference": "tint-color"
+                    }
                 ]
             }
         ]
@@ -1546,12 +1558,12 @@
                 "title": "Parameters",
                 "symbols": [
                     {
-                        "code": "maximum: Float",
+                        "code": "value: Float",
                         "comment": "Sets the identifier for the dropdown",
                         "type": "parameter"
                     },
                     {
-                        "code": "value: Float",
+                        "code": "total: Float",
                         "comment": "Sets the identifier for the dropdown",
                         "type": "parameter"
                     },
@@ -1563,7 +1575,78 @@
                 ]
             }
         ],
-        "snippet": "Progress(maximum: 100, value: 50)"
+        "snippet": "Progress(value: 50, total: 100)"
+    },
+    {
+        "slug": "disclosure",
+        "path": [
+            {
+                "name": "Documentation",
+                "link": "/documentation"
+            },
+            {
+                "name": "Disclosure",
+                "link": "/documentation/structure/disclosure"
+            }
+        ],
+        "title": "init(_:)",
+        "type": "initializer",
+        "description": "The element represents the document’s root element.",
+        "platforms": ["Linux"],
+        "targets": ["HTMLKitComponents"],
+        "topics": [
+            {
+                "title": "Parameters",
+                "symbols": [
+                ]
+            }
+        ],
+        "snippet": "Disclosure()"
+    },
+    {
+        "slug": "disclosure",
+        "path": [
+            {
+                "name": "Documentation",
+                "link": "/documentation"
+            }
+        ],
+        "title": "Disclosure",
+        "type": "structure",
+        "conformance": ["viewmodifier"],
+        "description": "The element represents the document’s root element.",
+        "platforms": ["Linux"],
+        "targets": ["HTMLKitComponents"],
+        "topics": [
+            {
+                "title": "Initializers",
+                "symbols": [
+                    {
+                        "code": "init(value: Float, total: Float, @ContentBuilder<Content> content: () &minus;> [Content]) &minus;> Progress",
+                        "comment": "Initializes the HTML element.",
+                        "type": "initializer",
+                        "reference": "progress"
+                    }
+                ]
+            },
+            {
+                "title": "Methods",
+                "symbols": [
+                    {
+                        "code": "func progressStyle(_ color: ProgressStyle) &minus;> Progress",
+                        "comment": "Initializes the HTML element.",
+                        "type": "method",
+                        "reference": "progress-style"
+                    },
+                    {
+                        "code": "func tintColor(_ color: TintColor) &minus;> Progress",
+                        "comment": "Initializes the HTML element.",
+                        "type": "method",
+                        "reference": "tint-color"
+                    }
+                ]
+            }
+        ]
     },
     {
         "slug": "textpad",
@@ -2118,6 +2201,65 @@
         "snippet": "List(direction: .horizontal) {\n}"
     },
     {
+        "slug": "video",
+        "path": [
+            {
+                "name": "Documentation",
+                "link": "/documentation"
+            }
+        ],
+        "title": "Video",
+        "type": "structure",
+        "conformance": ["viewmodifier"],
+        "description": "The element represents the document’s root element.",
+        "platforms": ["Linux"],
+        "targets": ["HTMLKitComponents"],
+        "topics": [
+            {
+                "title": "Initializers",
+                "symbols": [
+                    {
+                        "code": "init(source: String) &minus;> Video",
+                        "comment": "Initializes the HTML element.",
+                        "type": "initializer",
+                        "reference": "list"
+                    }
+                ]
+            },
+            {
+                "title": "Methods",
+                "symbols": [
+                ]
+            }
+        ]
+    },
+    {
+        "slug": "video",
+        "path": [
+            {
+                "name": "Documentation",
+                "link": "/documentation"
+            },
+            {
+                "name": "Video",
+                "link": "/documentation/structure/video"
+            }
+        ],
+        "title": "init(_:)",
+        "type": "initializer",
+        "description": "The element represents the document’s root element.",
+        "platforms": ["Linux"],
+        "targets": ["HTMLKitComponents"],
+        "topics": [
+            {
+                "title": "Parameters",
+                "symbols": [
+                ]
+            }
+        ],
+        "snippet": "Video(source: \"\") {\n}"
+    },
+    {
         "slug": "modal",
         "path": [
             {
@@ -2656,7 +2798,7 @@
                 "title": "Initializers",
                 "symbols": [
                     {
-                        "code": "init(system name: SymbolNames) &minus;> Symbol",
+                        "code": "init(system name: SymbolName) &minus;> Symbol",
                         "comment": "Initializes the HTML element.",
                         "type": "initializer",
                         "reference": "symbol"
@@ -2710,10 +2852,10 @@
                 "title": "Parameters",
                 "symbols": [
                     {
-                        "code": "system name: SymbolNames",
+                        "code": "system name: SymbolName",
                         "comment": "Sets the identifier for the dropdown",
                         "type": "enumeration",
-                        "reference": "symbol-names"
+                        "reference": "symbol-name"
                     }
                 ]
             }
@@ -3581,6 +3723,64 @@
                         "comment": "Initializes the HTML element.",
                         "type": "enumeration",
                         "reference": "focus-color"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "slug": "tint",
+        "path": [
+            {
+                "name": "Documentation",
+                "link": "/documentation"
+            }
+        ],
+        "title": "tint(_:)",
+        "type": "method",
+        "description": "The element represents the document’s root element.",
+        "platforms": ["Linux"],
+        "targets": ["HTMLKitComponents"],
+        "topics": [
+            {
+                "title": "Parameters",
+                "symbols": [
+                    {
+                        "code": "color: TintColor",
+                        "comment": "Initializes the HTML element.",
+                        "type": "enumeration",
+                        "reference": "tint-color"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "slug": "progress-style",
+        "path": [
+            {
+                "name": "Documentation",
+                "link": "/documentation"
+            },
+            {
+                "name": "Progress",
+                "link": "/documentation/structure/progress"
+            }
+        ],
+        "title": "progressStyle(_:)",
+        "type": "method",
+        "description": "The element represents the document’s root element.",
+        "platforms": ["Linux"],
+        "targets": ["HTMLKitComponents"],
+        "topics": [
+            {
+                "title": "Parameters",
+                "symbols": [
+                    {
+                        "code": "style: ProgressStyle",
+                        "comment": "Initializes the HTML element.",
+                        "type": "enumeration",
+                        "reference": "progress-style"
                     }
                 ]
             }
@@ -6182,7 +6382,7 @@
         ]
     },
     {
-        "slug": "symbol-names",
+        "slug": "symbol-name",
         "path": [
             {
                 "name": "Documentation",
@@ -6193,7 +6393,7 @@
                 "link": "/documentation/structure/symbol"
             }
         ],
-        "title": "SymbolNames",
+        "title": "SymbolName",
         "type": "enumeration",
         "description": "The element represents the document’s root element.",
         "platforms": ["Linux"],
@@ -6437,6 +6637,148 @@
                     {
                         "code": "case reset",
                         "comment": "Changes the border width of the view to 3 px.",
+                        "type": "case"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "slug": "tint-color",
+        "path": [
+            {
+                "name": "Documentation",
+                "link": "/documentation"
+            }
+        ],
+        "title": "TintColor",
+        "type": "enumeration",
+        "description": "The element represents the document’s root element.",
+        "platforms": ["Linux"],
+        "targets": ["HTMLKit"],
+        "topics": [
+            {
+                "title": "Cases",
+                "symbols": [
+                    {
+                        "code": "case black",
+                        "comment": "Changes the tint color to #000000.",
+                        "type": "case"
+                    },
+                    {
+                        "code": "case white",
+                        "comment": "Changes the tint color to #FFFFFF.",
+                        "type": "case"
+                    },
+                    {
+                        "code": "case blue",
+                        "comment": "Changes the tint color to #4098D7.",
+                        "type": "case"
+                    },
+                    {
+                        "code": "case brown",
+                        "comment": "Changes the tint color to #BF7140.",
+                        "type": "case"
+                    },
+                    {
+                        "code": "case cyan",
+                        "comment": "Changes the tint color to #38BEC9.",
+                        "type": "case"
+                    },
+                    {
+                        "code": "case green",
+                        "comment": "Changes the tint color to #57AE5B.",
+                        "type": "case"
+                    },
+                    {
+                        "code": "case indigo",
+                        "comment": "Changes the tint color to #647ACB.",
+                        "type": "case"
+                    },
+                    {
+                        "code": "case mint",
+                        "comment": "Changes the tint color to #91E697.",
+                        "type": "case"
+                    },
+                    {
+                        "code": "case pink",
+                        "comment": "Changes the tint color to #DA4A91.",
+                        "type": "case"
+                    },
+                    {
+                        "code": "case purple",
+                        "comment": "Changes the tint color to #724BB7.",
+                        "type": "case"
+                    },
+                    {
+                        "code": "case red",
+                        "comment": "Changes the tint color to #D64545.",
+                        "type": "case"
+                    },
+                    {
+                        "code": "case teal",
+                        "comment": "Changes the tint color to #3EBD93.",
+                        "type": "case"
+                    },
+                    {
+                        "code": "case orange",
+                        "comment": "Changes the tint color to #E67635.",
+                        "type": "case"
+                    },
+                    {
+                        "code": "case yellow",
+                        "comment": "Changes the tint color to #F7D070.",
+                        "type": "case"
+                    },
+                    {
+                        "code": "case gray",
+                        "comment": "Changes the tint color to #9E9E9E.",
+                        "type": "case"
+                    },
+                    {
+                        "code": "case silver",
+                        "comment": "Changes the tint color to #F7F7F7.",
+                        "type": "case"
+                    },
+                    {
+                        "code": "case accent",
+                        "comment": "Changes the tint color to #007FFF.",
+                        "type": "case"
+                    },
+                    {
+                        "code": "case system",
+                        "comment": "Changes the tint color to #DFE3E7.",
+                        "type": "case"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "slug": "progress-style",
+        "path": [
+            {
+                "name": "Documentation",
+                "link": "/documentation"
+            }
+        ],
+        "title": "ProgressStyle",
+        "type": "enumeration",
+        "description": "The element represents the document’s root element.",
+        "platforms": ["Linux"],
+        "targets": ["HTMLKit"],
+        "topics": [
+            {
+                "title": "Cases",
+                "symbols": [
+                    {
+                        "code": "case linear",
+                        "comment": "Changes the border width of the view to 1 px.",
+                        "type": "case"
+                    },
+                    {
+                        "code": "case circular",
+                        "comment": "Changes the border width of the view to 2 px.",
                         "type": "case"
                     }
                 ]
@@ -6786,26 +7128,6 @@
         ]
     },
     {
-        "slug": "environment",
-        "path": [
-            {
-                "name": "Documentation",
-                "link": "/documentation"
-            }
-        ],
-        "title": "Environment",
-        "type": "article",
-        "description": "The elements in HTMLKit are an abstraction of the elements in HTML (Hyper Text Markup Language). If you have written HTML before, then you know there are elements with or without an end tag. An element with an end tag will be represented in HTMLKit as an element with curly brackets, while an element without an end tag will be represented with round brackets.",
-        "platforms": ["Linux"],
-        "targets": ["HTMLKit"],
-        "topics": [
-            {
-                "title": "Parameters",
-                "symbols": []
-            }
-        ]
-    },
-    {
         "slug": "components",
         "path": [
             {
@@ -6815,7 +7137,7 @@
         ],
         "title": "Components",
         "type": "article",
-        "description": "The elements in HTMLKit are an abstraction of the elements in HTML (Hyper Text Markup Language). If you have written HTML before, then you know there are elements with or without an end tag. An element with an end tag will be represented in HTMLKit as an element with curly brackets, while an element without an end tag will be represented with round brackets.",
+        "description": "The components library follows the idea of a design system. It offers you standardized, reusable components imitating the syntax and semantics of SwiftUI. The library also comes with CSS (Cascading Style Sheet) and JS (JavaScript) to help you construct your vision without the need to completely rebuild it or have any knowledge in one of these languages.",
         "platforms": ["Linux"],
         "targets": ["HTMLKit"],
         "topics": [
@@ -6856,6 +7178,26 @@
         "title": "Security",
         "type": "article",
         "description": "The elements in HTMLKit are an abstraction of the elements in HTML (Hyper Text Markup Language). If you have written HTML before, then you know there are elements with or without an end tag. An element with an end tag will be represented in HTMLKit as an element with curly brackets, while an element without an end tag will be represented with round brackets.",
+        "platforms": ["Linux"],
+        "targets": ["HTMLKit"],
+        "topics": [
+            {
+                "title": "Parameters",
+                "symbols": []
+            }
+        ]
+    },
+    {
+        "slug": "environment",
+        "path": [
+            {
+                "name": "Documentation",
+                "link": "/documentation"
+            }
+        ],
+        "title": "Environment",
+        "type": "article",
+        "description": "The environment is a way to store values globally and to use them in the whole scope without explicitly providing them through a DTO (Data Transfer Object). The environment has keys you can use to store a single value for a specific key, or you can store a whole object too.",
         "platforms": ["Linux"],
         "targets": ["HTMLKit"],
         "topics": [
@@ -7033,4 +7375,46 @@
             }
         ]
     },
+    {
+        "slug": "document",
+        "path": [
+            {
+                "name": "Documentation",
+                "link": "/documentation"
+            }
+        ],
+        "title": "Document",
+        "type": "structure",
+        "description": "The element represents the document’s root element.",
+        "platforms": ["Linux"],
+        "targets": ["HTMLKit"],
+        "topics": [
+            {
+                "title": "Parameters",
+                "symbols": [
+                ]
+            }
+        ]
+    },
+    {
+        "slug": "html",
+        "path": [
+            {
+                "name": "Documentation",
+                "link": "/documentation"
+            }
+        ],
+        "title": "Html",
+        "type": "structure",
+        "description": "The element represents the document’s root element.",
+        "platforms": ["Linux"],
+        "targets": ["HTMLKit"],
+        "topics": [
+            {
+                "title": "Parameters",
+                "symbols": [
+                ]
+            }
+        ]
+    }
 ]

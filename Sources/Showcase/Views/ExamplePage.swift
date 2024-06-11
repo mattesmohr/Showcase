@@ -12,7 +12,6 @@ enum ExamplePage {
                         "Examples"
                     }
                     .fontSize(.large)
-                    .foregroundColor(.accent)
                 }
                 Section {
                     VStack(spacing: .large) {
@@ -31,7 +30,6 @@ enum ExamplePage {
                         "Example"
                     }
                     .fontSize(.large)
-                    .foregroundColor(.accent)
                 }
                 Section {
                     VStack(spacing: .large) {

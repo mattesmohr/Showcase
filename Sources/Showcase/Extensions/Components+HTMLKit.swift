@@ -258,3 +258,17 @@ extension Tokens.InnerRadius: CaseIterable {
         return [.large, .medium, .small]
     }
 }
+
+extension Tokens.ProgressStyle: CaseIterable {
+    
+    public static var allCases: [Tokens.ProgressStyle] {
+        return [.linear, .circular]
+    }
+}
+
+extension Tokens.TintColor: CaseIterable {
+    
+    public static var allCases: [Tokens.TintColor] {
+        return [.black, .blue, .brown, .cyan, .gray, .green, .indigo, .mint, .orange, .pink, .purple, .red, .silver, .teal]
+    }
+}

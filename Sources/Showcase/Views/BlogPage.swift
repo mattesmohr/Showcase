@@ -14,21 +14,18 @@ enum BlogPage {
                         "Blog"
                     }
                     .fontSize(.large)
-                    .foregroundColor(.accent)
                 }
                 Section {
                     Grid(ratio: .third, spacing: .small) {
                         for article in articles {
                             VStack(spacing: .small) {
                                 ThumbnailView {
-                                    Image(source: "/assets/test.svg")
                                 }
                                 .frame(width: .twelve)
                                 Text {
                                     article.title
                                 }
                                 .fontSize(.large)
-                                .foregroundColor(.accent)
                                 Text {
                                     article.excerpt
                                 }
@@ -52,18 +49,65 @@ enum BlogPage {
             PageContainer {
                 Header {
                     Text {
-                        "Blog"
+                        article.title
                     }
                     .fontSize(.large)
-                    .foregroundColor(.accent)
                 }
                 Section {
                     VStack(spacing: .large) {
-                        Text {
-                            article.title
+                        HStack(alignment: .top, spacing: .large) {
+                            VStack(spacing: .large) {
+                                ThumbnailView {
+                                    
+                                }
+                                .frame(width: .twelve)
+                                Text {
+                                    MarkdownString(article.content)
+                                }
+                            }
+                            .frame(width: .nine)
+                            VStack {
+                                HStack(spacing: .small) {
+                                    Image(source: "/assets/author.png")
+                                        .aspectRatio(.equal, fit: .cover)
+                                        .imageScale(.small)
+                                        .clipShape(.circle)
+                                    VStack {
+                                        Text {
+                                            article.author.name
+                                        }
+                                        Text {
+                                            article.author.position
+                                        }
+                                    }
+                                }
+                                Text {
+                                    article.published.formatted(date: .long, time: .none)
+                                }
+                            }
+                            .frame(width: .three)
                         }
-                        Text {
-                            article.content
+                        if let articles = article.articles {
+                            Scroll(showIndicators: true) {
+                                HStack(spacing: .small) {
+                                    for article in articles {
+                                        VStack(spacing: .small) {
+                                            Text {
+                                                article.title
+                                            }
+                                            .fontSize(.large)
+                                            Text {
+                                                article.excerpt
+                                            }
+                                            Link(destination: "/blog/\(article.slug)") {
+                                                "Read more"
+                                            }
+                                            .foregroundColor(.accent)
+                                        }
+                                        .frame(width: .six)
+                                    }
+                                }
+                            }
                         }
                     }
                 }
