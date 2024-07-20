@@ -1,9 +1,11 @@
 import Foundation
 import Vapor
 import Logging
+import NIOCore
+import NIOPosix
 
 @main
-struct Setup {
+enum Setup {
     
     static func main() async throws {
         
@@ -11,9 +13,11 @@ struct Setup {
         
         try LoggingSystem.bootstrap(from: &environment)
         
-        let application = Application(environment)
+        let application = try await Application.make(environment)
         
-        defer { application.shutdown() }
+        let executorTakeoverSuccess = NIOSingletons.unsafeTryInstallSingletonPosixEventLoopGroupAsConcurrencyGlobalExecutor()
+        
+        application.logger.debug("Running with \(executorTakeoverSuccess ? "SwiftNIO" : "standard") Swift Concurrency default executor")
         
         application.middleware.use(FileMiddleware(publicDirectory: application.directory.publicDirectory))
         
@@ -26,10 +30,13 @@ struct Setup {
             
             application.logger.report(error: error)
             
+            try? await application.asyncShutdown()
+            
             throw error
         }
         
         try await application.execute()
+        try await application.asyncShutdown()
     }
     
     static func routes(_ application: Application) async throws {

@@ -2,9 +2,10 @@ import HTMLKitVapor
 import Vapor
 
 // [/blog]
-final class BlogPageController {
+struct BlogPageController {
     
     // [/]
+    @Sendable
     func getIndex(_ request: Request) async throws -> View {
         
         if let url = Bundle.module.url(forResource: "articles", withExtension: "json") {
@@ -21,6 +22,7 @@ final class BlogPageController {
     }
     
     // [/:slug]
+    @Sendable
     func getShow(_ request: Request) async throws -> View {
         
         guard let slug = request.parameters.get("slug", as: String.self) else {

@@ -2,9 +2,10 @@ import HTMLKitVapor
 import Vapor
 
 // [/legal]
-final class PrivacyPageController {
+struct PrivacyPageController {
     
     // [/]
+    @Sendable
     func getIndex(_ request: Request) async throws -> View {
         
         return try await request.htmlkit.render(PrivacyPage.IndexView())

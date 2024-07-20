@@ -2,9 +2,10 @@ import HTMLKitVapor
 import Vapor
 
 // [/home]
-final class HomeController {
+struct HomeController {
     
     // [/]
+    @Sendable
     func getIndex(_ request: Request) async throws -> View {
         return try await request.htmlkit.render(HomePage.IndexView())
     }

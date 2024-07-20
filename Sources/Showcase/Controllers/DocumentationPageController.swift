@@ -2,14 +2,16 @@ import HTMLKitVapor
 import Vapor
 
 // [/documentation]
-final class DocumentationPageController {
+struct DocumentationPageController {
     
     // [/]
+    @Sendable
     func getIndex(_ request: Request) async throws -> View {
         return try await request.htmlkit.render(DocumentationPage.IndexView())
     }
     
     // [/:slug]
+    @Sendable
     func getArticle(_ request: Request) async throws -> View {
         
         guard let slug = request.parameters.get("slug") else {
@@ -48,6 +50,7 @@ final class DocumentationPageController {
     }
     
     // [/structure/:slug]
+    @Sendable
     func getStructure(_ request: Request) async throws -> View {
         
         guard let slug = request.parameters.get("slug") else {
@@ -198,6 +201,7 @@ final class DocumentationPageController {
     }
     
     // [/method/:slug]
+    @Sendable
     func getMethod(_ request: Request) async throws -> View {
         
         guard let slug = request.parameters.get("slug") else {
@@ -218,6 +222,7 @@ final class DocumentationPageController {
     }
     
     // [/enumeration/:slug]
+    @Sendable
     func getEnum(_ request: Request) async throws -> View {
         
         guard let slug = request.parameters.get("slug") else {
@@ -352,6 +357,7 @@ final class DocumentationPageController {
     }
     
     // [/initializer/:slug]
+    @Sendable
     func getInitializer(_ request: Request) async throws -> View {
         
         guard let slug = request.parameters.get("slug") else {

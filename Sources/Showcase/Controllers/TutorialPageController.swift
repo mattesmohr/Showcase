@@ -3,9 +3,10 @@ import Vapor
 import Foundation
 
 // [/tutorial]
-final class TutorialPageController {
+struct TutorialPageController {
     
     // [/]
+    @Sendable
     func getIndex(_ request: Request) async throws -> View {
         
         guard let url = Bundle.module.url(forResource: "tutorials", withExtension: "json") else {
@@ -18,6 +19,7 @@ final class TutorialPageController {
     }
     
     // [/:slug]
+    @Sendable
     func getShow(_ request: Request) async throws -> View {
         
         guard let slug = request.parameters.get("slug", as: String.self) else {

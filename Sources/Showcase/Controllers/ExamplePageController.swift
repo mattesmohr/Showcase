@@ -2,15 +2,17 @@ import HTMLKitVapor
 import Vapor
 
 // [/documentation]
-final class ExamplePageController {
+struct ExamplePageController {
     
     // [/]
+    @Sendable
     func getIndex(_ request: Request) async throws -> View {
         
         return try await request.htmlkit.render(ExamplePage.IndexView())
     }
     
     // [/:slug]
+    @Sendable
     func getShow(_ request: Request) async throws -> View {
         
         return try await request.htmlkit.render(ExamplePage.ShowView())

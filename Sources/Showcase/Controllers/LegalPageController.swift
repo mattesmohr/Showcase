@@ -2,9 +2,10 @@ import HTMLKitVapor
 import Vapor
 
 // [/legal]
-final class LegalPageController {
+struct LegalPageController {
     
     // [/]
+    @Sendable
     func getIndex(_ request: Request) async throws -> View {
         
         return try await request.htmlkit.render(LegalPage.IndexView())

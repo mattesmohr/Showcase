@@ -2,9 +2,10 @@ import HTMLKitVapor
 import Vapor
 
 // [/tool]
-final class ToolPageController {
+struct ToolPageController {
     
     // [/]
+    @Sendable
     func getIndex(_ request: Request) async throws -> View {
         
         return try await request.htmlkit.render(ToolPage.IndexView())
