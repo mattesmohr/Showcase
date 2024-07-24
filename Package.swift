@@ -1,11 +1,11 @@
-// swift-tools-version: 5.9
+// swift-tools-version: 5.10
 
 import PackageDescription
 
 let package = Package(
     name: "Showcase",
     platforms: [
-       .macOS(.v12)
+       .macOS(.v13)
     ],
     dependencies: [
         .package(url: "https://github.com/vapor/vapor.git", from: "4.102.1"),
@@ -22,9 +22,20 @@ let package = Package(
                 .process("Resources")
             ],
             swiftSettings: [
-                .unsafeFlags(["-cross-module-optimization"], .when(configuration: .release))
+                .enableUpcomingFeature("DisableOutwardActorInference"),
+                .enableExperimentalFeature("StrictConcurrency")
             ]
         ),
-        .testTarget(name: "ShowcaseTests", dependencies: ["Showcase"])
+        .testTarget(
+            name: "ShowcaseTests",
+            dependencies: [
+                .target(name: "Showcase"),
+                .product(name: "XCTVapor", package: "vapor")
+            ],
+            swiftSettings: [
+                .enableUpcomingFeature("DisableOutwardActorInference"),
+                .enableExperimentalFeature("StrictConcurrency")
+            ]
+        )
     ]
 )
