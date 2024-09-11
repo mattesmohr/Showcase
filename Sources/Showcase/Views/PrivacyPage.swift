@@ -9,7 +9,7 @@ enum PrivacyPage {
             PageContainer {
                 Header {
                     Text {
-                        "Privacy police"
+                        "Privacy policy"
                     }
                     .textStyle(.subheadline)
                 }
@@ -158,6 +158,7 @@ enum PrivacyPage {
                                 }
                                 .fontSize(.medium)
                             }
+                            .tag("data-objection")
                             VStack {
                                 Text {
                                     "Right to log a complaint with the competent supervisory agency"
@@ -205,6 +206,7 @@ enum PrivacyPage {
                                 }
                                 .fontSize(.medium)
                             }
+                            .tag("processing-restrictions")
                             VStack {
                                 Text {
                                     "SSL and/or TLS encryption"
@@ -265,6 +267,16 @@ enum PrivacyPage {
                                 Link(destination: "#constent-revocation") {
                                     Text {
                                         "Consent revocation"
+                                    }
+                                }
+                                Link(destination: "#data-objection") {
+                                    Text {
+                                        "Data objection"
+                                    }
+                                }
+                                Link(destination: "#complaint-log") {
+                                    Text {
+                                        "Complaint log"
                                     }
                                 }
                                 Link(destination: "#data-portability") {
