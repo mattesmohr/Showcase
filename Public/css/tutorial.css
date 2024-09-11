@@ -1,0 +1,91 @@
+.section {
+    inline-size: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 2.25rem;
+    margin-block-end: 2.25rem;
+
+    .step {
+        flex-shrink: 0;
+
+        padding: 0.75rem 1.75rem;
+        inline-size: 500px;
+        min-block-size: 150px;
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        border-radius: 0.313rem;
+        background-color: #FAFCFD;
+        transition: background-color 0.5s ease;
+
+        > * {
+            pointer-events: none;
+        }
+
+        &.state\:focused {
+            background-color: #E5F0F5;
+        }
+
+        > .description {
+            flex-grow: 1;
+
+            font-family: var(--fontFamily);
+            font-size: 0.9rem;
+        }
+
+        > .note {
+            font-family: var(--fontFamily);
+            font-style: italic;
+            font-size: 0.9rem;
+        }
+    }
+
+    .console {
+        position: relative;
+        padding-block: 10px;
+        inline-size: 100%;
+        block-size: 500px;
+        display: none;
+        background-color: #FAFCFD;
+        border-radius: 0.313rem;
+        overflow-x: auto;
+        border: 1px solid red;
+    }
+}
+
+@keyframes point-pulse {
+    0% {
+        opacity: 0.5;
+        transform:scale(1)
+    }
+    50% {
+        opacity: 0.5
+    }
+    100% {
+        opacity: 0;
+        transform:scale(1.6)
+    }
+}
+
+.explanation {
+    position: relative;
+    align-self: flex-end;
+
+    &:has(> .trigger:hover) {
+        .note {
+            display: block;
+        }
+    }
+
+    > .note {
+        display: none;
+        position: absolute;
+        z-index: 1;
+        width: 250px;
+        padding: 10px;
+        border-radius: 5px;
+        color: hsla(var(--whiteColor), 1.0);
+        background-color: hsla(var(--blackColor), 0.8);
+        font-family: monospace;
+    }
+}

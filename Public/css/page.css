@@ -1,4 +1,6 @@
 @import '../css/components.css';
+@import '../css/tutorial.css';
+@import '../css/thumbnails.css';
 
 @font-face {
   font-family: 'Mona Sans';
@@ -127,73 +129,6 @@ body > footer > section {
     --lineHeight: 22px;
     
     font-family: 'Hubot Sans';
-}
-
-.step {
-    padding: 0.75rem 1.75rem;
-    inline-size: 100%;
-    min-block-size: 100px;
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-    border-radius: 0.313rem;
-    background-color: #FAFCFD;
-}
-
-.step.state\:focused {
-    background-color: #E5F0F5;
-}
-
-.step > .description {
-    flex-grow: 1;
-    
-    font-family: var(--fontFamily);
-    font-size: 0.9rem;
-}
-
-.step > .note {
-    font-family: var(--fontFamily);
-    font-style: italic;
-    font-size: 0.9rem;
-}
-
-.console {
-    position: relative;
-    padding-block: 10px;
-    inline-size: 100%;
-    block-size: 100%;
-    min-block-size: 1200px;
-    display: none;
-    background-color: #E5F0F5;
-    border-radius: 0.313rem;
-    overflow-x: auto;
-}
-
-.console > .code > p {
-    display: block;
-    font-size: 14px;
-    line-height: 22px;
-    word-wrap: normal;
-    white-space: pre;
-    counter-increment: line;
-}
-
-.console > .code > p::before {
-    position: relative;
-    display: inline-block;
-    margin-inline-end: 0.938rem;
-    padding-inline: 0.938rem;
-    white-space: nowrap;
-    text-align: right;
-    content: counter(line);
-    color: #000000;
-    -webkit-user-select: none;
-}
-
-.code {
-    font-family: 'Hubot Sans', monospace;
-    font-size: 16px;
-    white-space: pre-wrap;
 }
 
 #modal {

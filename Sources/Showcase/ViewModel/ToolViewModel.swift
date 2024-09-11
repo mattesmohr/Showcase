@@ -21,6 +21,7 @@ struct TutorialViewModel {
 
 struct Tutorial: Codable {
     
+    let index: Int
     let slug: String
     let title: String
     let description: String
@@ -29,6 +30,7 @@ struct Tutorial: Codable {
 
 struct TutorialSection: Codable {
     
+    let index: Int
     let title: String
     let description: String
     let steps: [TutorialStep]
@@ -38,7 +40,7 @@ struct TutorialStep: Codable {
     
     let index: Int
     let description: String
-    let note: String?
+    var note: String?
     var code: TutorialCode?
 }
 

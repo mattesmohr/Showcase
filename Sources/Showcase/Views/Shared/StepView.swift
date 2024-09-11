@@ -1,4 +1,5 @@
 import HTMLKit
+import HTMLKitComponents
 
 struct StepView: View {
     
@@ -20,20 +21,27 @@ struct StepView: View {
     
     var body: Content {
         Division {
+            if let note = note {
+                Division {
+                    Division {
+                        Symbol(system: .lightbulb)
+                    }
+                    .class("trigger")
+                    Paragraph {
+                        MarkdownString {
+                            note
+                        }
+                    }
+                    .class("note")
+                }
+                .class("explanation")
+            }
             Paragraph {
                 MarkdownString {
                     description
                 }
             }
             .class("description")
-            if let note = note {
-                Paragraph {
-                    MarkdownString {
-                        note
-                    }
-                }
-                .class("note")
-            }
         }
         .class(classes.joined(separator: " "))
         .custom(key: "data-index", value: index)

@@ -72,25 +72,19 @@ enum TutorialPage {
                                     }
                                     .fontSize(.medium)
                                 }
-                                HStack(alignment: .top, spacing: .large) {
-                                    VStack(spacing: .large) {
+                                ZStack {
+                                    for step in section.steps {
+                                        ConsoleView(step: step, section: section.index, tutorial: tutorial.index)
+                                    }
+                                }
+                                .frame(width: .twelve)
+                                Scroll {
+                                    HStack(spacing: .large) {
                                         for step in section.steps {
                                             StepView(step: step)
                                         }
                                     }
-                                    .frame(width: .four)
-                                    ZStack {
-                                        for step in section.steps {
-                                            if let code = step.code {
-                                                ConsoleView(code: code)
-                                            } else {
-                                                ConsoleView()
-                                            }
-                                        }
-                                    }
-                                    .frame(width: .eight)
                                 }
-                                .frame(width: .twelve, height: .twelve)
                             }
                             .class("section")
                         }
