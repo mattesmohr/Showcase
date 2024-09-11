@@ -1,4 +1,5 @@
 import('./modules/tutorial.js');
+import('./modules/documentation.js');
 
 (function() {
 

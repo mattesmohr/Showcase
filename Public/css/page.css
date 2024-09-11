@@ -1,6 +1,7 @@
 @import '../css/components.css';
 @import '../css/tutorial.css';
 @import '../css/thumbnails.css';
+@import '../css/documentation.css';
 
 @font-face {
   font-family: 'Mona Sans';
@@ -174,22 +175,4 @@ body > footer > section {
 
 .scroll {
     width: 100%;
-}
-
-.highlight {
-    background-color: hsla(var(--blueColor), 0.5);
-}
-
-.section {
-    inline-size: 100%;
-    block-size: 1500px;
-    display: flex;
-    flex-direction: column;
-    gap: 2.25rem;
-    margin-block-end: 2.25rem;
-}
-
-#documentation .link:hover {
-    background-color: #E5F0F5;
-    border-radius: 5px;
 }
