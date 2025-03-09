@@ -15,10 +15,6 @@ enum Setup {
         
         let application = try await Application.make(environment)
         
-        let executorTakeoverSuccess = NIOSingletons.unsafeTryInstallSingletonPosixEventLoopGroupAsConcurrencyGlobalExecutor()
-        
-        application.logger.debug("Running with \(executorTakeoverSuccess ? "SwiftNIO" : "standard") Swift Concurrency default executor")
-        
         application.middleware.use(FileMiddleware(publicDirectory: application.directory.publicDirectory))
         
         do {
