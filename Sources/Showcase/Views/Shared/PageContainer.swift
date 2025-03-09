@@ -1,15 +1,15 @@
 import HTMLKit
 import HTMLKitComponents
 
-public struct PageContainer: View {
+struct PageContainer: View {
     
-    public var content: [BodyElement]
+    let content: [BodyElement]
     
-    public init(@ContentBuilder<BodyElement> content: () -> [BodyElement]) {
+    init(@ContentBuilder<BodyElement> content: () -> [BodyElement]) {
         self.content = content()
     }
 
-    public var body: Content {
+    var body: Content {
         Document(.html5)
         Html {
             Head {
@@ -65,7 +65,14 @@ public struct PageContainer: View {
                                 .bold()
                             }
                             List(direction: .horizontal) {
-                                Link(destination: "/documentation") {
+                                Text {
+                                    "Search"
+                                }
+                                .tag("button")
+                                .onClick { action in
+                                    action.open("modal")
+                                }
+                                Link(destination: "/reference") {
                                     Text {
                                         "Documentation"
                                     }
@@ -90,6 +97,7 @@ public struct PageContainer: View {
                 }
                 Main {
                     content
+                    SearchModal()
                 }
                 Footer {
                     Section {
@@ -137,12 +145,7 @@ public struct PageContainer: View {
                                     .textCase(.uppercase)
                                     .bold()
                                     List(direction: .vertical) {
-                                        Link(destination: "/tool") {
-                                            Text {
-                                                "Tools"
-                                            }
-                                        }
-                                        Link(destination: "/documentation") {
+                                        Link(destination: "/reference") {
                                             Text {
                                                 "Documentation"
                                             }
@@ -167,7 +170,7 @@ public struct PageContainer: View {
                                 "2024 HTMLKit"
                             }
                             Link(destination: "https://github.com/vapor-community/HTMLKit", target: .blank) {
-                                Image(source: "/assets/github.svg")
+                                Image(source: "/assets/ico/github.svg")
                             }
                             List(direction: .horizontal) {
                                 Link(destination: "/legal") {

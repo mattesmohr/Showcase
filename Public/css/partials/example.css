@@ -11,50 +11,50 @@
     background-size: 25px 25px;
     background-origin: border-box;
     overflow: hidden;
-}
 
-.example.scheme\:dark {
-    background: linear-gradient(#2B3440 1px, transparent 1px), linear-gradient(to right, #2B3440 1px, transparent 1px), linear-gradient(#161B22, #161B22);
-    background-size: 25px 25px;
-}
+    &.scheme\:dark {
+        background: linear-gradient(#2B3440 1px, transparent 1px), linear-gradient(to right, #2B3440 1px, transparent 1px), linear-gradient(#161B22, #161B22);
+        background-size: 25px 25px;
 
-.example-gradient {
-    inline-size: inherit;
-    block-size: inherit;
-    background: linear-gradient(145deg, transparent 0%, #FBFDFE 60%);
-}
+        .example-gradient {
+            background: linear-gradient(145deg, transparent 0%, #161B22 60%);
+            box-shadow: inset 2px 2px 2px #161B22;
+        }
+    }
 
-.example.scheme\:dark > .example-gradient {
-    background: linear-gradient(145deg, transparent 0%, #161B22 60%);
-    box-shadow: inset 2px 2px 2px #161B22;
-}
+    > .example-gradient {
+        inline-size: inherit;
+        block-size: inherit;
+        background: linear-gradient(145deg, transparent 0%, #FBFDFE 60%);
 
-.example-content {
-    inline-size: inherit;
-    block-size: inherit;
-    padding: 14px 16px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
+        > .example-content {
+            inline-size: inherit;
+            block-size: inherit;
+            padding: 14px 16px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    }
 
-.example-toolbar {
-    position: absolute;
-    z-index: 1;
-    top: 10px;
-    right: 10px;
-    display: inline-block;
-}
+    > .example-toolbar {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        z-index: 1;
+        display: inline-block;
 
-.example-tool {
-    --foregroundColor: var(--blackColor);
-    
-    padding: 10px;
-    border-width: 1px;
-    border-style: solid;
-    border-color: #FFFFFF;
-    border-radius: 5px;
-    background-color: #E5F0F5;
+        .example-tool {
+            --foregroundColor: var(--blackColor);
+
+            padding: 10px;
+            border-width: 1px;
+            border-style: solid;
+            border-color: #FFFFFF;
+            border-radius: 5px;
+            background-color: #E5F0F5;
+        }
+    }
 }
 
 .example.scheme\:dark > .example-toolbar > .example-tool {
@@ -124,31 +124,4 @@
     
     background: linear-gradient(135deg, #FFFFFF 4.5%, transparent 0, transparent 50%, #FFFFFF 0, #FFFFFF 54.5%, transparent 0, transparent);
     background-size: 7.5px 7.5px;
-}
-
-
-.thumbnail {
-    --inlineSize: 100%;
-    
-    display: grid;
-    grid-template-rows: 1fr;
-    place-items: center;
-    place-content: center;
-    block-size: 180px;
-    border: 1px solid #E5F0F5;
-    border-radius: 5px;
-    background-color: #FAFCFD;
-    text-align: center;
-    overflow: hidden;
-}
-
-.thumbnail > * {
-    inline-size: inherit;
-    block-size: inherit;
-    grid-area: 1 / 1;
-}
-
-.thumbnail-gradient {
-    position: relative;
-    background: linear-gradient(to top, #FAFCFD 1%, transparent 25%);
 }

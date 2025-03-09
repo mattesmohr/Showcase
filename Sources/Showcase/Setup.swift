@@ -15,12 +15,13 @@ enum Setup {
         
         let application = try await Application.make(environment)
         
-        application.middleware.use(FileMiddleware(publicDirectory: application.directory.publicDirectory))
-        
         do {
     
+            try await middlewares(application)
             try await routes(application)
             try await services(application)
+            
+            try await application.execute()
             
         } catch {
             
@@ -30,19 +31,22 @@ enum Setup {
             
             throw error
         }
-        
-        try await application.execute()
+    
         try await application.asyncShutdown()
+    }
+    
+    static func middlewares(_ application: Application) async throws {
+        
+        application.middleware.use(FileMiddleware(publicDirectory: application.directory.publicDirectory))
     }
     
     static func routes(_ application: Application) async throws {
         
         try application.routes.register(collection: HomeController())
-        try application.routes.register(collection: DocumentationPageController())
+        try application.routes.register(collection: ReferencePageController())
         try application.routes.register(collection: LegalPageController())
         try application.routes.register(collection: PrivacyPageController())
         try application.routes.register(collection: BlogPageController())
-        try application.routes.register(collection: ToolPageController())
         try application.routes.register(collection: TutorialPageController())
         try application.routes.register(collection: ExamplePageController())
     }

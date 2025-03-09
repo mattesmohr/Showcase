@@ -1,7 +1,10 @@
-@import '../css/components.css';
-@import '../css/tutorial.css';
-@import '../css/thumbnails.css';
-@import '../css/documentation.css';
+@import '../css/modules/stencils.css';
+@import '../css/modules/tutorial.css';
+@import '../css/modules/reference.css';
+@import '../css/partials/icon.css';
+@import '../css/partials/icon-example.css';
+@import '../css/modules/stencils.css';
+@import '../css/partials/example.css';
 
 @font-face {
   font-family: 'Mona Sans';
@@ -21,7 +24,11 @@
     --fontFamily: 'Mona Sans';
     --systemBorderColor: 199, 44%, 93%;
     --systemBackgroundColor: 200, 43%, 99%;
-    --containerSize: 75%;
+    --containerSize: 80%;
+
+    @media (min-width: 1680px) {
+        --containerSize: 60%;
+    }
 }
 
 * {
@@ -31,148 +38,131 @@
 }
 
 html {
-    background-color: #FFFFFF;
+    background-color: hsla(var(--whiteColor), 1.0);
     scroll-behavior: smooth;
-}
 
-body {
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-}
+    body {
+        min-inline-size: 100vh;
+        display: flex;
+        flex-direction: column;
 
-body > header {
-    position: sticky;
-    top: 0;
-    z-index: 1;
-    border-bottom: 1px;
-    border-bottom-style: solid;
-    border-bottom-color: #E5F0F5;
-    background-color: #FFFFFF;
-}
+        > header {
+            position: sticky;
+            top: 0;
+            z-index: 1;
+            border-bottom-width: 1px;
+            border-bottom-style: solid;
+            border-bottom-color: #E5F0F5;
+            background-color: #FFFFFF;
 
-body > header > section {
-    inline-size: var(--containerSize);
-    margin-inline: auto;
-    padding: 0.75rem;
-}
+            > section {
+                margin-inline: auto;
+                padding: 0.75rem;
+                inline-size: var(--containerSize);
+            }
+        }
 
-body > main {
-    flex-grow: 1;
-}
+        > main {
+            flex-grow: 1;
 
-body > main > header {
-    inline-size: var(--containerSize);
-    margin-inline: auto;
-    padding: 2.75rem 0.75rem;
-}
+            padding-bottom: 5.5rem;
 
-body > main > section {
-    inline-size: var(--containerSize);
-    margin-inline: auto;
-    padding: 2.75rem 0.75rem;
-}
+            > header {
+                margin-inline: auto;
+                padding-block: 2.75rem;
+                padding-inline: 0.75rem;
+                inline-size: var(--containerSize);
+            }
 
-body > main > footer {
-    inline-size: var(--containerSize);
-    margin-inline: auto;
-    padding: 2.75rem 0.75rem;
-}
+            > section {
+                margin-inline: auto;
+                padding-block: 2.75rem;
+                padding-inline: 0.75rem;
+                inline-size: var(--containerSize);
+            }
 
-body > footer {
-    padding-block-start: 2.75rem;
-    background-color: #FAFCFD;
-    border-top: 1px;
-    border-top-style: solid;
-    border-top-color: #E5F0F5;
-}
+            > footer {
+                margin-inline: auto;
+                padding-block: 2.75rem;
+                padding-inline: 0.75rem;
+                inline-size: var(--containerSize);
+            }
+        }
 
-body > footer > section {
-    inline-size: var(--containerSize);
-    margin-inline: auto;
-    padding: 0.75rem;
-}
+        > footer {
+            padding-block-start: 2.75rem;
+            border-top-width: 1px;
+            border-top-style: solid;
+            border-top-color: #E5F0F5;
+            background-color: #FAFCFD;
 
-.icon-example {
-    position: relative;
-    display: inline-block;
-    border: 1px solid hsla(var(--systemBorderColor), 1.0);
-    border-radius: 10px;
-    background: linear-gradient(#E5F0F5 1px, transparent 1px), linear-gradient(to right, #E5F0F5 1px, transparent 1px), linear-gradient(#FBFDFE, #FBFDFE);
-    background-size: 25px 25px;
-    background-origin: border-box;
-    overflow: hidden;
-}
-
-.icon-gradient {
-    inline-size: inherit;
-    block-size: inherit;
-    background: linear-gradient(145deg, transparent 0%, #FBFDFE 60%);
-}
-
-.icon-content {
-    inline-size: inherit;
-    block-size: inherit;
-    padding: 14px 16px;
-    
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    aspect-ratio: 1/1;
-}
-
-.scroll > .hstack .example {
-    min-inline-size: 400px;
-}
-
-.snippet > p {
-    --fontSize: 14px;
-    --lineHeight: 22px;
-    
-    font-family: 'Hubot Sans';
-}
-
-#modal {
-    width: 800px;
-    height: 500px;  
-}
-
-.icon {
-    --iconColor: black;
-
-    padding-inline: 2px;
-    padding-block: 1px;
-    width: 20px;
-    height: 20px;
-    display: grid;
-    place-items: center;
-    place-content: center;
-    border-width: 1px;
-    border-style: solid;
-    border-color: hsla(var(--iconColor), 1.0);
-    border-radius: 2px;
-    font-size: 14px;
-    font-weight: 500;
-    color: hsla(var(--iconColor), 1.0);
-    background-color: hsla(var(--iconColor), 0.1);
-}
-
-.icon.color\:blue {
-    --iconColor: var(--blueColor);
-}
-
-.icon.color\:red {
-    --iconColor: var(--redColor);
-}
-
-.icon.color\:orange {
-    --iconColor: var(--orangeColor);
-}
-
-.icon.color\:green {
-    --iconColor: var(--greenColor);
+            > section {
+                margin-inline: auto;
+                padding-block: 0.75rem;
+                padding-inline: 0.75rem;
+                inline-size: var(--containerSize);
+            }
+        }
+    }
 }
 
 .scroll {
-    width: 100%;
+    .hstack {
+        .example {
+            min-inline-size: 400px; /* Temporary fix */
+        }
+    }
+}
+
+.snippet {
+    p {
+        --fontSize: 15px;
+        --lineHeight: 22px;
+
+        font-family: 'Hubot Sans', monospace;
+    }
+}
+
+/* Temporary fix */
+#modal {
+    inline-size: 800px;
+    block-size: 500px;
+}
+
+.scroll {
+    inline-size: 100%;
+}
+
+/* Temporary fix */
+.card {
+    overflow: clip;
+
+    &.background\:blue\/transparent {
+        /* Adds a background gradient to the card */
+        background: linear-gradient(180deg, hsla(210, 40%, 96%, 0.5) 0%, hsla(244, 100%, 45%, 0.0) 46%);
+    }
+    
+    .card-header {
+        img {
+            mask-image: linear-gradient(to top, transparent 0, black 23%);
+        }
+    }
+    
+    .card-body {
+        flex-grow: 1;
+        
+        .vstack {
+            height: 100%;
+            
+            .text:nth-child(2) {
+                flex-grow: 1;
+            }
+        }
+    }
+}
+
+.image {
+    &.background\:test2 {
+        background: radial-gradient(circle, hsla(210, 40%, 96%, 1.0) 9%, hsla(244, 100%, 45%, 0.0) 28%);
+    }
 }

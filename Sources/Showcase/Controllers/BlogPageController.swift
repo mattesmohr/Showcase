@@ -13,7 +13,7 @@ struct BlogPageController {
             let decoder = JSONDecoder()
             decoder.dateDecodingStrategy = .iso8601
             
-            let articles = try decoder.decode([BlogArticle].self, from: Data(contentsOf: url))
+            let articles = try decoder.decode([Article].self, from: Data(contentsOf: url))
             
             return try await request.htmlkit.render(BlogPage.IndexView(articles: articles))
         }
@@ -36,7 +36,7 @@ struct BlogPageController {
         let decoder = JSONDecoder()
         decoder.dateDecodingStrategy = .iso8601
         
-        let articles = try decoder.decode([BlogArticle].self, from: Data(contentsOf: url))
+        let articles = try decoder.decode([Article].self, from: Data(contentsOf: url))
         
         guard let article = articles.filter({ $0.slug == slug }).first else {
             throw Abort(.notFound)

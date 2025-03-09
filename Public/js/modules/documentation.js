@@ -104,12 +104,18 @@
                     break;
             }
 
-            let text = document.createElement('p');
-            text.setAttribute('class', 'text');
-            text.innerHTML = entry.title;
+            let title = document.createElement('p');
+            title.setAttribute('class', 'text');
+            title.innerHTML = entry.title;
+            
+            let target = document.createElement('p');
+            target.setAttribute('class', 'text foreground:gray size:small margin-leading:auto');
+            target.innerHTML = entry.target;
 
             hstack.appendChild(icon);
-            hstack.appendChild(text);
+            hstack.appendChild(title);
+            hstack.appendChild(target);
+
             anchor.appendChild(hstack);
 
             this.searchList.appendChild(anchor);

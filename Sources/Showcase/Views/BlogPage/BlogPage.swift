@@ -5,7 +5,7 @@ enum BlogPage {
     
     struct IndexView: View {
         
-        var articles: [BlogArticle]
+        var articles: [Article]
 
         var body: Content {
             PageContainer {
@@ -43,7 +43,7 @@ enum BlogPage {
     
     struct ShowView: View {
         
-        var article: BlogArticle
+        var article: Article
 
         var body: Content {
             PageContainer {

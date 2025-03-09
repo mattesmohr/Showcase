@@ -1,7 +1,7 @@
 import HTMLKitVapor
 import Vapor
 
-// [/legal]
+// [/privacy]
 struct PrivacyPageController {
     
     // [/]

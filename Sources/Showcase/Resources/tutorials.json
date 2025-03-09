@@ -2,6 +2,7 @@
     {
         "index": 0,
         "slug": "start-with-htmlkit",
+        "thumbnail": "design.png",
         "title": "Start with HTMLKit",
         "description": "Learn how to setup a Swift package and create your ever first view.",
         "sections": [
@@ -241,6 +242,7 @@
     {
         "index": 1,
         "slug": "localize-with-htmlkit",
+        "thumbnail": "localization.png",
         "title": "Localize with HTMLKit",
         "description": "Discover how to configure localization and enhance the accessibility of your web page.",
         "sections": [
@@ -341,6 +343,7 @@
     {
         "index": 2,
         "slug": "design-with-htmlkit",
+        "thumbnail": "design.png",
         "title": "Design with HTMLKit",
         "description": "Use UI components and make your design process more easy.",
         "sections": [

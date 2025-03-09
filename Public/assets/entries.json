@@ -3,870 +3,1064 @@
         "keyword": "alert",
         "title": "Alert",
         "type": "structure",
-        "reference": "/documentation/structure/alert"
+        "target": "HTMLKitComponents",
+        "reference": "/reference/structure/alert"
     },
     {
         "keyword": "button",
         "title": "Button",
         "type": "structure",
-        "reference": "/documentation/structure/button"
+        "target": "HTMLKitComponents",
+        "reference": "/reference/structure/button"
     },
     {
         "keyword": "card",
         "title": "Card",
         "type": "structure",
-        "reference": "/documentation/structure/card"
+        "target": "HTMLKitComponents",
+        "reference": "/reference/structure/card"
     },
     {
         "keyword": "carousel",
         "title": "Carousel",
         "type": "structure",
-        "reference": "/documentation/structure/carousel"
+        "target": "HTMLKitComponents",
+        "reference": "/reference/structure/carousel"
     },
     {
         "keyword": "slide",
         "title": "Slide",
         "type": "structure",
-        "reference": "/documentation/structure/slide"
+        "target": "HTMLKitComponents",
+        "reference": "/reference/structure/slide"
     },
     {
         "keyword": "chart",
         "title": "Chart",
         "type": "structure",
-        "reference": "/documentation/structure/chart"
+        "target": "HTMLKitComponents",
+        "reference": "/reference/structure/chart"
     },
     {
         "keyword": "barmark",
         "title": "BarMark",
         "type": "structure",
-        "reference": "/documentation/structure/barmark"
+        "target": "HTMLKitComponents",
+        "reference": "/reference/structure/barmark"
     },
     {
         "keyword": "sectormark",
         "title": "SectorMark",
         "type": "structure",
-        "reference": "/documentation/structure/sectormark"
+        "target": "HTMLKitComponents",
+        "reference": "/reference/structure/sectormark"
     },
     {
         "keyword": "divider",
         "title": "Divider",
         "type": "structure",
-        "reference": "/documentation/structure/divider"
+        "target": "HTMLKitComponents",
+        "reference": "/reference/structure/divider"
     },
     {
         "keyword": "dropdown",
         "title": "Dropdown",
         "type": "structure",
-        "reference": "/documentation/structure/dropdown"
+        "target": "HTMLKitComponents",
+        "reference": "/reference/structure/dropdown"
     },
     {
         "keyword": "form",
         "title": "Form",
         "type": "structure",
-        "reference": "/documentation/structure/form"
+        "target": "HTMLKitComponents",
+        "reference": "/reference/structure/form"
     },
     {
         "keyword": "disclosure",
         "title": "Disclosure",
         "type": "structure",
-        "reference": "/documentation/structure/disclosure"
+        "target": "HTMLKitComponents",
+        "reference": "/reference/structure/disclosure"
     },
     {
         "keyword": "textfield",
         "title": "TextField",
         "type": "structure",
-        "reference": "/documentation/structure/textfield"
+        "target": "HTMLKitComponents",
+        "reference": "/reference/structure/textfield"
     },
     {
         "keyword": "texteditor",
         "title": "TextEditor",
         "type": "structure",
-        "reference": "/documentation/structure/texteditor"
+        "target": "HTMLKitComponents",
+        "reference": "/reference/structure/texteditor"
     },
     {
         "keyword": "checkfield",
         "title": "CheckField",
         "type": "structure",
-        "reference": "/documentation/structure/checkfield"
+        "target": "HTMLKitComponents",
+        "reference": "/reference/structure/checkfield"
     },
     {
         "keyword": "radioselect",
         "title": "RadioSelect",
         "type": "structure",
-        "reference": "/documentation/structure/radioselect"
+        "target": "HTMLKitComponents",
+        "reference": "/reference/structure/radioselect"
     },
     {
         "keyword": "selectfield",
         "title": "SelectField",
         "type": "structure",
-        "reference": "/documentation/structure/selectfield"
+        "target": "HTMLKitComponents",
+        "reference": "/reference/structure/selectfield"
     },
     {
         "keyword": "securefield",
         "title": "SecureField",
         "type": "structure",
-        "reference": "/documentation/structure/securefield"
+        "target": "HTMLKitComponents",
+        "reference": "/reference/structure/securefield"
     },
     {
         "keyword": "slider",
         "title": "Slider",
         "type": "structure",
-        "reference": "/documentation/structure/slider"
+        "target": "HTMLKitComponents",
+        "reference": "/reference/structure/slider"
     },
     {
         "keyword": "datepicker",
         "title": "DatePicker",
         "type": "structure",
-        "reference": "/documentation/structure/datepicker"
+        "target": "HTMLKitComponents",
+        "reference": "/reference/structure/datepicker"
     },
     {
         "keyword": "searchfield",
         "title": "SearchField",
         "type": "structure",
-        "reference": "/documentation/structure/searchfield"
+        "target": "HTMLKitComponents",
+        "reference": "/reference/structure/searchfield"
     },
     {
         "keyword": "progress",
         "title": "Progress",
         "type": "structure",
-        "reference": "/documentation/structure/progress"
+        "target": "HTMLKitComponents",
+        "reference": "/reference/structure/progress"
     },
     {
         "keyword": "textpad",
         "title": "TextPad",
         "type": "structure",
-        "reference": "/documentation/structure/textpad"
+        "target": "HTMLKitComponents",
+        "reference": "/reference/structure/textpad"
     },
     {
         "keyword": "filedialog",
         "title": "FileDialog",
         "type": "structure",
-        "reference": "/documentation/structure/filedialog"
+        "target": "HTMLKitComponents",
+        "reference": "/reference/structure/filedialog"
     },
     {
         "keyword": "grid",
         "title": "Grid",
         "type": "structure",
-        "reference": "/documentation/structure/grid"
+        "target": "HTMLKitComponents",
+        "reference": "/reference/structure/grid"
     },
     {
         "keyword": "grouping",
         "title": "Grouping",
         "type": "structure",
-        "reference": "/documentation/structure/grouping"
+        "target": "HTMLKitComponents",
+        "reference": "/reference/structure/grouping"
     },
     {
         "keyword": "image",
         "title": "Image",
         "type": "structure",
-        "reference": "/documentation/structure/image"
+        "target": "HTMLKitComponents",
+        "reference": "/reference/structure/image"
     },
     {
         "keyword": "link",
         "title": "Link",
         "type": "structure",
-        "reference": "/documentation/structure/link"
+        "target": "HTMLKitComponents",
+        "reference": "/reference/structure/link"
     },
     {
         "keyword": "list",
         "title": "List",
         "type": "structure",
-        "reference": "/documentation/structure/list"
+        "target": "HTMLKitComponents",
+        "reference": "/reference/structure/list"
     },
     {
         "keyword": "modal",
         "title": "Modal",
         "type": "structure",
-        "reference": "/documentation/structure/modal"
+        "target": "HTMLKitComponents",
+        "reference": "/reference/structure/modal"
     },
     {
         "keyword": "navigation",
         "title": "Navigation",
         "type": "structure",
-        "reference": "/documentation/structure/navigation"
+        "target": "HTMLKitComponents",
+        "reference": "/reference/structure/navigation"
     },
     {
         "keyword": "scroll",
         "title": "Scroll",
         "type": "structure",
-        "reference": "/documentation/structure/scroll"
+        "target": "HTMLKitComponents",
+        "reference": "/reference/structure/scroll"
     },
     {
         "keyword": "vstack",
         "title": "VStack",
         "type": "structure",
-        "reference": "/documentation/structure/vstack"
+        "target": "HTMLKitComponents",
+        "reference": "/reference/structure/vstack"
     },
     {
         "keyword": "hstack",
         "title": "HStack",
         "type": "structure",
-        "reference": "/documentation/structure/hstack"
+        "target": "HTMLKitComponents",
+        "reference": "/reference/structure/hstack"
     },
     {
         "keyword": "zstack",
         "title": "ZStack",
         "type": "structure",
-        "reference": "/documentation/structure/zstack"
+        "target": "HTMLKitComponents",
+        "reference": "/reference/structure/zstack"
     },
     {
         "keyword": "symbol",
         "title": "Symbol",
         "type": "structure",
-        "reference": "/documentation/structure/symbol"
+        "target": "HTMLKitComponents",
+        "reference": "/reference/structure/symbol"
     },
     {
         "keyword": "tabs",
         "title": "Tabs",
         "type": "structure",
-        "reference": "/documentation/structure/tabs"
+        "target": "HTMLKitComponents",
+        "reference": "/reference/structure/tabs"
     },
     {
         "keyword": "text",
         "title": "Text",
         "type": "structure",
-        "reference": "/documentation/structure/text"
+        "target": "HTMLKitComponents",
+        "reference": "/reference/structure/text"
     },
     {
         "keyword": "snippet",
         "title": "Snippet",
         "type": "structure",
-        "reference": "/documentation/structure/snippet"
+        "target": "HTMLKitComponents",
+        "reference": "/reference/structure/snippet"
     },
     {
         "keyword": "font",
         "title": "font",
         "type": "method",
-        "reference": "/documentation/method/font"
+        "target": "HTMLKitComponents",
+        "reference": "/reference/method/font"
     },
     {
         "keyword": "modalstyle",
         "title": "modalStyle",
         "type": "method",
-        "reference": "/documentation/method/modal-style"
+        "target": "HTMLKitComponents",
+        "reference": "/reference/method/modal-style"
     },
     {
         "keyword": "textstyle",
         "title": "textStyle",
         "type": "method",
-        "reference": "/documentation/method/text-style"
+        "target": "HTMLKitComponents",
+        "reference": "/reference/method/text-style"
     },
     {
         "keyword": "foregroundcolor",
         "title": "foregroundColor",
         "type": "method",
-        "reference": "/documentation/method/foreground-color"
+        "target": "HTMLKitComponents",
+        "reference": "/reference/method/foreground-color"
     },
     {
         "keyword": "fontsize",
         "title": "fontSize",
         "type": "method",
-        "reference": "/documentation/method/font-size"
+        "target": "HTMLKitComponents",
+        "reference": "/reference/method/font-size"
     },
     {
         "keyword": "snippetstyle",
         "title": "snippetStyle",
         "type": "method",
-        "reference": "/documentation/method/snippet-style"
+        "target": "HTMLKitComponents",
+        "reference": "/reference/method/snippet-style"
     },
     {
         "keyword": "fontweight",
         "title": "fontWeight",
         "type": "method",
-        "reference": "/documentation/method/font-weight"
+        "target": "HTMLKitComponents",
+        "reference": "/reference/method/font-weight"
     },
     {
         "keyword": "textcase",
         "title": "textCase",
         "type": "method",
-        "reference": "/documentation/method/text-case"
+        "target": "HTMLKitComponents",
+        "reference": "/reference/method/text-case"
     },
     {
         "keyword": "fontstyle",
         "title": "fontStyle",
         "type": "method",
-        "reference": "/documentation/method/font-style"
+        "target": "HTMLKitComponents",
+        "reference": "/reference/method/font-style"
     },
     {
         "keyword": "textdecoration",
         "title": "textDecoration",
         "type": "method",
-        "reference": "/documentation/method/text-decoration"
+        "target": "HTMLKitComponents",
+        "reference": "/reference/method/text-decoration"
     },
     {
         "keyword": "linespacing",
         "title": "lineSpacing",
         "type": "method",
-        "reference": "/documentation/method/line-spacing"
+        "target": "HTMLKitComponents",
+        "reference": "/reference/method/line-spacing"
     },
     {
         "keyword": "linelimit",
         "title": "lineLimit",
         "type": "method",
-        "reference": "/documentation/method/line-limit"
+        "target": "HTMLKitComponents",
+        "reference": "/reference/method/line-limit"
     },
     {
         "keyword": "shadow",
         "title": "shadow",
         "type": "method",
-        "reference": "/documentation/method/shadow"
+        "target": "HTMLKitComponents",
+        "reference": "/reference/method/shadow"
     },
     {
         "keyword": "opacity",
         "title": "opacity",
         "type": "method",
-        "reference": "/documentation/method/opacity"
+        "target": "HTMLKitComponents",
+        "reference": "/reference/method/opacity"
     },
     {
         "keyword": "zindex",
         "title": "zIndex",
         "type": "method",
-        "reference": "/documentation/method/zindex"
+        "target": "HTMLKitComponents",
+        "reference": "/reference/method/zindex"
     },
     {
         "keyword": "backgroundcolor",
         "title": "backgroundColor",
         "type": "method",
-        "reference": "/documentation/method/background-color"
+        "target": "HTMLKitComponents",
+        "reference": "/reference/method/background-color"
     },
     {
         "keyword": "colorscheme",
         "title": "colorScheme",
         "type": "method",
-        "reference": "/documentation/method/font-style"
+        "target": "HTMLKitComponents",
+        "reference": "/reference/method/font-style"
     },
     {
         "keyword": "padding",
         "title": "padding",
         "type": "method",
-        "reference": "/documentation/method/padding"
+        "target": "HTMLKitComponents",
+        "reference": "/reference/method/padding"
     },
     {
         "keyword": "bordershape",
         "title": "borderShape",
         "type": "method",
-        "reference": "/documentation/method/border-shape"
+        "target": "HTMLKitComponents",
+        "reference": "/reference/method/border-shape"
     },
     {
         "keyword": "tag",
         "title": "tag",
         "type": "method",
-        "reference": "/documentation/method/tag"
+        "target": "HTMLKitComponents",
+        "reference": "/reference/method/tag"
     },
     {
         "keyword": "border",
         "title": "border",
         "type": "method",
-        "reference": "/documentation/method/border"
+        "target": "HTMLKitComponents",
+        "reference": "/reference/method/border"
     },
     {
         "keyword": "frame",
         "title": "frame",
         "type": "method",
-        "reference": "/documentation/method/frame"
+        "target": "HTMLKitComponents",
+        "reference": "/reference/method/frame"
     },
     {
         "keyword": "margin",
         "title": "margin",
         "type": "method",
-        "reference": "/documentation/method/margin"
+        "target": "HTMLKitComponents",
+        "reference": "/reference/method/margin"
     },
     {
         "keyword": "focuscolor",
         "title": "focusColor",
         "type": "method",
-        "reference": "/documentation/method/focus-color"
+        "target": "HTMLKitComponents",
+        "reference": "/reference/method/focus-color"
     },
     {
         "keyword": "aspectratio",
         "title": "aspectRatio",
         "type": "method",
-        "reference": "/documentation/method/aspect-ratio"
+        "target": "HTMLKitComponents",
+        "reference": "/reference/method/aspect-ratio"
     },
     {
         "keyword": "imagescale",
         "title": "imageScale",
         "type": "method",
-        "reference": "/documentation/method/image-scale"
+        "target": "HTMLKitComponents",
+        "reference": "/reference/method/image-scale"
     },
     {
         "keyword": "cardstyle",
         "title": "cardStyle",
         "type": "method",
-        "reference": "/documentation/method/card-style"
+        "target": "HTMLKitComponents",
+        "reference": "/reference/method/card-style"
     },
     {
         "keyword": "navigationstyle",
         "title": "navigationStyle",
         "type": "method",
-        "reference": "/documentation/method/navigation-style"
+        "target": "HTMLKitComponents",
+        "reference": "/reference/method/navigation-style"
     },
     {
         "keyword": "clipshape",
         "title": "clipShape",
         "type": "method",
-        "reference": "/documentation/method/clip-shape"
+        "target": "HTMLKitComponents",
+        "reference": "/reference/method/clip-shape"
     },
     {
         "keyword": "blur",
         "title": "blur",
         "type": "method",
-        "reference": "/documentation/method/blur"
+        "target": "HTMLKitComponents",
+        "reference": "/reference/method/blur"
     },
     {
         "keyword": "grayscaledepth",
         "title": "grayscaleDepth",
         "type": "method",
-        "reference": "/documentation/method/grayscale-depth"
+        "target": "HTMLKitComponents",
+        "reference": "/reference/method/grayscale-depth"
     },
     {
         "keyword": "brightness",
         "title": "brightness",
         "type": "method",
-        "reference": "/documentation/method/brightness"
+        "target": "HTMLKitComponents",
+        "reference": "/reference/method/brightness"
     },
     {
         "keyword": "saturation",
         "title": "saturation",
         "type": "method",
-        "reference": "/documentation/method/saturation"
+        "target": "HTMLKitComponents",
+        "reference": "/reference/method/saturation"
     },
     {
         "keyword": "contrast",
         "title": "contrast",
         "type": "method",
-        "reference": "/documentation/method/contrast"
+        "target": "HTMLKitComponents",
+        "reference": "/reference/method/contrast"
     },
     {
         "keyword": "controlsize",
         "title": "controlSize",
         "type": "method",
-        "reference": "/documentation/method/control-size"
+        "target": "HTMLKitComponents",
+        "reference": "/reference/method/control-size"
     },
     {
         "keyword": "buttonstyle",
         "title": "buttonStyle",
         "type": "method",
-        "reference": "/documentation/method/button-style"
+        "target": "HTMLKitComponents",
+        "reference": "/reference/method/button-style"
     },
     {
         "keyword": "flowdirection",
         "title": "FlowDirection",
         "type": "enumeration",
-        "reference": "/documentation/enumeration/flow-direction"
+        "target": "HTMLKitComponents",
+        "reference": "/reference/enumeration/flow-direction"
     },
     {
         "keyword": "textalignment",
         "title": "TextAlignment",
         "type": "enumeration",
-        "reference": "/documentation/enumeration/text-alignment"
+        "target": "HTMLKitComponents",
+        "reference": "/reference/enumeration/text-alignment"
     },
     {
         "keyword": "viewwidth",
         "title": "ViewWidth",
         "type": "enumeration",
-        "reference": "/documentation/enumeration/view-width"
+        "target": "HTMLKitComponents",
+        "reference": "/reference/enumeration/view-width"
     },
     {
         "keyword": "viewheight",
         "title": "ViewHeight",
         "type": "enumeration",
-        "reference": "/documentation/enumeration/viewheight"
+        "target": "HTMLKitComponents",
+        "reference": "/reference/enumeration/viewheight"
     },
     {
         "keyword": "foregroundcolor",
         "title": "ForegroundColor",
         "type": "enumeration",
-        "reference": "/documentation/enumeration/foreground-color"
+        "target": "HTMLKitComponents",
+        "reference": "/reference/enumeration/foreground-color"
     },
     {
         "keyword": "fontsize",
         "title": "FontSize",
         "type": "enumeration",
-        "reference": "/documentation/enumeration/font-size"
+        "target": "HTMLKitComponents",
+        "reference": "/reference/enumeration/font-size"
     },
     {
         "keyword": "textcase",
         "title": "TextCase",
         "type": "enumeration",
-        "reference": "/documentation/enumeration/text-case"
+        "target": "HTMLKitComponents",
+        "reference": "/reference/enumeration/text-case"
     },
     {
         "keyword": "fontweight",
         "title": "FontWeight",
         "type": "enumeration",
-        "reference": "/documentation/enumeration/font-weight"
+        "target": "HTMLKitComponents",
+        "reference": "/reference/enumeration/font-weight"
     },
     {
         "keyword": "textdecoration",
         "title": "TextDecoration",
         "type": "enumeration",
-        "reference": "/documentation/enumeration/text-decoration"
+        "target": "HTMLKitComponents",
+        "reference": "/reference/enumeration/text-decoration"
     },
     {
         "keyword": "fontstyle",
         "title": "FontStyle",
         "type": "enumeration",
-        "reference": "/documentation/enumeration/font-style"
+        "target": "HTMLKitComponents",
+        "reference": "/reference/enumeration/font-style"
     },
     {
         "keyword": "backgroundcolor",
         "title": "BackgroundColor",
         "type": "enumeration",
-        "reference": "/documentation/enumeration/background-color"
+        "target": "HTMLKitComponents",
+        "reference": "/reference/enumeration/background-color"
     },
     {
         "keyword": "objectfit",
         "title": "ObjectFit",
         "type": "enumeration",
-        "reference": "/documentation/enumeration/object-fit"
+        "target": "HTMLKitComponents",
+        "reference": "/reference/enumeration/object-fit"
     },
     {
         "keyword": "opacityvalue",
         "title": "OpacityValue",
         "type": "enumeration",
-        "reference": "/documentation/enumeration/opacity-value"
+        "target": "HTMLKitComponents",
+        "reference": "/reference/enumeration/opacity-value"
     },
     {
         "keyword": "imagescale",
         "title": "ImageScale",
         "type": "enumeration",
-        "reference": "/documentation/enumeration/image-scale"
+        "target": "HTMLKitComponents",
+        "reference": "/reference/enumeration/image-scale"
     },
     {
         "keyword": "clipshape",
         "title": "ClipShape",
         "type": "enumeration",
-        "reference": "/documentation/enumeration/clip-shape"
+        "target": "HTMLKitComponents",
+        "reference": "/reference/enumeration/clip-shape"
     },
     {
         "keyword": "positionindex",
         "title": "PositionIndex",
         "type": "enumeration",
-        "reference": "/documentation/enumeration/position-index"
+        "target": "HTMLKitComponents",
+        "reference": "/reference/enumeration/position-index"
     },
     {
         "keyword": "textstyle",
         "title": "TextStyle",
         "type": "enumeration",
-        "reference": "/documentation/enumeration/text-style"
+        "target": "HTMLKitComponents",
+        "reference": "/reference/enumeration/text-style"
     },
     {
         "keyword": "verticalalignment",
         "title": "VerticalAlignment",
         "type": "enumeration",
-        "reference": "/documentation/enumeration/vertical-alignment"
+        "target": "HTMLKitComponents",
+        "reference": "/reference/enumeration/vertical-alignment"
     },
     {
         "keyword": "horizontalalignment",
         "title": "HorizontalAlignment",
         "type": "enumeration",
-        "reference": "/documentation/enumeration/horizontal-alignment"
+        "target": "HTMLKitComponents",
+        "reference": "/reference/enumeration/horizontal-alignment"
     },
     {
         "keyword": "contentspace",
         "title": "ContentSpace",
         "type": "enumeration",
-        "reference": "/documentation/enumeration/content-space"
+        "target": "HTMLKitComponents",
+        "reference": "/reference/enumeration/content-space"
     },
     {
         "keyword": "syntaxhighlight",
         "title": "SyntaxHighlight",
         "type": "enumeration",
-        "reference": "/documentation/enumeration/syntax-highlight"
+        "target": "HTMLKitComponents",
+        "reference": "/reference/enumeration/syntax-highlight"
     },
     {
         "keyword": "buttonstyle",
         "title": "ButtonStyle",
         "type": "enumeration",
-        "reference": "/documentation/enumeration/button-style"
+        "target": "HTMLKitComponents",
+        "reference": "/reference/enumeration/button-style"
     },
     {
         "keyword": "bordershape",
         "title": "BorderShape",
         "type": "enumeration",
-        "reference": "/documentation/enumeration/border-shape"
+        "target": "HTMLKitComponents",
+        "reference": "/reference/enumeration/border-shape"
     },
     {
         "keyword": "controlsize",
         "title": "ControlSize",
         "type": "enumeration",
-        "reference": "/documentation/enumeration/control-size"
+        "target": "HTMLKitComponents",
+        "reference": "/reference/enumeration/control-size"
     },
     {
         "keyword": "gridratio",
         "title": "GridRatio",
         "type": "enumeration",
-        "reference": "/documentation/enumeration/grid-ratio"
+        "target": "HTMLKitComponents",
+        "reference": "/reference/enumeration/grid-ratio"
     },
     {
         "keyword": "liststyle",
         "title": "ListStyle",
         "type": "enumeration",
-        "reference": "/documentation/enumeration/list-style"
+        "target": "HTMLKitComponents",
+        "reference": "/reference/enumeration/list-style"
     },
     {
         "keyword": "viewstate",
         "title": "ViewState",
         "type": "enumeration",
-        "reference": "/documentation/enumeration/view-state"
+        "target": "HTMLKitComponents",
+        "reference": "/reference/enumeration/view-state"
     },
     {
         "keyword": "bordercolor",
         "title": "BorderColor",
         "type": "enumeration",
-        "reference": "/documentation/enumeration/border-color"
+        "target": "HTMLKitComponents",
+        "reference": "/reference/enumeration/border-color"
     },
     {
         "keyword": "focuscolor",
         "title": "FocusColor",
         "type": "enumeration",
-        "reference": "/documentation/enumeration/focus-color"
+        "target": "HTMLKitComponents",
+        "reference": "/reference/enumeration/focus-color"
     },
     {
         "keyword": "colorscheme",
         "title": "ColorScheme",
         "type": "enumeration",
-        "reference": "/documentation/enumeration/color-scheme"
+        "target": "HTMLKitComponents",
+        "reference": "/reference/enumeration/color-scheme"
     },
     {
         "keyword": "paddinglength",
         "title": "PaddingLength",
         "type": "enumeration",
-        "reference": "/documentation/enumeration/padding-length"
+        "target": "HTMLKitComponents",
+        "reference": "/reference/enumeration/padding-length"
     },
     {
         "keyword": "marginlength",
         "title": "MarginLength",
         "type": "enumeration",
-        "reference": "/documentation/enumeration/margin-length"
+        "target": "HTMLKitComponents",
+        "reference": "/reference/enumeration/margin-length"
     },
     {
         "keyword": "aspectratio",
         "title": "AspectRatio",
         "type": "enumeration",
-        "reference": "/documentation/enumeration/aspect-ratio"
+        "target": "HTMLKitComponents",
+        "reference": "/reference/enumeration/aspect-ratio"
     },
     {
         "keyword": "navigationstyle",
         "title": "NavigationStyle",
         "type": "enumeration",
-        "reference": "/documentation/enumeration/navigation-style"
+        "target": "HTMLKitComponents",
+        "reference": "/reference/enumeration/navigation-style"
     },
     {
         "keyword": "lineheight",
         "title": "LineHeight",
         "type": "enumeration",
-        "reference": "/documentation/enumeration/line-height"
+        "target": "HTMLKitComponents",
+        "reference": "/reference/enumeration/line-height"
     },
     {
         "keyword": "linelimit",
         "title": "LineLimit",
         "type": "enumeration",
-        "reference": "/documentation/enumeration/line-limit"
+        "target": "HTMLKitComponents",
+        "reference": "/reference/enumeration/line-limit"
     },
     {
         "keyword": "framealignment",
         "title": "FrameAlignment",
         "type": "enumeration",
-        "reference": "/documentation/enumeration/frame-alignment"
+        "target": "HTMLKitComponents",
+        "reference": "/reference/enumeration/frame-alignment"
     },
     {
         "keyword": "fontfamily",
         "title": "FontFamily",
         "type": "enumeration",
-        "reference": "/documentation/enumeration/font-family"
+        "target": "HTMLKitComponents",
+        "reference": "/reference/enumeration/font-family"
     },
     {
         "keyword": "blurlevel",
         "title": "BlurLevel",
         "type": "enumeration",
-        "reference": "/documentation/enumeration/blur-level"
+        "target": "HTMLKitComponents",
+        "reference": "/reference/enumeration/blur-level"
     },
     {
         "keyword": "grayscaledepth",
         "title": "GrayscaleDepth",
         "type": "enumeration",
-        "reference": "/documentation/enumeration/grayscale-depth"
+        "target": "HTMLKitComponents",
+        "reference": "/reference/enumeration/grayscale-depth"
     },
     {
         "keyword": "brightnesslevel",
         "title": "BrightnessLevel",
         "type": "enumeration",
-        "reference": "/documentation/enumeration/brightness-level"
+        "target": "HTMLKitComponents",
+        "reference": "/reference/enumeration/brightness-level"
     },
     {
         "keyword": "saturationlevel",
         "title": "SaturationLevel",
         "type": "enumeration",
-        "reference": "/documentation/enumeration/saturation-level"
+        "target": "HTMLKitComponents",
+        "reference": "/reference/enumeration/saturation-level"
     },
     {
         "keyword": "contrastlevel",
         "title": "ContrastLevel",
         "type": "enumeration",
-        "reference": "/documentation/enumeration/contrast-level"
+        "target": "HTMLKitComponents",
+        "reference": "/reference/enumeration/contrast-level"
     },
     {
         "keyword": "innerradius",
         "title": "InnerRadius",
         "type": "enumeration",
-        "reference": "/documentation/enumeration/inner-radius"
+        "target": "HTMLKitComponents",
+        "reference": "/reference/enumeration/inner-radius"
     },
     {
         "keyword": "listspace",
         "title": "ListSpace",
         "type": "enumeration",
-        "reference": "/documentation/enumeration/list-space"
+        "target": "HTMLKitComponents",
+        "reference": "/reference/enumeration/list-space"
     },
     {
         "keyword": "blurradius",
         "title": "BlurRadius",
         "type": "enumeration",
-        "reference": "/documentation/enumeration/blur-radius"
+        "target": "HTMLKitComponents",
+        "reference": "/reference/enumeration/blur-radius"
     },
     {
         "keyword": "shadowcolor",
         "title": "ShadowColor",
         "type": "enumeration",
-        "reference": "/documentation/enumeration/shadow-color"
+        "target": "HTMLKitComponents",
+        "reference": "/reference/enumeration/shadow-color"
     },
     {
         "keyword": "borderwidth",
         "title": "BorderWidth",
         "type": "enumeration",
-        "reference": "/documentation/enumeration/border-width"
+        "target": "HTMLKitComponents",
+        "reference": "/reference/enumeration/border-width"
     },
     {
         "keyword": "edgeset",
         "title": "EdgeSet",
         "type": "enumeration",
-        "reference": "/documentation/enumeration/edge-set"
+        "target": "HTMLKitComponents",
+        "reference": "/reference/enumeration/edge-set"
     },
     {
         "keyword": "meta",
         "title": "Meta",
         "type": "structure",
-        "reference": "/documentation/structure/meta"
+        "target": "HTMLKit",
+        "reference": "/reference/structure/meta"
     },
     {
         "keyword": "inputtype",
         "title": "InputType",
         "type": "enumeration",
-        "reference": "/documentation/enumeration/input-type"
+        "target": "HTMLKit",
+        "reference": "/reference/enumeration/input-type"
     },
     {
         "keyword": "elements",
         "title": "Elements",
         "type": "article",
-        "reference": "/documentation/elements"
+        "target": "HTMLKit",
+        "reference": "/reference/elements"
     },
     {
         "keyword": "components",
         "title": "Components",
         "type": "article",
-        "reference": "/documentation/components"
+        "target": "HTMLKitComponents",
+        "reference": "/reference/components"
     },
     {
         "keyword": "security",
         "title": "Security",
         "type": "article",
-        "reference": "/documentation/security"
+        "target": "HTMLKit",
+        "reference": "/reference/security"
     },
     {
         "keyword": "environment",
         "title": "Environment",
         "type": "article",
-        "reference": "/documentation/environment"
+        "target": "HTMLKit",
+        "reference": "/reference/environment"
     },
     {
         "keyword": "localization",
         "title": "Localization",
         "type": "article",
-        "reference": "/documentation/localization"
+        "target": "HTMLKit",
+        "reference": "/reference/localization"
     },
     {
         "keyword": "onhover",
         "title": "onHover",
         "type": "method",
-        "reference": "/documentation/method/onhover"
+        "target": "HTMLKitComponents",
+        "reference": "/reference/method/onhover"
     },
     {
         "keyword": "onleave",
         "title": "onLeave",
         "type": "method",
-        "reference": "/documentation/method/onleave"
+        "target": "HTMLKitComponents",
+        "reference": "/reference/method/onleave"
     },
     {
         "keyword": "onsubmit",
         "title": "onSubmit",
         "type": "method",
-        "reference": "/documentation/method/onsubmit"
+        "target": "HTMLKitComponents",
+        "reference": "/reference/method/onsubmit"
     },
     {
         "keyword": "ondrag",
         "title": "onDrag",
         "type": "method",
-        "reference": "/documentation/method/ondrag"
+        "target": "HTMLKitComponents",
+        "reference": "/reference/method/ondrag"
     },
     {
         "keyword": "ondrop",
         "title": "onDrop",
         "type": "method",
-        "reference": "/documentation/method/ondrop"
+        "target": "HTMLKitComponents",
+        "reference": "/reference/method/ondrop"
     },
     {
         "keyword": "onpress",
         "title": "onPress",
         "type": "method",
-        "reference": "/documentation/method/onpress"
+        "target": "HTMLKitComponents",
+        "reference": "/reference/method/onpress"
     },
     {
         "keyword": "ontab",
         "title": "onTab",
         "type": "method",
-        "reference": "/documentation/method/ontab"
+        "target": "HTMLKitComponents",
+        "reference": "/reference/method/ontab"
     },
     {
         "keyword": "onclick",
         "title": "onClick",
         "type": "method",
-        "reference": "/documentation/method/onclick"
+        "target": "HTMLKitComponents",
+        "reference": "/reference/method/onclick"
     },
     {
         "keyword": "tint",
         "title": "tint",
         "type": "method",
-        "reference": "/documentation/method/tint"
+        "target": "HTMLKitComponents",
+        "reference": "/reference/method/tint"
     },
     {
         "keyword": "progressstyle",
         "title": "progressStyle",
         "type": "method",
-        "reference": "/documentation/method/progress-style"
+        "target": "HTMLKitComponents",
+        "reference": "/reference/method/progress-style"
     },
     {
         "keyword": "tintcolor",
         "title": "TintColor",
         "type": "enumeration",
-        "reference": "/documentation/enumeration/tint-color"
+        "target": "HTMLKitComponents",
+        "reference": "/reference/enumeration/tint-color"
     },
     {
         "keyword": "progressstyle",
         "title": "ProgressStyle",
         "type": "enumeration",
-        "reference": "/documentation/enumeration/progress-style"
+        "target": "HTMLKitComponents",
+        "reference": "/reference/enumeration/progress-style"
     },
     {
         "keyword": "symbolname",
         "title": "SymbolName",
         "type": "enumeration",
-        "reference": "/documentation/enumeration/symbol-name"
+        "target": "HTMLKitComponents",
+        "reference": "/reference/enumeration/symbol-name"
     },
     {
         "keyword": "video",
         "title": "Video",
         "type": "structure",
-        "reference": "/documentation/structure/video"
+        "target": "HTMLKitComponents",
+        "reference": "/reference/structure/video"
+    },
+    {
+        "keyword": "comment",
+        "title": "Comment",
+        "type": "structure",
+        "target": "HTMLKit",
+        "reference": "/reference/structure/comment"
+    },
+    {
+        "keyword": "document",
+        "title": "Document",
+        "type": "structure",
+        "target": "HTMLKit",
+        "reference": "/reference/structure/document"
+    },
+    {
+        "keyword": "html",
+        "title": "Html",
+        "type": "structure",
+        "target": "HTMLKit",
+        "reference": "/reference/structure/html"
+    },
+    {
+        "keyword": "article",
+        "title": "Article",
+        "type": "structure",
+        "target": "HTMLKit",
+        "reference": "/reference/structure/article"
+    },
+    {
+        "keyword": "section",
+        "title": "Section",
+        "type": "structure",
+        "target": "HTMLKit",
+        "reference": "/reference/structure/section"
+    },
+    {
+        "keyword": "navigation",
+        "title": "Navigation",
+        "type": "structure",
+        "target": "HTMLKit",
+        "reference": "/reference/structure/navigation"
+    },
+    {
+        "keyword": "aside",
+        "title": "Aside",
+        "type": "structure",
+        "target": "HTMLKit",
+        "reference": "/reference/structure/aside"
     }
 ]

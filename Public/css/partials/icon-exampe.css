@@ -1,0 +1,27 @@
+.icon-example {
+    position: relative;
+    display: inline-block;
+    border: 1px solid hsla(var(--systemBorderColor), 1.0);
+    border-radius: 10px;
+    background: linear-gradient(#E5F0F5 1px, transparent 1px), linear-gradient(to right, #E5F0F5 1px, transparent 1px), linear-gradient(#FBFDFE, #FBFDFE);
+    background-size: 25px 25px;
+    background-origin: border-box;
+    overflow: hidden;
+}
+
+.icon-gradient {
+    inline-size: inherit;
+    block-size: inherit;
+    background: linear-gradient(145deg, transparent 0%, #FBFDFE 60%);
+}
+
+.icon-content {
+    inline-size: inherit;
+    block-size: inherit;
+    padding: 14px 16px;
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    aspect-ratio: 1/1;
+}

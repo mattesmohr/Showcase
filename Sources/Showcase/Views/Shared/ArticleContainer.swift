@@ -3,11 +3,11 @@ import HTMLKitComponents
 
 struct ArticleContainer: View {
     
-    var article: ApiArticle
+    let article: Reference
     
-    var content: [Content]
+    let content: [Content]
     
-    init(article: ApiArticle, @ContentBuilder<Content> content: () -> [Content]) {
+    init(article: Reference, @ContentBuilder<Content> content: () -> [Content]) {
         
         self.article = article
         self.content = content()
@@ -66,8 +66,8 @@ struct ArticleContainer: View {
                         for symbol in topic.symbols {
                             VStack {
                                 if let reference = symbol.reference {
-                                    Link(destination: "/documentation/\(symbol.type)/\(reference)") {
-                                        Pre {
+                                    Link(destination: "/reference/\(symbol.type)/\(reference)") {
+                                        PreformattedText {
                                             Code {
                                                 symbol.code.replacingOccurrences(of: "Self", with: article.title)
                                             }
@@ -76,10 +76,9 @@ struct ArticleContainer: View {
                                     }
                                     Text {
                                         symbol.comment
-                                        
                                     }
                                 } else {
-                                    Pre {
+                                    PreformattedText {
                                         Code {
                                             symbol.code
                                         }
@@ -87,7 +86,6 @@ struct ArticleContainer: View {
                                     .class("code")
                                     Text {
                                         symbol.comment
-                                        
                                     }
                                 }
                             }

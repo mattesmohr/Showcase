@@ -1,72 +1,116 @@
 import HTMLKit
 import HTMLKitComponents
 
-enum DocumentationPage {
+enum ReferencePage {
     
     struct IndexView: View {
         
         var body: Content {
-            DocumentationContainer {
-                HStack(alignment: .top, spacing: .large) {
-                    VStack(spacing: .large) {
-                        VStack {
-                            Text {
-                                "Introduction"
-                            }
-                            .fontSize(.large)
-                            Text {
-                                MarkdownString {
-                                    "The introduction section of the HTMLKit documentation should provide a comprehensive overview of the framework, highlighting its purpose, key features, and advantages. It should explain how HTMLKit allows developers to write HTML in Swift and how it integrates seamlessly with backend frameworks like Vapor and Hummingbird to create a unified full-stack development experience."
-                                }
-                            }
-                            .fontSize(.medium)
-                            Grid(ratio: .fifth) {
-                                VStack {
-                                    Text {
-                                        "Elements"
-                                    }
-                                    .bold()
-                                    Link(destination: "/documentation/elements") {
-                                        Text {
-                                            "Read more"
-                                        }
-                                    }
-                                }
-                                VStack {
-                                    Text {
-                                        "Localization"
-                                    }
-                                    .bold()
-                                    Link(destination: "/documentation/localization") {
-                                        Text {
-                                            "Read more"
-                                        }
-                                    }
-                                }
-                                VStack {
-                                    Text {
-                                        "Components"
-                                    }
-                                    .bold()
-                                    Link(destination: "/documentation/components") {
-                                        Text {
-                                            "Read more"
-                                        }
-                                    }
-                                }
-                                VStack {
-                                    Text {
-                                        "Environment"
-                                    }
-                                    .bold()
-                                    Link(destination: "/documentation/environment") {
-                                        Text {
-                                            "Read more"
-                                        }
-                                    }
-                                }
-                            }
+            ReferenceContainer {
+                VStack {
+                    Text {
+                        "Introduction"
+                    }
+                    .fontSize(.large)
+                    Text {
+                        MarkdownString {
+                            "The introduction section of the HTMLKit documentation should provide a comprehensive overview of the framework, highlighting its purpose, key features, and advantages. It should explain how HTMLKit allows developers to write HTML in Swift and how it integrates seamlessly with backend frameworks like Vapor and Hummingbird to create a unified full-stack development experience."
                         }
+                    }
+                    .fontSize(.medium)
+                    Grid(ratio: .quarter, spacing: .large) {
+                        Card {
+                            VStack(spacing: .small) {
+                                Text {
+                                    "Elements"
+                                }
+                                .fontSize(.large)
+                                Text {
+                                    "Explore live examples and see the capabilities of HTMLKit in action."
+                                }
+                                Link(destination: "/reference/elements") {
+                                    Text {
+                                        "Read more"
+                                    }
+                                }
+                                .foregroundColor(.accent)
+                            }
+                            
+                        } header: {
+                            Image(source: "/assets/img/examples.png")
+                                .aspectRatio(.unequal, fit: .contain)
+                        }
+                        .cardStyle(PosterStyle())
+                        .padding(length: .medium)
+                        Card {
+                            VStack(spacing: .small) {
+                                Text {
+                                    "Localization"
+                                }
+                                .fontSize(.large)
+                                Text {
+                                    "Explore live examples and see the capabilities of HTMLKit in action."
+                                }
+                                Link(destination: "/reference/localization") {
+                                    Text {
+                                        "Read more"
+                                    }
+                                }
+                                .foregroundColor(.accent)
+                            }
+                            
+                        } header: {
+                            Image(source: "/assets/img/examples.png")
+                                .aspectRatio(.unequal, fit: .contain)
+                        }
+                        .cardStyle(PosterStyle())
+                        .padding(length: .medium)
+                        Card {
+                            VStack(spacing: .small) {
+                                Text {
+                                    "Components"
+                                }
+                                .fontSize(.large)
+                                Text {
+                                    "Explore live examples and see the capabilities of HTMLKit in action."
+                                }
+                                Link(destination: "/reference/components") {
+                                    Text {
+                                        "Read more"
+                                    }
+                                }
+                                .foregroundColor(.accent)
+                            }
+                            
+                        } header: {
+                            Image(source: "/assets/img/examples.png")
+                                .aspectRatio(.unequal, fit: .contain)
+                        }
+                        .cardStyle(PosterStyle())
+                        .padding(length: .medium)
+                        Card {
+                            VStack(spacing: .small) {
+                                Text {
+                                    "Environment"
+                                }
+                                .fontSize(.large)
+                                Text {
+                                    "Explore live examples and see the capabilities of HTMLKit in action."
+                                }
+                                Link(destination: "/reference/environment") {
+                                    Text {
+                                        "Read more"
+                                    }
+                                }
+                                .foregroundColor(.accent)
+                            }
+                            
+                        } header: {
+                            Image(source: "/assets/img/examples.png")
+                                .aspectRatio(.unequal, fit: .contain)
+                        }
+                        .cardStyle(PosterStyle())
+                        .padding(length: .medium)
                     }
                 }
             }
@@ -75,11 +119,11 @@ enum DocumentationPage {
     
     struct ArticleView: View {
         
-        var article: ApiArticle
+        let reference: Reference
         
         var body: Content {
-            DocumentationContainer {
-                ArticleContainer(article: article) {
+            ReferenceContainer {
+                ArticleContainer(article: reference) {
                 }
             }
         }
@@ -88,11 +132,11 @@ enum DocumentationPage {
     
     struct ElementsArticleView: View {
         
-        var article: ApiArticle
+        let reference: Reference
         
         var body: Content {
-            DocumentationContainer {
-                ArticleContainer(article: article) {
+            ReferenceContainer {
+                ArticleContainer(article: reference) {
                 }
             }
         }
@@ -100,11 +144,11 @@ enum DocumentationPage {
     
     struct LocalizationArticleView: View {
         
-        var article: ApiArticle
+        let reference: Reference
         
         var body: Content {
-            DocumentationContainer {
-                ArticleContainer(article: article) {
+            ReferenceContainer {
+                ArticleContainer(article: reference) {
                 }
             }
         }
@@ -112,11 +156,11 @@ enum DocumentationPage {
     
     struct ComponentsArticleView: View {
         
-        var article: ApiArticle
+        let reference: Reference
         
         var body: Content {
-            DocumentationContainer {
-                ArticleContainer(article: article) {
+            ReferenceContainer {
+                ArticleContainer(article: reference) {
                 }
             }
         }
@@ -124,11 +168,11 @@ enum DocumentationPage {
     
     struct SecurityArticleView: View {
         
-        var article: ApiArticle
+        let reference: Reference
         
         var body: Content {
-            DocumentationContainer {
-                ArticleContainer(article: article) {
+            ReferenceContainer {
+                ArticleContainer(article: reference) {
                 }
             }
         }
@@ -136,11 +180,11 @@ enum DocumentationPage {
     
     struct EnvironmentArticleView: View {
         
-        var article: ApiArticle
+        let reference: Reference
         
         var body: Content {
-            DocumentationContainer {
-                ArticleContainer(article: article) {
+            ReferenceContainer {
+                ArticleContainer(article: reference) {
                 }
             }
         }
@@ -148,11 +192,11 @@ enum DocumentationPage {
     
     struct InitializerView: View {
         
-        var article: ApiArticle
+        let reference: Reference
         
         var body: Content {
-            DocumentationContainer {
-                ArticleContainer(article: article) {
+            ReferenceContainer {
+                ArticleContainer(article: reference) {
                 }
             }
         }
@@ -160,11 +204,11 @@ enum DocumentationPage {
     
     struct MethodView: View {
         
-        var article: ApiArticle
+        let reference: Reference
         
         var body: Content {
-            DocumentationContainer {
-                ArticleContainer(article: article) {
+            ReferenceContainer {
+                ArticleContainer(article: reference) {
                 }
             }
         }
@@ -172,11 +216,11 @@ enum DocumentationPage {
     
     struct StructureView: View {
         
-        var article: ApiArticle
+        let reference: Reference
         
         var body: Content {
-            DocumentationContainer {
-                ArticleContainer(article: article) {
+            ReferenceContainer {
+                ArticleContainer(article: reference) {
                 }
             }
         }
@@ -184,11 +228,11 @@ enum DocumentationPage {
     
     struct EnumerationView: View {
         
-        var article: ApiArticle
+        let reference: Reference
         
         var body: Content {
-            DocumentationContainer {
-                ArticleContainer(article: article) {
+            ReferenceContainer {
+                ArticleContainer(article: reference) {
                 }
             }
         }
@@ -196,11 +240,11 @@ enum DocumentationPage {
     
     struct AlertView: View {
         
-        var article: ApiArticle
+        let reference: Reference
         
         var body: Content {
-            DocumentationContainer {
-                ArticleContainer(article: article) {
+            ReferenceContainer {
+                ArticleContainer(article: reference) {
                     ExampleView {
                         Button(role: .button) {
                             "Show alert"
@@ -231,11 +275,11 @@ enum DocumentationPage {
     
     struct ButtonView: View {
         
-        var article: ApiArticle
+        let reference: Reference
         
         var body: Content {
-            DocumentationContainer {
-                ArticleContainer(article: article) {
+            ReferenceContainer {
+                ArticleContainer(article: reference) {
                     ExampleView {
                         Button(role: .button) {
                             "Button"
@@ -249,11 +293,11 @@ enum DocumentationPage {
     
     struct CardView: View {
         
-        var article: ApiArticle
+        let reference: Reference
         
         var body: Content {
-            DocumentationContainer {
-                ArticleContainer(article: article) {
+            ReferenceContainer {
+                ArticleContainer(article: reference) {
                     ExampleView {
                         Card {
                             Text {
@@ -269,11 +313,11 @@ enum DocumentationPage {
     
     struct VideoView: View {
         
-        var article: ApiArticle
+        let reference: Reference
         
         var body: Content {
-            DocumentationContainer {
-                ArticleContainer(article: article) {
+            ReferenceContainer {
+                ArticleContainer(article: reference) {
                     ExampleView {
                         Video(source: "")
                             .frame(width: .minimum, height: .twelve)
@@ -286,11 +330,11 @@ enum DocumentationPage {
     
     struct ChartView: View {
         
-        var article: ApiArticle
+        let reference: Reference
         
         var body: Content {
-            DocumentationContainer {
-                ArticleContainer(article: article) {
+            ReferenceContainer {
+                ArticleContainer(article: reference) {
                     ExampleView {
                         Chart {
                             BarMark(value: 100, label: "Apfel")
@@ -311,11 +355,11 @@ enum DocumentationPage {
     
     struct BarMarkView: View {
         
-        var article: ApiArticle
+        let reference: Reference
         
         var body: Content {
-            DocumentationContainer {
-                ArticleContainer(article: article) {
+            ReferenceContainer {
+                ArticleContainer(article: reference) {
                     ExampleView {
                         Chart {
                             BarMark(value: 100, label: "Apfel")
@@ -336,11 +380,11 @@ enum DocumentationPage {
     
     struct SectorMarkView: View {
         
-        var article: ApiArticle
+        let reference: Reference
         
         var body: Content {
-            DocumentationContainer {
-                ArticleContainer(article: article) {
+            ReferenceContainer {
+                ArticleContainer(article: reference) {
                     ExampleView {
                         Chart {
                             SectorMark(value: 100, label: "Apfel")
@@ -361,11 +405,11 @@ enum DocumentationPage {
     
     struct DropdownView: View {
         
-        var article: ApiArticle
+        let reference: Reference
         
         var body: Content {
-            DocumentationContainer {
-                ArticleContainer(article: article) {
+            ReferenceContainer {
+                ArticleContainer(article: reference) {
                     ExampleView {
                         Dropdown {
                             List(direction: .vertical) {
@@ -398,11 +442,11 @@ enum DocumentationPage {
     
     struct GridView: View {
         
-        var article: ApiArticle
+        let reference: Reference
         
         var body: Content {
-            DocumentationContainer {
-                ArticleContainer(article: article) {
+            ReferenceContainer {
+                ArticleContainer(article: reference) {
                     ExampleView {
                         Grid(ratio: .third, spacing: .large) {
                             for _ in 1...8 {
@@ -423,11 +467,11 @@ enum DocumentationPage {
     
     struct SymbolView: View {
         
-        var article: ApiArticle
+        let reference: Reference
         
         var body: Content {
-            DocumentationContainer {
-                ArticleContainer(article: article) {
+            ReferenceContainer {
+                ArticleContainer(article: reference) {
                     ExampleView {
                         Symbol(system: .house)
                             .fontSize(.extralarge)
@@ -440,11 +484,11 @@ enum DocumentationPage {
     
     struct ScrollView: View {
         
-        var article: ApiArticle
+        let reference: Reference
         
         var body: Content {
-            DocumentationContainer {
-                ArticleContainer(article: article) {
+            ReferenceContainer {
+                ArticleContainer(article: reference) {
                     ExampleView {
                         VStack {
                             Scroll {
@@ -469,11 +513,11 @@ enum DocumentationPage {
     
     struct SnippetView: View {
         
-        var article: ApiArticle
+        let reference: Reference
         
         var body: Content {
-            DocumentationContainer {
-                ArticleContainer(article: article) {
+            ReferenceContainer {
+                ArticleContainer(article: reference) {
                     ExampleView {
                         Snippet(highlight: .html) {
                             """
@@ -491,11 +535,11 @@ enum DocumentationPage {
     
     struct TextView: View {
         
-        var article: ApiArticle
+        let reference: Reference
         
         var body: Content {
-            DocumentationContainer {
-                ArticleContainer(article: article) {
+            ReferenceContainer {
+                ArticleContainer(article: reference) {
                     ExampleView {
                         Text {
                             "Hello World"
@@ -512,11 +556,11 @@ enum DocumentationPage {
     
     struct ModalView: View {
         
-        var article: ApiArticle
+        let reference: Reference
         
         var body: Content {
-            DocumentationContainer {
-                ArticleContainer(article: article) {
+            ReferenceContainer {
+                ArticleContainer(article: reference) {
                     ExampleView {
                         Button(role: .button) {
                             "Show Modal"
@@ -534,11 +578,11 @@ enum DocumentationPage {
     
     struct ListView: View {
         
-        var article: ApiArticle
+        let reference: Reference
         
         var body: Content {
-            DocumentationContainer {
-                ArticleContainer(article: article) {
+            ReferenceContainer {
+                ArticleContainer(article: reference) {
                     ExampleView {
                         List(direction: .horizontal) {
                             Text {
@@ -560,11 +604,11 @@ enum DocumentationPage {
     
     struct ImageView: View {
         
-        var article: ApiArticle
+        let reference: Reference
         
         var body: Content {
-            DocumentationContainer {
-                ArticleContainer(article: article) {
+            ReferenceContainer {
+                ArticleContainer(article: reference) {
                     ExampleView {
                         Image(source: "/assets/bamberg.jpeg")
                             .frame(width: .minimum, height: .twelve)
@@ -577,11 +621,11 @@ enum DocumentationPage {
     
     struct DisclosureView: View {
         
-        var article: ApiArticle
+        let reference: Reference
         
         var body: Content {
-            DocumentationContainer {
-                ArticleContainer(article: article) {
+            ReferenceContainer {
+                ArticleContainer(article: reference) {
                     ExampleView {
                         Disclosure("test") {
                             HStack {
@@ -600,11 +644,11 @@ enum DocumentationPage {
     
     struct ProgressView: View {
         
-        var article: ApiArticle
+        let reference: Reference
         
         var body: Content {
-            DocumentationContainer {
-                ArticleContainer(article: article) {
+            ReferenceContainer {
+                ArticleContainer(article: reference) {
                     ExampleView {
                         Progress(value: 80, total: 100) {
                         }
@@ -618,11 +662,11 @@ enum DocumentationPage {
     
     struct CarouselView: View {
         
-        var article: ApiArticle
+        let reference: Reference
         
         var body: Content {
-            DocumentationContainer {
-                ArticleContainer(article: article) {
+            ReferenceContainer {
+                ArticleContainer(article: reference) {
                     ExampleView {
                         Carousel {
                             Slide {
@@ -648,11 +692,11 @@ enum DocumentationPage {
     
     struct TabView: View {
         
-        var article: ApiArticle
+        let reference: Reference
         
         var body: Content {
-            DocumentationContainer {
-                ArticleContainer(article: article) {
+            ReferenceContainer {
+                ArticleContainer(article: reference) {
                     ExampleView {
                         Tabs(direction: .horizontal) {
                             Pane {
@@ -660,7 +704,7 @@ enum DocumentationPage {
                                     "Pane1"
                                 }
                             } label: {
-                                Symbol(system: .bell)
+                                HTMLKitComponents.Symbol(system: .bell)
                                 Text {
                                     "Panel1"
                                 }
@@ -672,7 +716,7 @@ enum DocumentationPage {
                                     "Panel2"
                                 }
                             } label: {
-                                Symbol(system: .bell)
+                                HTMLKitComponents.Symbol(system: .bell)
                                 Text {
                                     "Panel2"
                                 }
@@ -690,11 +734,11 @@ enum DocumentationPage {
     
     struct HStackView: View {
 
-        var article: ApiArticle
+        let reference: Reference
         
         var body: Content {
-            DocumentationContainer {
-                ArticleContainer(article: article) {
+            ReferenceContainer {
+                ArticleContainer(article: reference) {
                     ExampleView {
                         HStack {
                             for index in 0...2 {
@@ -712,11 +756,11 @@ enum DocumentationPage {
     
     struct VStackView: View {
         
-        var article: ApiArticle
+        let reference: Reference
         
         var body: Content {
-            DocumentationContainer {
-                ArticleContainer(article: article) {
+            ReferenceContainer {
+                ArticleContainer(article: reference) {
                     ExampleView {
                         VStack {
                             for index in 0...2 {
@@ -734,11 +778,11 @@ enum DocumentationPage {
     
     struct GroupingView: View {
         
-        var article: ApiArticle
+        let reference: Reference
         
         var body: Content {
-            DocumentationContainer {
-                ArticleContainer(article: article) {
+            ReferenceContainer {
+                ArticleContainer(article: reference) {
                     ExampleView {
                         Grouping {
                             for index in 0...2 {
@@ -756,11 +800,11 @@ enum DocumentationPage {
     
     struct ZStackView: View {
         
-        var article: ApiArticle
+        let reference: Reference
         
         var body: Content {
-            DocumentationContainer {
-                ArticleContainer(article: article) {
+            ReferenceContainer {
+                ArticleContainer(article: reference) {
                     ExampleView {
                         ZStack {
                             VStack {
@@ -782,11 +826,11 @@ enum DocumentationPage {
     
     struct TextFieldView: View {
         
-        var article: ApiArticle
+        let reference: Reference
         
         var body: Content {
-            DocumentationContainer {
-                ArticleContainer(article: article) {
+            ReferenceContainer {
+                ArticleContainer(article: reference) {
                     ExampleView {
                         TextField(name: "textfield", value: "value")
                     }
@@ -798,11 +842,11 @@ enum DocumentationPage {
     
     struct SearchFieldView: View {
         
-        var article: ApiArticle
+        let reference: Reference
         
         var body: Content {
-            DocumentationContainer {
-                ArticleContainer(article: article) {
+            ReferenceContainer {
+                ArticleContainer(article: reference) {
                     ExampleView {
                         SearchField(name: "searchfield", value: "value")
                     }
@@ -814,11 +858,11 @@ enum DocumentationPage {
     
     struct TextEditorView: View {
         
-        var article: ApiArticle
+        let reference: Reference
         
         var body: Content {
-            DocumentationContainer {
-                ArticleContainer(article: article) {
+            ReferenceContainer {
+                ArticleContainer(article: reference) {
                     ExampleView {
                         TextEditor(name: "texteditor") {
                             "value"
@@ -832,11 +876,11 @@ enum DocumentationPage {
     
     struct TextPadView: View {
         
-        var article: ApiArticle
+        let reference: Reference
         
         var body: Content {
-            DocumentationContainer {
-                ArticleContainer(article: article) {
+            ReferenceContainer {
+                ArticleContainer(article: reference) {
                     ExampleView {
                         TextPad(name: "textpad") {
                             "value"
@@ -850,11 +894,11 @@ enum DocumentationPage {
     
     struct SecureFieldView: View {
         
-        var article: ApiArticle
+        let reference: Reference
         
         var body: Content {
-            DocumentationContainer {
-                ArticleContainer(article: article) {
+            ReferenceContainer {
+                ArticleContainer(article: reference) {
                     ExampleView {
                         SecureField(name: "securefield", value: "value")
                     }
@@ -866,11 +910,11 @@ enum DocumentationPage {
     
     struct CheckFieldView: View {
         
-        var article: ApiArticle
+        let reference: Reference
         
         var body: Content {
-            DocumentationContainer {
-                ArticleContainer(article: article) {
+            ReferenceContainer {
+                ArticleContainer(article: reference) {
                     ExampleView {
                         CheckField(value: "value") {
                             "Label"
@@ -884,11 +928,11 @@ enum DocumentationPage {
     
     struct RadioSelectView: View {
         
-        var article: ApiArticle
+        let reference: Reference
         
         var body: Content {
-            DocumentationContainer {
-                ArticleContainer(article: article) {
+            ReferenceContainer {
+                ArticleContainer(article: reference) {
                     ExampleView {
                         RadioSelect(value: "value") {
                             "Label"
@@ -902,11 +946,11 @@ enum DocumentationPage {
     
     struct SelectFieldView: View {
         
-        var article: ApiArticle
+        let reference: Reference
         
         var body: Content {
-            DocumentationContainer {
-                ArticleContainer(article: article) {
+            ReferenceContainer {
+                ArticleContainer(article: reference) {
                     ExampleView {
                         SelectField(name: "selectfield") {
                             RadioSelect(value: "") {
@@ -922,11 +966,11 @@ enum DocumentationPage {
     
     struct SliderView: View {
         
-        var article: ApiArticle
+        let reference: Reference
         
         var body: Content {
-            DocumentationContainer {
-                ArticleContainer(article: article) {
+            ReferenceContainer {
+                ArticleContainer(article: reference) {
                     ExampleView {
                         Slider(name: "slider")
                     }
@@ -938,11 +982,11 @@ enum DocumentationPage {
     
     struct LinkView: View {
         
-        var article: ApiArticle
+        let reference: Reference
         
         var body: Content {
-            DocumentationContainer {
-                ArticleContainer(article: article) {
+            ReferenceContainer {
+                ArticleContainer(article: reference) {
                     ExampleView {
                         Link(destination: "https://vapor.codes") {
                             Text {
@@ -958,11 +1002,11 @@ enum DocumentationPage {
     
     struct DatePickerView: View {
         
-        var article: ApiArticle
+        let reference: Reference
         
         var body: Content {
-            DocumentationContainer {
-                ArticleContainer(article: article) {
+            ReferenceContainer {
+                ArticleContainer(article: reference) {
                     ExampleView {
                         DatePicker(name: "datepicker")
                     }
@@ -974,11 +1018,11 @@ enum DocumentationPage {
     
     struct FieldDialogView: View {
         
-        var article: ApiArticle
+        let reference: Reference
         
         var body: Content {
-            DocumentationContainer {
-                ArticleContainer(article: article) {
+            ReferenceContainer {
+                ArticleContainer(article: reference) {
                     ExampleView {
                         FileDialog(name: "filedialog")
                     }
@@ -990,11 +1034,11 @@ enum DocumentationPage {
     
     struct FontFamilyEnumView: View {
         
-        var article: ApiArticle
+        let reference: Reference
         
         var body: Content {
-            DocumentationContainer {
-                ArticleContainer(article: article) {
+            ReferenceContainer {
+                ArticleContainer(article: reference) {
                     Scroll {
                         HStack(spacing: .small) {
                             for family in Tokens.FontFamily.allCases {
@@ -1014,11 +1058,11 @@ enum DocumentationPage {
     
     struct TextStyleEnumView: View {
         
-        var article: ApiArticle
+        let reference: Reference
         
         var body: Content {
-            DocumentationContainer {
-                ArticleContainer(article: article) {
+            ReferenceContainer {
+                ArticleContainer(article: reference) {
                     Scroll {
                         HStack(spacing: .small) {
                             for style in Tokens.TextStyle.allCases {
@@ -1038,11 +1082,11 @@ enum DocumentationPage {
     
     struct FontStyleEnumView: View {
         
-        var article: ApiArticle
+        let reference: Reference
         
         var body: Content {
-            DocumentationContainer {
-                ArticleContainer(article: article) {
+            ReferenceContainer {
+                ArticleContainer(article: reference) {
                     Scroll {
                         HStack(spacing: .small) {
                             for style in Tokens.FontStyle.allCases {
@@ -1062,11 +1106,11 @@ enum DocumentationPage {
     
     struct FlowDirectionEnumView: View {
         
-        var article: ApiArticle
+        let reference: Reference
         
         var body: Content {
-            DocumentationContainer {
-                ArticleContainer(article: article) {
+            ReferenceContainer {
+                ArticleContainer(article: reference) {
                     Scroll {
                         HStack(spacing: .small) {
                             for direction in Tokens.FlowDirection.allCases {
@@ -1089,11 +1133,11 @@ enum DocumentationPage {
     
     struct ForegroundColorEnumView: View {
         
-        var article: ApiArticle
+        let reference: Reference
         
         var body: Content {
-            DocumentationContainer {
-                ArticleContainer(article: article) {
+            ReferenceContainer {
+                ArticleContainer(article: reference) {
                     Scroll {
                         HStack(spacing: .small) {
                             for color in Tokens.ForegroundColor.allCases {
@@ -1113,11 +1157,11 @@ enum DocumentationPage {
     
     struct BackgroundColorEnumView: View {
         
-        var article: ApiArticle
+        let reference: Reference
         
         var body: Content {
-            DocumentationContainer {
-                ArticleContainer(article: article) {
+            ReferenceContainer {
+                ArticleContainer(article: reference) {
                     Scroll {
                         HStack(spacing: .small) {
                             for color in Tokens.BackgroundColor.allCases {
@@ -1137,11 +1181,11 @@ enum DocumentationPage {
     
     struct BorderColorEnumView: View {
         
-        var article: ApiArticle
+        let reference: Reference
         
         var body: Content {
-            DocumentationContainer {
-                ArticleContainer(article: article) {
+            ReferenceContainer {
+                ArticleContainer(article: reference) {
                     Scroll {
                         HStack(spacing: .small) {
                             for color in Tokens.BorderColor.allCases {
@@ -1163,11 +1207,11 @@ enum DocumentationPage {
     
     struct FontWeightEnumView: View {
         
-        var article: ApiArticle
+        let reference: Reference
         
         var body: Content {
-            DocumentationContainer {
-                ArticleContainer(article: article) {
+            ReferenceContainer {
+                ArticleContainer(article: reference) {
                     Scroll {
                         HStack(spacing: .small) {
                             for weight in Tokens.FontWeight.allCases {
@@ -1187,11 +1231,11 @@ enum DocumentationPage {
     
     struct FontSizeEnumView: View {
         
-        var article: ApiArticle
+        let reference: Reference
         
         var body: Content {
-            DocumentationContainer {
-                ArticleContainer(article: article) {
+            ReferenceContainer {
+                ArticleContainer(article: reference) {
                     Scroll {
                         HStack(spacing: .small) {
                             for size in Tokens.FontSize.allCases {
@@ -1211,11 +1255,11 @@ enum DocumentationPage {
     
     struct TextCaseEnumView: View {
         
-        var article: ApiArticle
+        let reference: Reference
         
         var body: Content {
-            DocumentationContainer {
-                ArticleContainer(article: article) {
+            ReferenceContainer {
+                ArticleContainer(article: reference) {
                     Scroll {
                         HStack(spacing: .small) {
                             for size in Tokens.TextCase.allCases {
@@ -1235,11 +1279,11 @@ enum DocumentationPage {
     
     struct TextDecorationEnumView: View {
         
-        var article: ApiArticle
+        let reference: Reference
         
         var body: Content {
-            DocumentationContainer {
-                ArticleContainer(article: article) {
+            ReferenceContainer {
+                ArticleContainer(article: reference) {
                     Scroll {
                         HStack(spacing: .small) {
                             for decoration in Tokens.TextDecoration.allCases {
@@ -1259,11 +1303,11 @@ enum DocumentationPage {
     
     struct TextAlignmentEnumView: View {
         
-        var article: ApiArticle
+        let reference: Reference
         
         var body: Content {
-            DocumentationContainer {
-                ArticleContainer(article: article) {
+            ReferenceContainer {
+                ArticleContainer(article: reference) {
                     Scroll {
                         HStack(spacing: .small) {
                             for alignment in Tokens.TextAlignment.allCases {
@@ -1284,11 +1328,11 @@ enum DocumentationPage {
     
     struct BorderShapeEnumView: View {
         
-        var article: ApiArticle
+        let reference: Reference
         
         var body: Content {
-            DocumentationContainer {
-                ArticleContainer(article: article) {
+            ReferenceContainer {
+                ArticleContainer(article: reference) {
                     Scroll {
                         HStack(spacing: .small) {
                             for shape in Tokens.BorderShape.allCases {
@@ -1308,11 +1352,11 @@ enum DocumentationPage {
     
     struct BlurLevelEnumView: View {
         
-        var article: ApiArticle
+        let reference: Reference
         
         var body: Content {
-            DocumentationContainer {
-                ArticleContainer(article: article) {
+            ReferenceContainer {
+                ArticleContainer(article: reference) {
                     Scroll {
                         HStack(spacing: .small) {
                             for level in Tokens.BlurLevel.allCases {
@@ -1331,11 +1375,11 @@ enum DocumentationPage {
     
     struct SaturationLevelEnumView: View {
         
-        var article: ApiArticle
+        let reference: Reference
         
         var body: Content {
-            DocumentationContainer {
-                ArticleContainer(article: article) {
+            ReferenceContainer {
+                ArticleContainer(article: reference) {
                     Scroll {
                         HStack(spacing: .small) {
                             for level in Tokens.SaturationLevel.allCases {
@@ -1354,11 +1398,11 @@ enum DocumentationPage {
     
     struct ConstrastLevelEnumView: View {
         
-        var article: ApiArticle
+        let reference: Reference
         
         var body: Content {
-            DocumentationContainer {
-                ArticleContainer(article: article) {
+            ReferenceContainer {
+                ArticleContainer(article: reference) {
                     Scroll {
                         HStack(spacing: .small) {
                             for level in Tokens.ContrastLevel.allCases {
@@ -1377,11 +1421,11 @@ enum DocumentationPage {
     
     struct BrightnessLevelEnumView: View {
         
-        var article: ApiArticle
+        let reference: Reference
         
         var body: Content {
-            DocumentationContainer {
-                ArticleContainer(article: article) {
+            ReferenceContainer {
+                ArticleContainer(article: reference) {
                     Scroll {
                         HStack(spacing: .small) {
                             for level in Tokens.BrightnessLevel.allCases {
@@ -1400,11 +1444,11 @@ enum DocumentationPage {
     
     struct GrayscaleDepthEnumView: View {
         
-        var article: ApiArticle
+        let reference: Reference
         
         var body: Content {
-            DocumentationContainer {
-                ArticleContainer(article: article) {
+            ReferenceContainer {
+                ArticleContainer(article: reference) {
                     Scroll {
                         HStack(spacing: .small) {
                             for depth in Tokens.GrayscaleDepth.allCases {
@@ -1423,11 +1467,11 @@ enum DocumentationPage {
     
     struct ListSpaceEnumView: View {
         
-        var article: ApiArticle
+        let reference: Reference
         
         var body: Content {
-            DocumentationContainer {
-                ArticleContainer(article: article) {
+            ReferenceContainer {
+                ArticleContainer(article: reference) {
                     Scroll {
                         HStack(spacing: .small) {
                             for space in Tokens.ListSpace.allCases {
@@ -1451,11 +1495,11 @@ enum DocumentationPage {
     
     struct ShadowColorEnumView: View {
         
-        var article: ApiArticle
+        let reference: Reference
         
         var body: Content {
-            DocumentationContainer {
-                ArticleContainer(article: article) {
+            ReferenceContainer {
+                ArticleContainer(article: reference) {
                     Scroll {
                         HStack(spacing: .small) {
                             for color in Tokens.ShadowColor.allCases {
@@ -1475,11 +1519,11 @@ enum DocumentationPage {
     
     struct BorderWidthEnumView: View {
         
-        var article: ApiArticle
+        let reference: Reference
         
         var body: Content {
-            DocumentationContainer {
-                ArticleContainer(article: article) {
+            ReferenceContainer {
+                ArticleContainer(article: reference) {
                     Scroll {
                         HStack(spacing: .small) {
                             for width in Tokens.BorderWidth.allCases {
@@ -1499,11 +1543,11 @@ enum DocumentationPage {
     
     struct ColorSchemeEnumView: View {
         
-        var article: ApiArticle
+        let reference: Reference
         
         var body: Content {
-            DocumentationContainer {
-                ArticleContainer(article: article) {
+            ReferenceContainer {
+                ArticleContainer(article: reference) {
                     Scroll {
                         HStack(spacing: .small) {
                             for scheme in Tokens.ColorScheme.allCases {
@@ -1523,11 +1567,11 @@ enum DocumentationPage {
     
     struct ImageScaleEnumView: View {
         
-        var article: ApiArticle
+        let reference: Reference
         
         var body: Content {
-            DocumentationContainer {
-                ArticleContainer(article: article) {
+            ReferenceContainer {
+                ArticleContainer(article: reference) {
                     Scroll {
                         HStack(spacing: .small) {
                             for scale in Tokens.ImageScale.allCases {
@@ -1545,11 +1589,11 @@ enum DocumentationPage {
     
     struct ProgressStyleEnumView: View {
         
-        var article: ApiArticle
+        let reference: Reference
         
         var body: Content {
-            DocumentationContainer {
-                ArticleContainer(article: article) {
+            ReferenceContainer {
+                ArticleContainer(article: reference) {
                     Scroll {
                         HStack(spacing: .small) {
                             for style in Tokens.ProgressStyle.allCases {
@@ -1568,11 +1612,11 @@ enum DocumentationPage {
     
     struct TintColorEnumView: View {
         
-        var article: ApiArticle
+        let reference: Reference
         
         var body: Content {
-            DocumentationContainer {
-                ArticleContainer(article: article) {
+            ReferenceContainer {
+                ArticleContainer(article: reference) {
                     Scroll {
                         HStack(spacing: .small) {
                             for color in Tokens.TintColor.allCases {
@@ -1592,11 +1636,11 @@ enum DocumentationPage {
     
     struct ObjectFitEnumView: View {
         
-        var article: ApiArticle
+        let reference: Reference
         
         var body: Content {
-            DocumentationContainer {
-                ArticleContainer(article: article) {
+            ReferenceContainer {
+                ArticleContainer(article: reference) {
                     Scroll {
                         HStack(spacing: .small) {
                             for fit in Tokens.ObjectFit.allCases {
@@ -1615,11 +1659,11 @@ enum DocumentationPage {
     
     struct AspectRatioEnumView: View {
         
-        var article: ApiArticle
+        let reference: Reference
         
         var body: Content {
-            DocumentationContainer {
-                ArticleContainer(article: article) {
+            ReferenceContainer {
+                ArticleContainer(article: reference) {
                     Scroll {
                         HStack(spacing: .small) {
                             for ratio in Tokens.AspectRatio.allCases {
@@ -1638,11 +1682,11 @@ enum DocumentationPage {
     
     struct ClipShapeEnumView: View {
         
-        var article: ApiArticle
+        let reference: Reference
         
         var body: Content {
-            DocumentationContainer {
-                ArticleContainer(article: article) {
+            ReferenceContainer {
+                ArticleContainer(article: reference) {
                     Scroll {
                         HStack(spacing: .small) {
                             for shape in Tokens.ClipShape.allCases {
@@ -1660,11 +1704,11 @@ enum DocumentationPage {
     
     struct ContentSpaceEnumView: View {
         
-        var article: ApiArticle
+        let reference: Reference
         
         var body: Content {
-            DocumentationContainer {
-                ArticleContainer(article: article) {
+            ReferenceContainer {
+                ArticleContainer(article: reference) {
                     Scroll {
                         HStack(spacing: .small) {
                             for space in Tokens.ContentSpace.allCases {
@@ -1689,11 +1733,11 @@ enum DocumentationPage {
     
     struct GridRatioEnumView: View {
         
-        var article: ApiArticle
+        let reference: Reference
         
         var body: Content {
-            DocumentationContainer {
-                ArticleContainer(article: article) {
+            ReferenceContainer {
+                ArticleContainer(article: reference) {
                     Scroll {
                         HStack(spacing: .small) {
                             for ratio in Tokens.GridRatio.allCases {
@@ -1718,11 +1762,11 @@ enum DocumentationPage {
     
     struct OpacityValueEnumView: View {
         
-        var article: ApiArticle
+        let reference: Reference
         
         var body: Content {
-            DocumentationContainer {
-                ArticleContainer(article: article) {
+            ReferenceContainer {
+                ArticleContainer(article: reference) {
                     Scroll {
                         HStack(spacing: .small) {
                             for value in Tokens.OpacityValue.allCases {
@@ -1741,11 +1785,11 @@ enum DocumentationPage {
     
     struct PaddingLengthEnumView: View {
         
-        var article: ApiArticle
+        let reference: Reference
         
         var body: Content {
-            DocumentationContainer {
-                ArticleContainer(article: article) {
+            ReferenceContainer {
+                ArticleContainer(article: reference) {
                     Scroll {
                         HStack(spacing: .small) {
                             for length in Tokens.PaddingLength.allCases {
@@ -1771,11 +1815,11 @@ enum DocumentationPage {
     
     struct MarginLengthEnumView: View {
         
-        var article: ApiArticle
+        let reference: Reference
         
         var body: Content {
-            DocumentationContainer {
-                ArticleContainer(article: article) {
+            ReferenceContainer {
+                ArticleContainer(article: reference) {
                     Scroll {
                         HStack(spacing: .small) {
                             for length in Tokens.MarginLength.allCases {
@@ -1802,11 +1846,11 @@ enum DocumentationPage {
     
     struct InnerRadiusEnumView: View {
         
-        var article: ApiArticle
+        let reference: Reference
         
         var body: Content {
-            DocumentationContainer {
-                ArticleContainer(article: article) {
+            ReferenceContainer {
+                ArticleContainer(article: reference) {
                     Scroll {
                         HStack(spacing: .small) {
                             for radius in Tokens.InnerRadius.allCases {
@@ -1833,11 +1877,11 @@ enum DocumentationPage {
     
     struct SymbolNameEnumView: View {
         
-        var article: ApiArticle
+        let reference: Reference
         
         var body: Content {
-            DocumentationContainer {
-                ArticleContainer(article: article) {
+            ReferenceContainer {
+                ArticleContainer(article: reference) {
                     Scroll {
                         HStack(spacing: .small) {
                             for name in Symbol.SymbolNames.allCases {
@@ -1855,11 +1899,11 @@ enum DocumentationPage {
     
     struct ButtonStyleEnumView: View {
         
-        var article: ApiArticle
+        let reference: Reference
         
         var body: Content {
-            DocumentationContainer {
-                ArticleContainer(article: article) {
+            ReferenceContainer {
+                ArticleContainer(article: reference) {
                     Scroll {
                         HStack(spacing: .small) {
                             for style in Tokens.ButtonStyle.allCases {
@@ -1879,11 +1923,11 @@ enum DocumentationPage {
     
     struct NavigationStyleEnumView: View {
         
-        var article: ApiArticle
+        let reference: Reference
         
         var body: Content {
-            DocumentationContainer {
-                ArticleContainer(article: article) {
+            ReferenceContainer {
+                ArticleContainer(article: reference) {
                     Scroll {
                         HStack(spacing: .small) {
                             ExampleView {

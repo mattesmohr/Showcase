@@ -5,7 +5,7 @@ enum TutorialPage {
     
     struct IndexView: View {
         
-        var tutorials: [Tutorial]
+        let tutorials: [Tutorial]
 
         var body: Content {
             PageContainer {
@@ -16,24 +16,29 @@ enum TutorialPage {
                     .fontSize(.large)
                 }
                 Section {
-                    Grid(ratio: .third, spacing: .small) {
+                    Grid(ratio: .quarter, spacing: .small) {
                         for tutorial in tutorials {
-                            VStack(spacing: .small) {
-                                ThumbnailView {
+                            Card {
+                                VStack(spacing: .small) {
+                                    Text {
+                                        tutorial.title
+                                    }
+                                    .fontSize(.large)
+                                    Text {
+                                        tutorial.description
+                                    }
+                                    Link(destination: "/tutorial/\(tutorial.slug)") {
+                                        "Read more"
+                                    }
+                                    .foregroundColor(.accent)
                                 }
-                                .frame(width: .twelve)
-                                Text {
-                                    tutorial.title
-                                }
-                                .fontSize(.large)
-                                Text {
-                                    tutorial.description
-                                }
-                                Link(destination: "/tutorial/\(tutorial.slug)") {
-                                    "Read more"
-                                }
-                                .foregroundColor(.accent)
+                            } header: {
+                                Image(source: "/assets/img/\(tutorial.thumbnail)")
+                                    .aspectRatio(.unequal, fit: .contain)
                             }
+                            .borderShape(.largerounded)
+                            .padding(length: .medium)
+                            .backgroundColor(.custom("blue/transparent"))
                         }
                     }
                 }
@@ -43,7 +48,7 @@ enum TutorialPage {
     
     struct ShowView: View {
         
-        var tutorial: Tutorial
+        let tutorial: Tutorial
 
         var body: Content {
             PageContainer {

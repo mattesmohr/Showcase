@@ -1,0 +1,35 @@
+.icon {
+    --iconColor: black;
+
+    padding-inline: 2px;
+    padding-block: 1px;
+    width: 20px;
+    height: 20px;
+    display: grid;
+    place-items: center;
+    place-content: center;
+    border-width: 1px;
+    border-style: solid;
+    border-color: hsla(var(--iconColor), 1.0);
+    border-radius: 2px;
+    font-size: 14px;
+    font-weight: 500;
+    color: hsla(var(--iconColor), 1.0);
+    background-color: hsla(var(--iconColor), 0.1);
+
+    &.color\:blue {
+        --iconColor: var(--blueColor);
+    }
+
+    &.color\:red {
+        --iconColor: var(--redColor);
+    }
+
+    &.color\:orange {
+        --iconColor: var(--orangeColor);
+    }
+
+    &.color\:green {
+        --iconColor: var(--greenColor);
+    }
+}

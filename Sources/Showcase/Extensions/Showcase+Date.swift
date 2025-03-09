@@ -2,7 +2,7 @@ import Foundation
 
 extension Date {
     
-    func formatted(date: DateFormatter.Style, time: DateFormatter.Style) -> String {
+    func formatted(date: DateFormatter.Style, time: DateFormatter.Style = .none) -> String {
         
         let formatter = DateFormatter()
         formatter.dateStyle = date
